@@ -1,0 +1,316 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap');
+
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+.registrar-usuario {
+  display: flex;
+  position: relative;              
+  flex-direction: column;
+  background-color: #f4f4f5;
+}
+
+
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-self: flex-end;
+  margin-top: 1rem;
+  margin-right: 3rem;
+  width: 100%;
+  max-width: 1336px;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    margin-right: 0.625rem;
+    max-width: 100%;
+  }
+}
+
+.title {
+  margin-left: 1rem;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  color: #0f172a;
+  margin-top: 5rem;
+  font-family: 'Hammersmith One', sans-serif;
+}
+
+@media (max-width: 768px) {
+  .title {
+    margin-left: 0.625rem;
+  }
+}
+
+.content-wrapper {
+  align-self: stretch;
+  margin-top: 1.25rem;
+  width: 100%;
+  display: flex;
+  gap: 1.25rem;
+}
+
+@media (max-width: 768px) {
+  .content-wrapper {
+    max-width: 100%;
+    flex-direction: column;
+    gap: 0;
+  }
+}
+
+.form-section {
+  width: 37%;
+}
+
+@media (max-width: 768px) {
+  .form-section {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+.form-fields {
+  align-self: stretch;
+  margin: auto 0;
+  width: 100%;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  color: #737373;
+  font-family: 'Roboto', sans-serif;
+}
+
+@media (max-width: 768px) {
+  .form-fields {
+    margin-top: 2.5rem;
+    max-width: 100%;
+  }
+}
+
+.input-field {
+  padding: 1rem 1.25rem;
+  background-color: white;
+  border-radius: 1.5rem;
+  margin-bottom: 2.25rem;
+  font-family: 'Roboto', sans-serif;
+  width: 100%;
+  border-style: none;
+}
+
+@media (max-width: 768px) {
+  .input-field {
+    max-width: 100%;
+  }
+}
+
+.input-field:first-child {
+  margin-bottom: 2.25rem;
+}
+
+.password-field {
+  display: flex;
+  gap: 1.25rem;
+  justify-content: space-between;
+  padding: 0.875rem 1.5rem;
+  margin-bottom: 2.5rem;
+  background-color: white;
+  border-radius: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .password-field {
+    padding-right: 1.25rem;
+    max-width: 100%;
+  }
+}
+
+.password-icon {
+  object-fit: contain;
+  flex-shrink: 0;
+  aspect-ratio: 1.23;
+  width: 27px;
+}
+
+.input-field-carnet {
+  padding: 0.75rem 1.5rem 1.25rem;
+  background-color: white;
+  border-radius: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .input-field-carnet {
+    padding-left: 1.25rem;
+    max-width: 100%;
+  }
+}
+
+.image-section {
+  margin-left: 1.25rem;
+  width: 63%;
+}
+
+@media (max-width: 768px) {
+  .image-section {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+.image-container {
+  flex-grow: 1;
+  display: flex;
+  gap: 1.25rem;
+}
+
+@media (max-width: 768px) {
+  .image-container {
+    margin-top: 2.5rem;
+    max-width: 100%;
+    flex-direction: column;
+    gap: 0;
+  }
+}
+
+.profile-image-wrapper {
+  width: 60%;
+}
+
+@media (max-width: 768px) {
+  .profile-image-wrapper {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+.profile-image {
+  object-fit: contain;
+  z-index: 99;
+  margin-top: 0.2rem;
+  margin-right: 0;
+  width: 100%;
+  border-radius: 50%;
+  aspect-ratio: 1;
+  margin-left: 9rem;
+
+  
+}
+
+@media (max-width: 768px) {
+  .profile-image {
+    max-width: 100%;
+  }
+}
+
+.side-image-wrapper {
+  margin-left: 1.25rem;
+  width: 40%;
+  background-image: linear-gradient(rgb(253, 126, 48), #f4f4f5);
+  overflow: visible;
+  background-size: 300px 100%;
+
+}
+
+@media (max-width: 768px) {
+  .side-image-wrapper {
+    margin-left: 0;
+    width: 100%;
+    
+  }
+}
+
+.side-image {
+  object-fit: contain;
+  width: 100%;
+  aspect-ratio: 1.24;
+  
+  
+}
+
+.buttons-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  margin-top: 1.5rem;
+  max-width: 100%;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+  color: white;
+  width: 400px;
+  align-items: flex-end;
+}
+
+.register-button {
+  padding: 1.25rem 2.5rem;
+  white-space: nowrap;
+  background-color: #ea580c;
+  border-radius: 1000px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .register-button {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+}
+
+.login-button {
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: 0;
+  padding: 1.2rem 2rem;
+  background-color: #0f172a !important;
+  border-radius: 1000px;
+  width: fit-content;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+  border-style: none;
+}
+
+.login-button:hover {
+  background-color: #34333b !important;
+}
+
+@media (max-width: 768px) {
+  .login-button {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+}
+
+.home-link {
+  display: flex;
+  gap: 0.375rem;
+  margin-top: 3rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 700;
+  color: black;
+  white-space: nowrap;
+  font-family: 'Roboto', sans-serif;
+}
+
+@media (max-width: 768px) {
+  .home-link {
+    margin-top: 2.5rem;
+  }
+}
+
+.home-icon {
+  object-fit: contain;
+  flex-shrink: 0;
+  width: 1.5rem;
+  aspect-ratio: 1;
+}
+
+.home-text {
+  margin: auto 0;
+}
