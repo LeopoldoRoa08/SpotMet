@@ -1,0 +1,75 @@
+/* Header Section */
+.header-section {
+  display: flex;
+  z-index: 10;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 100%;
+  background-color: #f4f4f5;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+  position: relative;
+}
+
+.header-content {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.logo-main {
+  object-fit: contain;
+  width: 143px;
+  
+}
+
+.nav-icons {
+  display: flex;
+  gap: 0.625rem;
+  margin-right: 25px;
+}
+
+.icon-group {
+  display: flex;
+  margin: auto 0;
+}
+
+.icon-small {
+  object-fit: contain;
+  flex-shrink: 0;
+  aspect-ratio: 0.96;
+  width: 22px;
+}
+
+.icon-medium {
+  object-fit: contain;
+  flex-shrink: 0;
+  aspect-ratio: 1.15;
+  width: 47px;
+}
+
+.icon-square {
+  object-fit: contain;
+  width: 46px;
+}
+
+/* Footer Section */
+.footer-section {
+    background-color: #030027;
+    display: flex;
+    font-size: 1.25rem;
+    text-align: center;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+}
+
+.footer-text {
+  position: relative;
+  z-index: 1;
+}
+
+.footer-bold {
+  font-weight: 700;
+}
