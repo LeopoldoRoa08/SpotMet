@@ -258,8 +258,6 @@ body, html {
   
   
 }
-
-
 /* Responsive Design */
 @media (max-width: 768px) {
   .header-section {
@@ -353,4 +351,48 @@ body, html {
     padding-top: 6rem;
     padding-bottom: 7rem;
   }
+/* Icono de usuario profesional - Versión negra funcional */
+.user-icon-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1000;
+  padding: 0;
+  transition: transform 0.2s;
+}
+
+.user-icon-button:hover {
+  transform: scale(1.1);
+}
+
+.user-icon-button:active {
+  transform: scale(0.95);
+}
+
+.user-icon-symbol {
+  display: block;
+  width: 24px;
+  height: 24px;
+  margin: 0 auto;
+  background-color: #000;
+  border-radius: 50%;
+  position: relative;
+}
+
+.user-icon-symbol::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 32px;
+  height: 16px;
+  background-color: #000;
+  border-radius: 16px 16px 0 0;
+}
 }

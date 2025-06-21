@@ -4,8 +4,15 @@ import "./PaginaPrincipal.css";
 
 function PaginaPrincipal() {
   return (
-    <div className="pagina-principal">
 
+    <div className="pagina-principal">
+ {/* Icono de usuario minimalista */}
+        <button 
+        className="user-icon-button"
+        onClick={() => router.push("/iniciar-sesion")}
+        aria-label="Iniciar sesión">
+        <span className="user-icon-symbol"></span>
+      </button>
       <div className="hero-section">
         <img
           src="https://cdn.builder.io/api/v1/image/assets/0ee00be008dd423aadc13fb6ab914f24/5e88f684d9912220bfe00b6306d4ab1567ad610f?placeholderIfAbsent=true"
@@ -13,9 +20,7 @@ function PaginaPrincipal() {
           alt="Background"
         />
         <p className="hero-text">
-          <span className="hero-text-bold">Alquiler</span>{" "}
-          <span className="hero-text-normal">de Espacios en la{" "}</span>
-          <span className="hero-text-unimet">UNIMET</span>
+          <span className="hero-text-bold">Alquiler de Espacios en la UNIMET</span>{" "}
         </p>
       </div>
 
@@ -23,13 +28,8 @@ function PaginaPrincipal() {
         <div className="orange-content">
           <div className="text-column">
             <div className="description-text">
-              <span className="description-normal">Convierte cada espacio en la</span>{" "}
-              <span className="description-bold">Universidad Metropolitana</span>
-              <span className="description-normal">
-                {" "}
-                en el escenario perfecto para tu próxima gran idea. ¡Descubre,
-                reserva y hazlo tuyo!
-              </span>
+              <span className="description-normal">Convierte cada espacio en la Universidad Metropolitana en el escenario perfecto para tu próxima gran idea. ¡Descubre,
+                reserva y hazlo tuyo!</span>{" "}
             </div>
           </div>
           <div className="image-column">
@@ -43,13 +43,8 @@ function PaginaPrincipal() {
       </div>
 
       <div className="opportunity-section">
-        <span className="opportunity-text-normal">¡Más que espacios, somos la{" "}</span>
-        <span className="opportunity-text-bold">oportunidad{" "}</span>
-        <span className="opportunity-text-normal">para</span>
-        <span className="opportunity-text-bold">{" "}crear, aprender y conectar</span>
-        <span className="opportunity-text-normal">{" "}con los</span>{" "}
-        <span className="opportunity-text-orange">estudiantes</span>
-        <span className="opportunity-text-bold">!</span>
+        <span className="opportunity-text-normal">¡Más que espacios, somos la oportunidad para crear, aprender y conectar con los estudiantes!</span>
+
       </div>
 
       <div className="explore-section">
@@ -63,10 +58,7 @@ function PaginaPrincipal() {
             <div className="banner-content">
               <div className="banner-text">
                 Descubre el{" "}
-                <span className="banner-text-bold">lugar perfecto</span> para tu
-                evento y<br />
-                elige<span className="banner-text-medium"> cómo </span>hacer tu
-                reserva
+                <span className="banner-text-bold">lugar perfecto para tu evento y elige cómo hacer tu reserva</span>
               </div>
               <img
                 src="https://cdn.builder.io/api/v1/image/assets/0ee00be008dd423aadc13fb6ab914f24/2c9ec2306b714ea6a32e622c4aa3b9f1a948fd6f?placeholderIfAbsent=true"
@@ -80,6 +72,7 @@ function PaginaPrincipal() {
           </div>
           <div className="explore-button-section">
             <div className="explore-button">
+              <a href=""></a>
               Ver Espacios
             </div>
           </div>
