@@ -1,11 +1,8 @@
 "use client";
 import React from "react";
 import "./PaginaPrincipal.css";
-import { useNavigate } from "react-router-dom";
 
 function PaginaPrincipal() {
-  const navigate = useNavigate();
-
   return (
     <div className="pagina-principal">
 
@@ -40,8 +37,6 @@ function PaginaPrincipal() {
               src="https://cdn.builder.io/api/v1/image/assets/0ee00be008dd423aadc13fb6ab914f24/d492487a21e50556dfc12aa97cd0849e71280948?placeholderIfAbsent=true"
               className="orange-image"
               alt="Universidad"
-              onClick={() => navigate('/Login')}
-              style={{ cursor: "pointer" }}
             />
           </div>
         </div>
