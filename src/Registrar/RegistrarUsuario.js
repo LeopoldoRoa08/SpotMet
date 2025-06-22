@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import './RegistrarUsuario.css';
 import { useNavigate } from 'react-router-dom';
@@ -27,14 +28,57 @@ export const RegistrarUsuario = function() {
   function validateForm() {
     const newErrors = {};
     
-    if (!formData.nombre.trim()) newErrors.nombre = "Nombre es requerido";
-    if (!/^\S+@\S+\.\S+$/.test(formData.email)) newErrors.email = "Email inválido";
-    if (formData.password.length < 6) newErrors.password = "Mínimo 6 caracteres";
-    if (formData.password !== formData.confirmPassword) newErrors.confirmPassword = "Las contraseñas no coinciden";
-    if (!/^[0-9]{6,10}$/.test(formData.cedula)) newErrors.cedula = "Cédula inválida";
+    // Validación de nombre
+    if (!formData.nombre.trim()) {
+      newErrors.nombre = "Nombre es requerido";
+    }
+    
+    // Validación de email
+    if (!formData.email.includes('@') || !formData.email.includes('.')) {
+      newErrors.email = "Email inválido (debe contener @ y .)";
+    }
+    
+    // Validación de contraseña
+    if (formData.password.length < 6) {
+      newErrors.password = "La contraseña debe tener al menos 6 caracteres";
+    }
+    
+    // Validación de confirmación de contraseña
+    if (formData.password !== formData.confirmPassword) {
+      newErrors.confirmPassword = "Las contraseñas no coinciden";
+    }
+    
+    // Validación de cédula (solo números, entre 6 y 10 dígitos)
+    if (!/^\d{6,10}$/.test(formData.cedula)) {
+      newErrors.cedula = "Cédula inválida (6-10 dígitos)";
+    }
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
+  }
+
+  function saveToLocalStorage(userData) {
+    // Obtener usuarios existentes o inicializar array vacío
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+    
+    // Verificar si el email ya está registrado
+    const emailExists = users.some(user => user.email === userData.email);
+    if (emailExists) {
+      alert('Este email ya está registrado');
+      return false;
+    }
+    
+    // Verificar si la cédula ya está registrada
+    const cedulaExists = users.some(user => user.cedula === userData.cedula);
+    if (cedulaExists) {
+      alert('Esta cédula ya está registrada');
+      return false;
+    }
+    
+    // Agregar nuevo usuario
+    users.push(userData);
+    localStorage.setItem('users', JSON.stringify(users));
+    return true;
   }
 
   function handleSubmit(e) {
@@ -42,13 +86,26 @@ export const RegistrarUsuario = function() {
     setIsSubmitting(true);
     
     if (validateForm()) {
-      // Simulación de llamada a API
-      setTimeout(function() {
-        console.log('Datos enviados:', formData);
+      // Preparar datos para guardar (sin la confirmación de contraseña)
+      const userToSave = {
+        nombre: formData.nombre,
+        email: formData.email,
+        password: formData.password,
+        cedula: formData.cedula
+      };
+      
+      // Guardar en localStorage
+      if (saveToLocalStorage(userToSave)) {
+        // Simulación de llamada a API
+        setTimeout(function() {
+          console.log('Usuario registrado:', userToSave);
+          setIsSubmitting(false);
+          alert('Registro exitoso!');
+          navigate('/iniciar-sesion');
+        }, 1000);
+      } else {
         setIsSubmitting(false);
-        alert('Registro exitoso!');
-        navigate('/iniciar-sesion');
-      }, 1500);
+      }
     } else {
       setIsSubmitting(false);
     }
@@ -80,73 +137,73 @@ export const RegistrarUsuario = function() {
               // Campo Nombre
               React.createElement('input', {
                 name: 'nombre',
-                className: 'input-field',
+                className: errors.nombre ? 'input-field error' : 'input-field',
                 placeholder: 'Ingrese su nombre',
                 value: formData.nombre,
                 onChange: handleChange
               }),
               errors.nombre && React.createElement(
-                'span',
-                { className: 'error-message' },
+                'div',
+                { className: 'error-message', style: { color: 'red', fontSize: '0.8rem', marginTop: '-1.5rem', marginBottom: '1rem' } },
                 errors.nombre
               ),
               // Campo Email
               React.createElement('input', {
                 name: 'email',
-                className: 'input-field',
+                className: errors.email ? 'input-field error' : 'input-field',
                 placeholder: 'Ingrese su Email',
                 value: formData.email,
                 onChange: handleChange
               }),
               errors.email && React.createElement(
-                'span',
-                { className: 'error-message' },
+                'div',
+                { className: 'error-message', style: { color: 'red', fontSize: '0.8rem', marginTop: '-1.5rem', marginBottom: '1rem' } },
                 errors.email
               ),
               // Campo Contraseña
               React.createElement('input', {
                 type: 'password',
                 name: 'password',
-                className: 'input-field',
-                placeholder: 'Ingrese su contraseña',
+                className: errors.password ? 'input-field error' : 'input-field',
+                placeholder: 'Ingrese su contraseña (mínimo 6 caracteres)',
                 value: formData.password,
                 onChange: handleChange
               }),
               errors.password && React.createElement(
-                'span',
-                { className: 'error-message' },
+                'div',
+                { className: 'error-message', style: { color: 'red', fontSize: '0.8rem', marginTop: '-1.5rem', marginBottom: '1rem' } },
                 errors.password
               ),
               // Campo Confirmar Contraseña
               React.createElement('input', {
                 type: 'password',
                 name: 'confirmPassword',
-                className: 'input-field',
+                className: errors.confirmPassword ? 'input-field error' : 'input-field',
                 placeholder: 'Confirme su contraseña',
                 value: formData.confirmPassword,
                 onChange: handleChange
               }),
               errors.confirmPassword && React.createElement(
-                'span',
-                { className: 'error-message' },
+                'div',
+                { className: 'error-message', style: { color: 'red', fontSize: '0.8rem', marginTop: '-1.5rem', marginBottom: '1rem' } },
                 errors.confirmPassword
               ),
               // Campo Cédula
               React.createElement('input', {
                 name: 'cedula',
-                className: 'input-field',
-                placeholder: 'Ingrese su cédula',
+                className: errors.cedula ? 'input-field error' : 'input-field',
+                placeholder: 'Ingrese su cédula (6-10 dígitos)',
                 value: formData.cedula,
                 onChange: handleChange
               }),
               errors.cedula && React.createElement(
-                'span',
-                { className: 'error-message' },
+                'div',
+                { className: 'error-message', style: { color: 'red', fontSize: '0.8rem', marginTop: '-1.5rem', marginBottom: '1rem' } },
                 errors.cedula
               )
             )
           ),
-          // Sección de imágenes (se mantiene igual)
+          // Sección de imágenes
           React.createElement(
             'div',
             { className: 'image-section' },
