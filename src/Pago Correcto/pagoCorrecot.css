@@ -1,0 +1,213 @@
+.container {
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  background-color: #f4f4f5;
+}
+
+.header {
+  padding-bottom: 1.5rem;
+  width: 100%;
+  background-color: #f5f5f5;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 768px) {
+  .header {
+    max-width: 100%;
+  }
+}
+
+.headerContent {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-left: 2.75rem;
+  padding-right: 2.75rem;
+  width: 100%;
+  background-color: #f4f4f5;
+}
+
+@media (max-width: 768px) {
+  .headerContent {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    max-width: 100%;
+  }
+}
+
+.logoSection {
+  display: flex;
+  align-self: flex-start;
+}
+
+.logo1 {
+  object-fit: contain;
+  flex-shrink: 0;
+  align-self: flex-start;
+  margin-right: 0;
+  max-width: 100%;
+  aspect-ratio: 1;
+  width: 142px;
+}
+
+.logo2 {
+  object-fit: contain;
+  flex-shrink: 0;
+  max-width: 100%;
+  aspect-ratio: 1.03;
+  width: 177px;
+}
+
+.iconSection {
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-start;
+  margin: auto 0;
+}
+
+.icon1 {
+  object-fit: contain;
+  flex-shrink: 0;
+  margin-top: 0.875rem;
+  aspect-ratio: 1;
+  width: 47px;
+}
+
+.icon2 {
+  object-fit: contain;
+  flex-shrink: 0;
+  aspect-ratio: 1;
+  width: 61px;
+}
+
+.icon3 {
+  object-fit: contain;
+  flex-shrink: 0;
+  aspect-ratio: 0.87;
+  width: 46px;
+}
+
+.mainContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  padding-bottom: 6rem;
+  margin-top: 1.75rem;
+  max-width: 100%;
+  color: black;
+  background-color: white;
+  border-radius: 1.5rem;
+  width: 882px;
+}
+
+@media (max-width: 768px) {
+  .mainContent {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+}
+
+.contentInner {
+  display: flex;
+  z-index: 10;
+  flex-direction: column;
+  margin-top: -0.625rem;
+  max-width: 100%;
+  width: 434px;
+}
+
+.successBanner {
+  object-fit: contain;
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
+  width: 100%;
+  border-radius: 9999px;
+  aspect-ratio: 1.63;
+}
+
+@media (max-width: 768px) {
+  .successBanner {
+    margin-left: 0.625rem;
+    margin-right: 0.625rem;
+  }
+}
+
+.successIcon {
+  object-fit: contain;
+  z-index: 10;
+  align-self: center;
+  margin-top: -1.25rem;
+  max-width: 100%;
+  aspect-ratio: 1;
+  width: 178px;
+}
+
+.successTitle {
+  margin-top: 0.625rem;
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+@media (max-width: 768px) {
+  .successTitle {
+    max-width: 100%;
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+}
+
+.reservationLink {
+  align-self: center;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  text-align: center;
+}
+
+.footer {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  margin-top: 1.25rem;
+  width: 100%;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  text-align: center;
+  color: white;
+  min-height: 209px;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    max-width: 100%;
+  }
+}
+
+.footerBackground {
+  object-fit: cover;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.footerContent {
+  position: relative;
+  z-index: 10;
+}
+
+.boldText {
+font-weight: 700;
+}
