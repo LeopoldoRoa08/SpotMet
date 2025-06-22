@@ -48,9 +48,7 @@ export const RegistrarUsuario = (props) => {
             Registrarme
           </button>
           <button className="login-button">
-            <Link to= "IniciarSesion.jsx" className= "back-to-the-login">
             Ya tengo cuenta
-            </Link>
           </button>
         </div>
         <div className="home-link">

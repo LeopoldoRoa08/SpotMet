@@ -12,6 +12,8 @@ body, html {
   background-color: #f4f4f5;
 }
 
+
+
 .main-content {
   display: flex;
   flex-direction: column;
