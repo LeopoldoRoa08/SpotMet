@@ -7,6 +7,7 @@ import Register from "./Registrar/RegistrarUsuario";
 import Header from "./Componente/Header";
 import Footer from "./Componente/Footer";
 
+
 const root = document.getElementById("root");
 
 ReactDOM.createRoot(root).render(
