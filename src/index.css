@@ -65,4 +65,33 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+  /* Estilos para el contenedor principal */
+.main-container {
+  min-height: calc(100vh - 120px);
+  padding: 20px 0;
+}
+
+/* Estilos para enlaces de navegación */
+.nav-link {
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: #ea580c;
+}
+
+/* Estilos para botones de formulario */
+button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.error-message {
+  color: #ef4444;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  display: block;
+}
 }
