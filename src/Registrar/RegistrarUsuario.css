@@ -310,30 +310,5 @@ body, html {
 }
 
 .home-text {
-  margin: auto 0;
-  .error {
-  border: 1px solid #ef4444 !important;
-}
-
-.error-message {
-  color: #ef4444;
-  font-size: 0.875rem;
-  margin-top: -1.5rem;
-  margin-bottom: 1.5rem;
-  display: block;
-}
-
-.password-field input {
-  flex-grow: 1;
-  border: none;
-  outline: none;
-  background: transparent;
-  font-family: 'Roboto', sans-serif;
-  font-size: 1rem;
-}
-
-.register-button:disabled {
-  background-color: #f97316;
-  cursor: not-allowed;
-}
+  margin: auto 0;
 }
