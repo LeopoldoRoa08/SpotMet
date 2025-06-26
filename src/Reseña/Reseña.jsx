@@ -17,7 +17,7 @@ function Resenas() {
         { src: "https://cdn.builder.io/api/v1/image/assets/TEMP/89a86d4a20b15795396b284de080da084b9edde0?placeholderIfAbsent=true&apiKey=b3c1de37907348cdbf57798a458478a7", filled: true },
         { src: "https://cdn.builder.io/api/v1/image/assets/TEMP/b52df8bbd80b10e94ee007789afd0622e2e5392a?placeholderIfAbsent=true&apiKey=b3c1de37907348cdbf57798a458478a7", filled: false },
         { src: "https://cdn.builder.io/api/v1/image/assets/TEMP/b52df8bbd80b10e94ee007789afd0622e2e5392a?placeholderIfAbsent=true&apiKey=b3c1de37907348cdbf57798a458478a7", filled: false }
-              ]
+      ]
     },
     {
       id: 2,
@@ -33,7 +33,7 @@ function Resenas() {
         { src: "https://cdn.builder.io/api/v1/image/assets/TEMP/d22509adbde85bd6e27d4de5b4db8a94e5529d72?placeholderIfAbsent=true&apiKey=b3c1de37907348cdbf57798a458478a7", filled: false }
       ]
     },
-     {
+    {
       id: 3,
       name: "Santiago Zambrano",
       program: "Ingeniería Civil",
@@ -47,7 +47,7 @@ function Resenas() {
         { src: "https://cdn.builder.io/api/v1/image/assets/TEMP/ad8b0918f4e7394a14f315c166b80b907d134ed3?placeholderIfAbsent=true&apiKey=b3c1de37907348cdbf57798a458478a7", filled: true }
       ]
     },
-        {
+    {
       id: 4,
       name: "Luis Torrealba",
       program: "Estudios Liberales",
@@ -61,7 +61,7 @@ function Resenas() {
         { src: "https://cdn.builder.io/api/v1/image/assets/TEMP/ad8b0918f4e7394a14f315c166b80b907d134ed3?placeholderIfAbsent=true&apiKey=b3c1de37907348cdbf57798a458478a7", filled: true }
       ]
     },
-        {
+    {
       id: 5,
       name: "Daniel Rodrigues",
       program: "Ingeniería Electrica",
@@ -75,7 +75,7 @@ function Resenas() {
         { src: "https://cdn.builder.io/api/v1/image/assets/TEMP/3fa5edb876c11ca77776d74caff587e9fba23cfb?placeholderIfAbsent=true&apiKey=b3c1de37907348cdbf57798a458478a7", filled: false }
       ]
     },
-        {
+    {
       id: 6,
       name: "Aldebaran Campos",
       program: "Idiomas Modernos",
@@ -90,7 +90,126 @@ function Resenas() {
       ]
     }
   ];
+
+  const [formData, setFormData] = useState({
+    name: '',
+    program: '',
+    review: '',
+    rating: 0
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleRatingChange = (rating) => {
+    setFormData(prev => ({
+      ...prev,
+      rating
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('Review submitted:', formData);
+    alert('¡Gracias por tu reseña!');
+    setFormData({
+      name: '',
+      program: '',
+      review: '',
+      rating: 0
+    });
+  };
+
+  const ReviewCard = ({ review, compact = false }) => {
     return (
+      <div className={`review-card ${compact ? 'compact' : ''}`}>
+        <div className="review-header">
+          <img src={review.avatar} alt={review.name} className="review-avatar" />
+          <div className="review-user-info">
+            <h3 className="review-name">{review.name}</h3>
+            <p className="review-program">{review.program}</p>
+          </div>
+        </div>
+        <div className="review-content">
+          <p className="review-text">{review.text}</p>
+          <div className="review-stars">
+            {review.stars.map((star, index) => (
+              <img 
+                key={index}
+                src={star.src} 
+                alt={star.filled ? "Filled star" : "Empty star"} 
+                className={`star ${star.filled ? 'filled' : ''}`}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  const ReviewForm = () => {
+    return (
+      <form className="review-form" onSubmit={handleSubmit}>
+        <h2 className="form-title">Deja tu reseña</h2>
+        <div className="form-group">
+          <label htmlFor="name">Nombre:</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="program">Programa:</label>
+          <input
+            type="text"
+            id="program"
+            name="program"
+            value={formData.program}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="review">Reseña:</label>
+          <textarea
+            id="review"
+            name="review"
+            value={formData.review}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label>Calificación:</label>
+          <div className="rating-stars">
+            {[1, 2, 3, 4, 5].map((star) => (
+              <span
+                key={star}
+                className={`star ${star <= formData.rating ? 'filled' : ''}`}
+                onClick={() => handleRatingChange(star)}
+              >
+                ★
+              </span>
+            ))}
+          </div>
+        </div>
+        <button type="submit" className="submit-button">
+          Enviar Reseña
+        </button>
+      </form>
+    );
+  };
+
+  return (
     <div className="resenas-container">
       {/* Header Section */}
       <div className="header-section">
@@ -113,7 +232,7 @@ function Resenas() {
               className="logo-small-1"
               alt="Logo 3"
             />
-              <img
+            <img
               src="https://cdn.builder.io/api/v1/image/assets/TEMP/c20ecf9abcc8418328b9b565d312d57c7c4cabd5?placeholderIfAbsent=true&apiKey=b3c1de37907348cdbf57798a458478a7"
               className="logo-small-2"
               alt="Logo 4"
@@ -136,7 +255,8 @@ function Resenas() {
         />
         <h1 className="hero-title">¡Compartenos tu opinión!</h1>
       </div>
-            {/* Reviews Section */}
+
+      {/* Reviews Section */}
       <div className="reviews-section">
         {/* First Row - Two Reviews */}
         <div className="reviews-row-first">
@@ -163,6 +283,7 @@ function Resenas() {
             <ReviewCard review={reviews[5]} compact />
           </div>
         </div>
+
         {/* Review Form Section */}
         <div className="form-section">
           <div className="home-link">
@@ -192,6 +313,6 @@ function Resenas() {
       </div>
     </div>
   );
-  }
+}
 
 export default Resenas;
