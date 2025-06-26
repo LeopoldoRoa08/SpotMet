@@ -1,9 +1,9 @@
 import React from 'react';
 import ReviewCard from './components/ReviewCard';
 import ReviewForm from './components/ReviewForm';
-import './Resenas.css';
+import './Reseñas.css';
 
-function Resenas() {
+function Reseñas() {
   const reviews = [
     {
       id: 1,
@@ -210,7 +210,7 @@ function Resenas() {
   };
 
   return (
-    <div className="resenas-container">
+    <div className="reseñas-container">
       {/* Header Section */}
       <div className="header-section">
         <div className="header-content">
@@ -315,4 +315,4 @@ function Resenas() {
   );
 }
 
-export default Resenas;
+export default Reseñas;
