@@ -15,7 +15,7 @@ function Header() {
           src="https://cdn.builder.io/api/v1/image/assets/0ee00be008dd423aadc13fb6ab914f24/5ad1804f5fd6181303a513808017ff63ef5aa460?placeholderIfAbsent=true"
           className="logo-main"
           alt="Logo"
-          onClick={() => navigate('/Register')}
+          onClick={() => navigate('/')}
           style={{ cursor: "pointer" }}
         />
         <div className="nav-icons">

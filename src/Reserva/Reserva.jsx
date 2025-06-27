@@ -104,40 +104,6 @@ function Reserva() {
 
   return (
     <div className="reserva-container">
-      {/* Header Section */}
-      <div className="header-section">
-        <div className="header-content">
-          <div className="logo-section">
-            <img
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/c38026be22641ba7b03c300f6c4f682a61fcc744?placeholderIfAbsent=true&apiKey=b3c1de37907348cdbf57798a458478a7"
-              className="logo-primary"
-              alt="Logo principal"
-            />
-            <img
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/a002b7b916d204e74cf7852b9b208d16b62e7999?placeholderIfAbsent=true&apiKey=b3c1de37907348cdbf57798a458478a7"
-              className="logo-secondary"
-              alt="Logo secundario"
-            />
-          </div>
-          <div className="nav-icons">
-            <img
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/2244eee61c86ad5995a8c588ef6e4612733ca15c?placeholderIfAbsent=true&apiKey=b3c1de37907348cdbf57798a458478a7"
-              className="nav-icon-1"
-              alt="Icono de navegación"
-            />
-            <img
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/c20ecf9abcc8418328b9b565d312d57c7c4cabd5?placeholderIfAbsent=true&apiKey=b3c1de37907348cdbf57798a458478a7"
-              className="nav-icon-2"
-              alt="Icono de navegación"
-            />
-            <img
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/5d88aab2b1b666849b92aba3f0d8946b35a76cb1?placeholderIfAbsent=true&apiKey=b3c1de37907348cdbf57798a458478a7"
-              className="nav-icon-3"
-              alt="Icono de navegación"
-            />
-          </div>
-        </div>
-      </div>
 
       {/* Título */}
       <div className="reservas-title">Reservas</div>
@@ -310,20 +276,6 @@ function Reserva() {
             alt="Inicio"
           />
           <div className="breadcrumb-text">Inicio</div>
-        </div>
-      </div>
-
-      {/* Footer */}
-      <div className="footer">
-        <img
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/2b708494abc0c92a344e20f877db113f79b8c86d?placeholderIfAbsent=true&apiKey=b3c1de37907348cdbf57798a458478a7"
-          className="footer-background"
-          alt="Fondo del footer"
-        />
-        <div className="footer-content">
-          Copyright © 2025 - Spotmet | Síguenos:{' '}
-          <span style={{ fontWeight: 700 }}>Instagram</span> |{' '}
-          <span style={{ fontWeight: 700 }}>Facebook</span>
         </div>
       </div>
     </div>

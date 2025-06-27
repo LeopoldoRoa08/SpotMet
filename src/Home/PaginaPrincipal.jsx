@@ -1,15 +1,18 @@
 "use client";
 import React from "react";
 import "./PaginaPrincipal.css";
+import { useNavigate } from "react-router-dom";
 
 function PaginaPrincipal() {
+  const navigate = useNavigate();
+  
   return (
     <div className="pagina-principal">
 
-      <div className="hero-section">
+      <div className="hero-section-home">
         <img
           src="https://cdn.builder.io/api/v1/image/assets/0ee00be008dd423aadc13fb6ab914f24/5e88f684d9912220bfe00b6306d4ab1567ad610f?placeholderIfAbsent=true"
-          className="hero-background"
+          className="hero-background-home"
           alt="Background"
         />
         <p className="hero-text">
@@ -79,7 +82,10 @@ function PaginaPrincipal() {
             Explore los espacios
           </div>
           <div className="explore-button-section">
-            <div className="explore-button">
+            <div className="explore-button"
+            onClick={() => navigate('/ver-espacios')}
+            style={{ cursor: "pointer" }}
+            >
               Ver Espacios
             </div>
           </div>

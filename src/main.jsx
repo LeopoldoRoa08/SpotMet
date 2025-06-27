@@ -6,7 +6,9 @@ import Login from "./IniciarSesion/IniciarSesion";
 import Register from "./Registrar/RegistrarUsuario";
 import Header from "./Componente/Header";
 import Footer from "./Componente/Footer";
-
+import Reserva from "./Reserva/Reserva";
+import Reseñas from "./Reseña/Reseña";
+import VerEspaciosGeneral from "./VerEspacio/VerEspacio";
 
 const root = document.getElementById("root");
 
@@ -18,6 +20,9 @@ ReactDOM.createRoot(root).render(
         <Route path="/" element={<App />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/reserva" element={<Reserva/>} />
+        <Route path="/reseñas" element={<Reseñas/>} />
+        <Route path="/ver-espacios" element={<VerEspaciosGeneral/>} />
       </Routes>
     </main>
     <Footer />

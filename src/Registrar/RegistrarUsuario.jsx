@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import './RegistrarUsuario.css';
 import { useNavigate, Link } from 'react-router-dom';
+import {  createUserWithEmailAndPassword  } from 'firebase/auth';
+import { auth } from '../firebase';
+
 
 export const RegistrarUsuario = () => {
   const navigate = useNavigate();
@@ -35,18 +38,29 @@ export const RegistrarUsuario = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e) => {
+  async function handleSubmit(e){
     e.preventDefault();
     setIsSubmitting(true);
     
     if (validateForm()) {
-      // Simulación de llamada a API
-      setTimeout(() => {
-        console.log('Datos de registro:', formData);
-        setIsSubmitting(false);
-        alert('Registro exitoso!');
-        navigate('/');
-      }, 1500);
+      await createUserWithEmailAndPassword(auth, formData.email, formData.password)
+        .then((userCredential) => {
+            // Signed in
+            const user = userCredential.user;
+            console.log(user);
+            navigate("/login")
+            // ...
+        })
+        .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.log(errorCode, errorMessage);
+            // ..
+        });
+
+
+
+
     } else {
       setIsSubmitting(false);
     }

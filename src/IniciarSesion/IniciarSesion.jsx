@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import './IniciarSesion.css';
 import { useNavigate, Link } from 'react-router-dom';
+import {  signInWithEmailAndPassword   } from 'firebase/auth';
+import { auth, googleProvider } from '../firebase';  // Adjust the path to your Firebase config file
+import { signInWithPopup } from 'firebase/auth';
+
 
 const IniciarSesion = () => {
   const navigate = useNavigate();
@@ -36,24 +40,43 @@ const IniciarSesion = () => {
     setIsSubmitting(true);
     
     if (validateForm()) {
-      setTimeout(() => {
-        console.log('Datos de login:', formData);
-        setIsSubmitting(false);
-        alert('Inicio de sesión exitoso!');
-        navigate('/');
-      }, 1500);
+
+        signInWithEmailAndPassword(auth, formData.email, formData.password)
+        .then((userCredential) => {
+            // Signed in
+            const user = userCredential.user;
+            navigate("/")
+            console.log(user);
+        })
+        .catch((error) => {
+            alert("ERROR: Cuenta invalida")
+            setIsSubmitting(false);
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.log(errorCode, errorMessage)
+        });
+      
     } else {
       setIsSubmitting(false);
     }
   };
 
-  const handleGoogleLogin = () => {
-    console.log('Iniciando sesión con Google');
-  };
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
+
+  async function handleGoogleLogin(){
+    try {
+      const data = await signInWithPopup(auth, googleProvider);
+      alert('Signed in successfully with Google');
+      navigate("/")
+      console.log(data.user);
+    } catch (error) {
+      console.error('Error signing in with Google', error);
+    }
+    return
+  }
 
   return (
     <div className="iniciar-sesion">
@@ -116,7 +139,7 @@ const IniciarSesion = () => {
                   <button 
                     type="button" 
                     className="google-login"
-                    onClick={handleGoogleLogin}
+                    onClick={()=>handleGoogleLogin()}
                   >
                     <img
                       src="https://cdn.builder.io/api/v1/image/assets/0ee00be008dd423aadc13fb6ab914f24/a02f5535bcc86dd6ea0bd466eeb088b2a6616536?placeholderIfAbsent=true"

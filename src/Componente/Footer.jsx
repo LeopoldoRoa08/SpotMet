@@ -1,8 +1,13 @@
 "use client";
 import React from "react";
 import "./Header-Footer.css"; 
+import { useNavigate } from "react-router-dom";
+
+
 
 function Footer() {
+  const navigate = useNavigate();
+
   return (
       <div className="footer-section">
         <div className="footer-text">
@@ -10,6 +15,9 @@ function Footer() {
           <span className="footer-bold">Instagram</span> |{" "}
           <span className="footer-bold">Facebook</span>
         </div>
+          <button className="footer-reseñas" 
+          onClick={()=> navigate("/reseñas")}
+          >VER RESEÑAS</button>
       </div>
   
   )

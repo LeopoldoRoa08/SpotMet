@@ -1,7 +1,6 @@
 import React from 'react';
-import ReviewCard from './components/ReviewCard';
-import ReviewForm from './components/ReviewForm';
-import './Reseñas.css';
+import './Reseña.css';
+import { useState } from 'react';
 
 function Reseñas() {
   const reviews = [
@@ -211,40 +210,6 @@ function Reseñas() {
 
   return (
     <div className="reseñas-container">
-      {/* Header Section */}
-      <div className="header-section">
-        <div className="header-content">
-          <div className="logo-group-left">
-            <img
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/c38026be22641ba7b03c300f6c4f682a61fcc744?placeholderIfAbsent=true&apiKey=b3c1de37907348cdbf57798a458478a7"
-              className="logo-square"
-              alt="Logo 1"
-            />
-            <img
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/a002b7b916d204e74cf7852b9b208d16b62e7999?placeholderIfAbsent=true&apiKey=b3c1de37907348cdbf57798a458478a7"
-              className="logo-rectangular"
-              alt="Logo 2"
-            />
-          </div>
-          <div className="logo-group-right">
-            <img
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/57251f4f0e0685ae9c9b7afdef1371957399a8f9?placeholderIfAbsent=true&apiKey=b3c1de37907348cdbf57798a458478a7"
-              className="logo-small-1"
-              alt="Logo 3"
-            />
-            <img
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/c20ecf9abcc8418328b9b565d312d57c7c4cabd5?placeholderIfAbsent=true&apiKey=b3c1de37907348cdbf57798a458478a7"
-              className="logo-small-2"
-              alt="Logo 4"
-            />
-            <img
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/5d88aab2b1b666849b92aba3f0d8946b35a76cb1?placeholderIfAbsent=true&apiKey=b3c1de37907348cdbf57798a458478a7"
-              className="logo-small-3"
-              alt="Logo 5"
-            />
-          </div>
-        </div>
-      </div>
 
       {/* Hero Section */}
       <div className="hero-section">
@@ -295,20 +260,6 @@ function Reseñas() {
             <div className="home-text">Inicio</div>
           </div>
           <ReviewForm />
-        </div>
-      </div>
-
-      {/* Footer Section */}
-      <div className="footer-section">
-        <img
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/c93bb222902409d7e62793f0effa7eb84a03d617?placeholderIfAbsent=true&apiKey=b3c1de37907348cdbf57798a458478a7"
-          className="footer-background"
-          alt="Footer Background"
-        />
-        <div className="footer-content">
-          Copyright © 2025 - Spotmet | Síguenos:{" "}
-          <span className="footer-bold">Instagram</span> |{" "}
-          <span className="footer-bold">Facebook</span>
         </div>
       </div>
     </div>
