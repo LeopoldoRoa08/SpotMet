@@ -121,7 +121,7 @@ function Reserva() {
                   alt="Fondo del espacio"
                 />
                 <img
-                  src=""
+                  src="Salon.png"
                   className="space-main-image"
                   alt="Salon A2-302"
                 />

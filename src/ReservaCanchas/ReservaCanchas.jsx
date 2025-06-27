@@ -121,7 +121,7 @@ function Reserva() {
                   alt="Fondo del espacio"
                 />
                 <img
-                  src=""
+                  src="Canchas.png"
                   className="space-main-image"
                   alt="Ciudad Deportiva"
                 />

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Reserva.css';
 
+
 function Reserva() {
   const navigate = useNavigate();
   
@@ -121,7 +122,7 @@ function Reserva() {
                   alt="Fondo del espacio"
                 />
                 <img
-                  src=""
+                  src="Lidera-6 (1).png"
                   className="space-main-image"
                   alt="Auditorio"
                 />

@@ -121,7 +121,7 @@ function Reserva() {
                   alt="Fondo del espacio"
                 />
                 <img
-                  src=""
+                  src="sala-24-horas-3"
                   className="space-main-image"
                   alt="Sala 24 horas"
                 />

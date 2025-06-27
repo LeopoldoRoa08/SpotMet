@@ -121,7 +121,7 @@ function Reserva() {
                   alt="Fondo del espacio"
                 />
                 <img
-                  src=""
+                  src="Laboratorio-copia-1024x682.png"
                   className="space-main-image"
                   alt="Laboratorio de Química"
                 />
