@@ -6,7 +6,12 @@ import Login from "./IniciarSesion/IniciarSesion";
 import Register from "./Registrar/RegistrarUsuario";
 import Header from "./Componente/Header";
 import Footer from "./Componente/Footer";
-import Reserva from "./Reserva/Reserva";
+import ReservaAud from "./ReservaAuditorios/ReservaAuditorios";
+import ReservaFurbo from "./ReservaCanchas/ReservaCanchas";
+import ReservaMundoX from "./ReservaCentroMundoX/ReservaMundoX";
+import ReservaLab from "./ReservaLaboratorios/ReservaLabs";
+import Reserva24 from "./ReservaSala24Horas/ReservaSala24";
+import Reservasalon from "./ReservaSalones/ReservaSalones";
 import Reseñas from "./Reseña/Reseña";
 import VerEspaciosGeneral from "./VerEspacio/VerEspacio";
 
@@ -20,7 +25,12 @@ ReactDOM.createRoot(root).render(
         <Route path="/" element={<App />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/reserva" element={<Reserva/>} />
+        <Route path="/reservaauds" element={<ReservaAud/>} />
+        <Route path="/reservadep" element={<ReservaFurbo/>} />
+        <Route path="/reservamundox" element={<ReservaMundoX/>} />
+        <Route path="/reservalab" element={<ReservaLab/>} />
+        <Route path="/reservasalones" element={<Reservasalon/>} />
+        <Route path="/reserva24horas" element={<Reserva24/>} />
         <Route path="/reseñas" element={<Reseñas/>} />
         <Route path="/ver-espacios" element={<VerEspaciosGeneral/>} />
       </Routes>
