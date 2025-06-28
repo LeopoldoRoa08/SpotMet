@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Reserva.css';
+import './ReservaAuditorio.css';
 
-function Reserva() {
+
+function ReservaAuditorio () {
   const navigate = useNavigate();
   
   // Estado para los datos del formulario
@@ -121,20 +122,20 @@ function Reserva() {
                   alt="Fondo del espacio"
                 />
                 <img
-                  src="Laboratorio-copia-1024x682.png"
+                  src="Lidera-6 (1).png"
                   className="space-main-image"
-                  alt="Laboratorio de Química"
+                  alt="Auditorio"
                 />
               </div>
             </div>
             <div className="space-details-column">
               <div className="space-details">
-                <div className="space-type">Tipo de espacio: Laboratorio</div>
+                <div className="space-type">Tipo de espacio: Espectaculo</div>
                 <div className="space-name">
-                  Laboratorio de Quimica
+                  Auditorios
                   <br />
                 </div>
-                <div className="center-name">Laboratorio de Química</div>
+                <div className="center-name">Paraninfo</div>
               </div>
             </div>
           </div>
@@ -281,4 +282,4 @@ function Reserva() {
   );
 }
 
-export default Reserva;
+export default ReservaAuditorio;

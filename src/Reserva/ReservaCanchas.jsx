@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Reserva.css';
+import './ReservaCanchas.css';
 
-function Reserva() {
+function ReservaCanchas() {
   const navigate = useNavigate();
   
   // Estado para los datos del formulario
@@ -281,4 +281,4 @@ function Reserva() {
   );
 }
 
-export default Reserva;
+export default ReservaCanchas;

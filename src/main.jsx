@@ -2,13 +2,21 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import App from "./Home/PaginaPrincipal";
-import Login from "./IniciarSesion/IniciarSesion";
-import Register from "./Registrar/RegistrarUsuario";
+import IniciarSesion from "./IniciarSesion/IniciarSesion";
+import RegistrarUsuario from "./RegistrarUsuario/RegistrarUsuario";
 import Header from "./Componente/Header";
-import Reserva from "./Reservas/Reserva";
 import Footer from "./Componente/Footer";
-import Reseñas from "./Reseña/Reseña";
+import Reseña from "./Reseña/Reseña";
 import VerEspaciosGeneral from "./VerEspacio/VerEspacio";
+import Reservaauditorios from './Reserva/ReservaAuditorio';
+import ReservarCanchas from "./Reserva/ReservaCanchas";
+import Reservalab from "./Reserva/ReservaLabs";
+import ReservaX from "./Reserva/ReservaMundoX";
+import ReservaSala24horas from "./Reserva/ReservaSala24";
+import Reservasalones from "./Reserva/ReservaSalones";
+
+
+
 
 const root = document.getElementById("root");
 
@@ -18,10 +26,15 @@ ReactDOM.createRoot(root).render(
     <main className="main-container">
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/reserva" element={<Reserva/>} />
-        <Route path="/reseñas" element={<Reseñas/>} />
+        <Route path="/iniciarsesion" element={<IniciarSesion />} />
+        <Route path="/registrar" element={<RegistrarUsuario />} />
+        <Route path="/auditorio" element={<Reservaauditorios/>} />
+        <Route path="/canchas" element={<ReservarCanchas/>} />
+        <Route path="/reseña" element={<Reseña/>} />
+        <Route path="/laboratorios" element={<Reservalab/>} />
+        <Route path="/mundox" element={<ReservaX/>} />
+        <Route path="/sala24" element={<ReservaSala24horas/>} />
+        <Route path="/salon" element={<Reservasalones/>} />
         <Route path="/ver-espacios" element={<VerEspaciosGeneral/>} />
       </Routes>
     </main>

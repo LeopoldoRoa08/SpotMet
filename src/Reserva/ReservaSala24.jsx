@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Reserva.css';
+import './ReservaSala24.css';
 
-function Reserva() {
+function ReservaSala24() {
   const navigate = useNavigate();
   
   // Estado para los datos del formulario
@@ -121,9 +121,9 @@ function Reserva() {
                   alt="Fondo del espacio"
                 />
                 <img
-                  src="Salon.png"
+                  src="sala-24-horas-3"
                   className="space-main-image"
-                  alt="Salon A2-302"
+                  alt="Sala 24 horas"
                 />
               </div>
             </div>
@@ -131,10 +131,10 @@ function Reserva() {
               <div className="space-details">
                 <div className="space-type">Tipo de espacio: Salones</div>
                 <div className="space-name">
-                  Salon de Clase
+                  Biblioteca
                   <br />
                 </div>
-                <div className="center-name">Salon de Clase A2-302</div>
+                <div className="center-name">Sala 24 horas</div>
               </div>
             </div>
           </div>
@@ -281,4 +281,4 @@ function Reserva() {
   );
 }
 
-export default Reserva;
+export default ReservaSala24;

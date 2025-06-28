@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Reserva.css';
+import './ReservaMundoX.css';
 
-
-function Reserva() {
+function ReservaMundoX() {
   const navigate = useNavigate();
   
   // Estado para los datos del formulario
@@ -122,20 +121,21 @@ function Reserva() {
                   alt="Fondo del espacio"
                 />
                 <img
-                  src="Lidera-6 (1).png"
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/8ca7b8776fe739b75ec7a884761348ebe9983c8a?placeholderIfAbsent=true&apiKey=b3c1de37907348cdbf57798a458478a7"
                   className="space-main-image"
-                  alt="Auditorio"
+                  alt="Laboratorio Experimental del Metaverso"
                 />
               </div>
             </div>
             <div className="space-details-column">
               <div className="space-details">
-                <div className="space-type">Tipo de espacio: Espectaculo</div>
+                <div className="space-type">Tipo de espacio: Laboratorio</div>
                 <div className="space-name">
-                  Auditorios
+                  Laboratorio Experimental
                   <br />
+                  del Metaverso
                 </div>
-                <div className="center-name">Paraninfo</div>
+                <div className="center-name">Centro Mundo X</div>
               </div>
             </div>
           </div>
@@ -282,4 +282,4 @@ function Reserva() {
   );
 }
 
-export default Reserva;
+export default ReservaMundoX;

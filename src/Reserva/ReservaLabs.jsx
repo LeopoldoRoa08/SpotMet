@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Reserva.css';
+import './ReservaLabs.css';
 
-function Reserva() {
+function ReservaLabs() {
   const navigate = useNavigate();
   
   // Estado para los datos del formulario
@@ -121,9 +121,9 @@ function Reserva() {
                   alt="Fondo del espacio"
                 />
                 <img
-                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/8ca7b8776fe739b75ec7a884761348ebe9983c8a?placeholderIfAbsent=true&apiKey=b3c1de37907348cdbf57798a458478a7"
+                  src="Laboratorio-copia-1024x682.png"
                   className="space-main-image"
-                  alt="Laboratorio Experimental del Metaverso"
+                  alt="Laboratorio de Química"
                 />
               </div>
             </div>
@@ -131,11 +131,10 @@ function Reserva() {
               <div className="space-details">
                 <div className="space-type">Tipo de espacio: Laboratorio</div>
                 <div className="space-name">
-                  Laboratorio Experimental
+                  Laboratorio de Quimica
                   <br />
-                  del Metaverso
                 </div>
-                <div className="center-name">Centro Mundo X</div>
+                <div className="center-name">Laboratorio de Química</div>
               </div>
             </div>
           </div>
@@ -282,4 +281,4 @@ function Reserva() {
   );
 }
 
-export default Reserva;
+export default ReservaLabs;
