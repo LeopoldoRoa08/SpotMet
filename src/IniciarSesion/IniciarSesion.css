@@ -7,9 +7,7 @@ body, html {
 }
 
 .iniciar-sesion {
-  overflow: hidden;
   flex-direction: column;
-  background-color: #f4f4f5;
   min-height: 100vh;
   display: flex;
 }
@@ -97,7 +95,7 @@ body, html {
 
 .password-input {
   padding-left: 1.25rem;
-  padding-right: 2.5rem;
+  padding-right: 1.25rem;
   padding-top: 0.625rem;
   padding-bottom: 0.625rem;
   width: 100%;
@@ -211,6 +209,7 @@ body, html {
 }
 
 .register-button {
+  
   padding: 0.5rem;
   max-width: 100%;
   color: #ffffff;

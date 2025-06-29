@@ -6,7 +6,6 @@ import IniciarSesion from "./IniciarSesion/IniciarSesion";
 import RegistrarUsuario from "./RegistrarUsuario/RegistrarUsuario";
 import Header from "./Componente/Header";
 import Footer from "./Componente/Footer";
-import Reserva from "./Reserva/Reserva";
 import Reseñas from "./Reseña/Reseña";
 import VerEspaciosGeneral from "./VerEspacio/VerEspacio";
 import Reservaauditorios from './Reserva/ReservaAuditorio';
@@ -36,7 +35,6 @@ ReactDOM.createRoot(root).render(
         <Route path="/mundox" element={<ReservaX/>} />
         <Route path="/24horas" element={<ReservaSala24horas/>} />
         <Route path="/salon" element={< Reservasalones/>} />
-        <Route path="/reserva" element={<Reserva/>} />
         <Route path="/reseñas" element={<Reseñas/>} />
         <Route path="/ver-espacios" element={<VerEspaciosGeneral/>} />
       </Routes>
