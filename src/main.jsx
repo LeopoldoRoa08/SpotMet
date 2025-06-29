@@ -6,7 +6,8 @@ import IniciarSesion from "./IniciarSesion/IniciarSesion";
 import RegistrarUsuario from "./RegistrarUsuario/RegistrarUsuario";
 import Header from "./Componente/Header";
 import Footer from "./Componente/Footer";
-import Reseña from "./Reseña/Reseña";
+import Reserva from "./Reserva/Reserva";
+import Reseñas from "./Reseña/Reseña";
 import VerEspaciosGeneral from "./VerEspacio/VerEspacio";
 import Reservaauditorios from './Reserva/ReservaAuditorio';
 import ReservarCanchas from "./Reserva/ReservaCanchas";
@@ -18,23 +19,25 @@ import Reservasalones from "./Reserva/ReservaSalones";
 
 
 
-const root = document.getElementById("root");
 
+const root = document.getElementById("root");
+//Cambiamos algo de prueba
 ReactDOM.createRoot(root).render(
   <BrowserRouter>
     <Header />
     <main className="main-container">
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="/iniciarsesion" element={<IniciarSesion />} />
-        <Route path="/registrar" element={<RegistrarUsuario />} />
-        <Route path="/auditorio" element={<Reservaauditorios/>} />
+        <Route path="/login" element={<IniciarSesion />} />
+        <Route path="/register" element={<RegistrarUsuario />} />
+        <Route path="/auditorios" element={<Reservaauditorios/>} />
         <Route path="/canchas" element={<ReservarCanchas/>} />
-        <Route path="/reseña" element={<Reseña/>} />
         <Route path="/laboratorios" element={<Reservalab/>} />
         <Route path="/mundox" element={<ReservaX/>} />
-        <Route path="/sala24" element={<ReservaSala24horas/>} />
-        <Route path="/salon" element={<Reservasalones/>} />
+        <Route path="/24horas" element={<ReservaSala24horas/>} />
+        <Route path="/salon" element={< Reservasalones/>} />
+        <Route path="/reserva" element={<Reserva/>} />
+        <Route path="/reseñas" element={<Reseñas/>} />
         <Route path="/ver-espacios" element={<VerEspaciosGeneral/>} />
       </Routes>
     </main>
