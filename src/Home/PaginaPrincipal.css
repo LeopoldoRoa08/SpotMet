@@ -14,7 +14,7 @@ body, html {
 
 
 /* Hero Section */
-.hero-section {
+.hero-section-home {
     display: flex;
     position: relative;
     flex-direction: column;
@@ -26,7 +26,7 @@ body, html {
     padding: 0 5%;
 }
 
-.hero-background {
+.hero-background-home {
   object-fit: cover;
   position: absolute;
   inset: 0;

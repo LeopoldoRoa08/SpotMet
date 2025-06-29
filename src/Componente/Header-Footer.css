@@ -25,7 +25,7 @@
 .nav-icons {
   display: flex;
   gap: 0.625rem;
-  margin-right: 25px;
+  margin: auto 25px auto 0;
 }
 
 .icon-group {
@@ -72,4 +72,22 @@
 
 .footer-bold {
   font-weight: 700;
+}
+
+.footer-reseñas{
+    margin-top: 20px;
+    font-size: 18px;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    max-width: 100%;
+    color: white;
+    background-color: #e76f2a;
+    border-radius: 50px;
+    width: 226px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
 }
