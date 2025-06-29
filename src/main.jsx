@@ -11,7 +11,7 @@ import Reseñas from "./Reseña/Reseña";
 import VerEspaciosGeneral from "./VerEspacio/VerEspacio";
 
 const root = document.getElementById("root");
-//Cambiamos algo 
+//Cambiamos algo de prueba
 ReactDOM.createRoot(root).render(
   <BrowserRouter>
     <Header />
