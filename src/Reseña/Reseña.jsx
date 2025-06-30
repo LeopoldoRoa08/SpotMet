@@ -153,64 +153,74 @@ function Reseñas() {
 
   const ReviewForm = () => {
     return (
-      <form className="review-form" onSubmit={handleSubmit}>
-        <h2 className="form-title">Deja tu reseña</h2>
-        <div className="form-group">
-          <label htmlFor="name">Nombre:</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="program">Programa:</label>
-          <input
-            type="text"
-            id="program"
-            name="program"
-            value={formData.program}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="review">Reseña:</label>
-          <textarea
-            id="review"
-            name="review"
-            value={formData.review}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label>Calificación:</label>
-          <div className="rating-stars">
-            {[1, 2, 3, 4, 5].map((star) => (
-              <span
-                key={star}
-                className={`star ${star <= formData.rating ? 'filled' : ''}`}
-                onClick={() => handleRatingChange(star)}
-              >
-                ★
-              </span>
-            ))}
+      <div className="review-form-card">
+        <h2 className="review-form-title">¡Compartenos tu opinión!</h2>
+        
+        <form onSubmit={handleSubmit}>
+          <div className="review-form-group">
+            <div style={{ display: 'flex', gap: '1rem' }}>
+              <div style={{ flex: 1 }}>
+                <label className="review-form-label">Nombre:</label>
+                <input
+                  type="text"
+                  className="review-form-input"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              <div style={{ flex: 1 }}>
+                <label className="review-form-label">Carrera:</label>
+                <input
+                  type="text"
+                  className="review-form-input"
+                  name="program"
+                  value={formData.program}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+            </div>
           </div>
-        </div>
-        <button type="submit" className="submit-button">
-          Enviar Reseña
-        </button>
-      </form>
+
+          <div className="review-form-group">
+            <label className="review-form-label">Reseña:</label>
+            <textarea
+              className="review-form-textarea"
+              name="review"
+              value={formData.review}
+              onChange={handleChange}
+              required
+              placeholder="Escriba su reseña..."
+            />
+          </div>
+
+          <div className="review-form-group">
+            <label className="review-form-label">Calificación:</label>
+            <div className="review-form-rating">
+              {[1, 2, 3, 4, 5].map((star) => (
+                <span
+                  key={star}
+                  className={`review-form-star ${star <= formData.rating ? 'filled' : ''}`}
+                  onClick={() => handleRatingChange(star)}
+                >
+                  ★
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <button type="submit" className="review-form-submit">
+            Enviar Reseña
+          </button>
+        </form>
+      </div>
     );
   };
 
   return (
     <div className="reseñas-container">
-
       {/* Hero Section */}
       <div className="hero-section">
         <img
@@ -223,34 +233,25 @@ function Reseñas() {
 
       {/* Reviews Section */}
       <div className="reviews-section">
-        {/* First Row - Two Reviews */}
-        <div className="reviews-row-first">
-          <ReviewCard review={reviews[0]} />
-          <ReviewCard review={reviews[1]} />
-        </div>
-
-        {/* Second Row - Two Reviews */}
-        <div className="reviews-row-second">
-          <div className="review-wrapper-left">
-            <ReviewCard review={reviews[2]} compact />
+        <div className="reviews-columns-container">
+          {/* Columna izquierda */}
+          <div className="reviews-column left-column">
+            <ReviewCard review={reviews[0]} />
+            <ReviewCard review={reviews[2]} />
+            <ReviewCard review={reviews[4]} />
           </div>
-          <div className="review-wrapper-right">
-            <ReviewCard review={reviews[3]} compact />
-          </div>
-        </div>
-
-        {/* Third Row - Two Reviews */}
-        <div className="reviews-row-third">
-          <div className="review-wrapper-left">
-            <ReviewCard review={reviews[4]} compact />
-          </div>
-          <div className="review-wrapper-right">
-            <ReviewCard review={reviews[5]} compact />
+          
+          {/* Columna derecha */}
+          <div className="reviews-column right-column">
+            <ReviewCard review={reviews[1]} />
+            <ReviewCard review={reviews[3]} />
+            <ReviewCard review={reviews[5]} />
           </div>
         </div>
 
         {/* Review Form Section */}
         <div className="form-section">
+          <ReviewForm />
           <div className="home-link">
             <img
               src="https://cdn.builder.io/api/v1/image/assets/TEMP/c42ec600022b3fae885d2bbdd8394046eae346c4?placeholderIfAbsent=true&apiKey=b3c1de37907348cdbf57798a458478a7"
@@ -259,7 +260,6 @@ function Reseñas() {
             />
             <div className="home-text">Inicio</div>
           </div>
-          <ReviewForm />
         </div>
       </div>
     </div>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './ReservaLabs.css';
+import lab from "./Laboratorio-copia-1024x682.png" 
 
 function ReservaLabs() {
   const navigate = useNavigate();
@@ -106,7 +107,7 @@ function ReservaLabs() {
     <div className="reserva-container">
 
       {/* Título */}
-      <div className="reservas-title">Reservas</div>
+      <div className="reservas-title" style={{ alignSelf: 'center', marginRight: 0 }} >Reservas</div>
 
       {/* Contenido principal */}
       <div className="main-content">
@@ -121,7 +122,7 @@ function ReservaLabs() {
                   alt="Fondo del espacio"
                 />
                 <img
-                  src="Laboratorio-copia-1024x682.png"
+                  src= {lab}
                   className="space-main-image"
                   alt="Laboratorio de Química"
                 />
