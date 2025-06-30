@@ -42,34 +42,6 @@ function VerEspaciosGeneral() {
               </div>
             </div>
           </div>
-          <div className="search-input-container search-overlay-1">
-            <div className="search-input">
-              <div className="search-content">
-                <img
-                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/3aceaede4e66243e8151004dd6efc680090b2955?placeholderIfAbsent=true&apiKey=b3c1de37907348cdbf57798a458478a7"
-                  className="search-icon"
-                  alt="Search"
-                />
-                <div className="search-text">
-                  Buscar espacio...
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="search-input-container search-overlay-2">
-            <div className="search-input">
-              <div className="search-content">
-                <img
-                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/3aceaede4e66243e8151004dd6efc680090b2955?placeholderIfAbsent=true&apiKey=b3c1de37907348cdbf57798a458478a7"
-                  className="search-icon"
-                  alt="Search"
-                />
-                <div className="search-text">
-                  Buscar espacio...
-                </div>
-              </div>
-            </div>
-          </div>
           <div className="location-dropdown">
             Ubicación
           </div>
