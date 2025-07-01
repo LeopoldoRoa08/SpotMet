@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './ReservaSala24.css';
+import sala24 from "./sala-24-horas-3.png";
 
 function ReservaSala24() {
   const navigate = useNavigate();
@@ -121,7 +122,7 @@ function ReservaSala24() {
                   alt="Fondo del espacio"
                 />
                 <img
-                  src="sala-24-horas-3"
+                  src={sala24}
                   className="space-main-image"
                   alt="Sala 24 horas"
                 />

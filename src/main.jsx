@@ -7,13 +7,15 @@ import RegistrarUsuario from "./RegistrarUsuario/RegistrarUsuario";
 import Header from "./Componente/Header";
 import Footer from "./Componente/Footer";
 import Reseñas from "./Reseña/Reseña";
-import VerEspaciosGeneral from "./VerEspacio/VerEspacio";
+import VerEspaciosGeneral from "./VerEspacioMenu/VerEspacio";
 import Reservaauditorios from './Reserva/ReservaAuditorio';
 import ReservarCanchas from "./Reserva/ReservaCanchas";
 import Reservalab from "./Reserva/ReservaLabs";
 import ReservaX from "./Reserva/ReservaMundoX";
 import ReservaSala24horas from "./Reserva/ReservaSala24";
 import Reservasalones from "./Reserva/ReservaSalones";
+import Pagocheck from "./PagoCorrecto/PagoCorrecto";
+
 
 
 
@@ -33,10 +35,13 @@ ReactDOM.createRoot(root).render(
         <Route path="/canchas" element={<ReservarCanchas/>} />
         <Route path="/laboratorios" element={<Reservalab/>} />
         <Route path="/mundox" element={<ReservaX/>} />
+        <Route path="/pago" element={<Pagocheck/>} />
         <Route path="/24horas" element={<ReservaSala24horas/>} />
         <Route path="/salon" element={< Reservasalones/>} />
         <Route path="/reseñas" element={<Reseñas/>} />
         <Route path="/ver-espacios" element={<VerEspaciosGeneral/>} />
+
+
       </Routes>
     </main>
     <Footer />
