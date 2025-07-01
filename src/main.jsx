@@ -15,8 +15,12 @@ import ReservaX from "./Reserva/ReservaMundoX";
 import ReservaSala24horas from "./Reserva/ReservaSala24";
 import Reservasalones from "./Reserva/ReservaSalones";
 import Pagocheck from "./PagoCorrecto/PagoCorrecto";
-
-
+import VerAuditorio from "./VerEspacio/VerAuditorio";
+import VerSalon from "./VerEspacio/VerAulas";
+import VerCancha from "./VerEspacio/VerCanchas";
+import VerMundoX from "./VerEspacio/VerCentroMundoX";
+import VerLaboratorio from "./VerEspacio/VerLaboratorios";
+import VerSala24Horas from "./VerEspacio/VerSala24";
 
 
 
@@ -40,6 +44,12 @@ ReactDOM.createRoot(root).render(
         <Route path="/salon" element={< Reservasalones/>} />
         <Route path="/reseñas" element={<Reseñas/>} />
         <Route path="/ver-espacios" element={<VerEspaciosGeneral/>} />
+        <Route path="/ver-auditorio" element={<VerAuditorio/>} />
+        <Route path="/ver-salon" element={<VerSalon/>} />
+        <Route path="/ver-cancha" element={<VerCancha/>} />
+        <Route path="/ver-centro-mundo-x" element={<VerMundoX/>} />
+        <Route path="/ver-laboratorio" element={<VerLaboratorio/>} />
+        <Route path="/ver-sala-24-horas" element={<VerSala24Horas/>} />
 
 
       </Routes>
