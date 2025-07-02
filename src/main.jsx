@@ -15,6 +15,8 @@ import ReservaX from "./Reserva/ReservaMundoX";
 import ReservaSala24horas from "./Reserva/ReservaSala24";
 import Reservasalones from "./Reserva/ReservaSalones";
 import Pagocheck from "./PagoCorrecto/PagoCorrecto";
+import EspacioCrear from "./EspaciosDisponiblesCrear/EspaciosDisponiblesCrear";
+
 
 
 
@@ -40,6 +42,7 @@ ReactDOM.createRoot(root).render(
         <Route path="/salon" element={< Reservasalones/>} />
         <Route path="/reseñas" element={<Reseñas/>} />
         <Route path="/ver-espacios" element={<VerEspaciosGeneral/>} />
+        <Route path="/espacio-crear" element={<VerEspaciosGeneral/>} />
 
 
       </Routes>

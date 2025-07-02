@@ -1,0 +1,318 @@
+.container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.header {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 8rem;
+  width: 100%;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  background-color: #f5f5f5;
+  height: 166px;
+}
+
+.logoImage {
+  position: absolute;
+  aspect-ratio: 1/1;
+  height: 177px;
+  left: 133px;
+  top: -5px;
+  width: 177px;
+}
+
+.headerIcons {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  gap: 1.25rem;
+  align-items: center;
+  transform: translateY(-50%);
+  right: 120px;
+}
+
+.headerTitle {
+  position: absolute;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  right: 120px;
+  color: #0f172a;
+  top: 120px;
+}
+
+.mainContent {
+  padding: 2.5rem 8rem;
+  margin: 0 auto;
+  max-width: 1500px;
+}
+
+.sectionTitle {
+  margin-bottom: 2rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  color: #000000;
+}
+
+.imageUploadSection {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2.25rem;
+  width: 100%;
+  background-color: #ffffff;
+  height: 343px;
+  max-width: 1258px;
+  border-radius: 30px;
+}
+
+.imageUploadContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.uploadIcon {
+  opacity: 0.1;
+  aspect-ratio: 1/1;
+  height: 212px;
+  width: 212px;
+}
+
+.uploadText {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  color: #000000;
+}
+
+.formSection {
+  padding: 2.5rem;
+  margin-bottom: 2.5rem;
+  width: 100%;
+  background-color: #ffffff;
+  max-width: 1257px;
+  border-radius: 30px;
+}
+
+.inputField {
+  padding: 1.25rem;
+  margin: 0 auto 1.25rem auto;
+  width: 100%;
+  border-radius: 0.75rem;
+  background-color: #f5f5f5;
+  height: 59px;
+  max-width: 1089px;
+}
+
+.inputRow {
+  display: flex;
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.inputFieldSmall {
+  flex: 1;
+  padding: 1.25rem;
+  border-radius: 0.75rem;
+  background-color: #f5f5f5;
+  height: 59px;
+  width: 322px;
+}
+
+.textareaField {
+  padding: 1.25rem;
+  margin: 0 auto 2.5rem auto;
+  width: 100%;
+  border-radius: 0.75rem;
+  background-color: #f5f5f5;
+  height: 331px;
+  max-width: 1089px;
+}
+
+.inputText {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  color: #a8a29e;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.5rem;
+}
+
+.createButton {
+  display: flex;
+  position: relative;
+  gap: 0.625rem;
+  justify-content: center;
+  align-items: center;
+  background-color: #ea580c;
+  border-radius: 1rem;
+  cursor: pointer;
+  height: 46px;
+  width: 227px;
+}
+
+.buttonText {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.backLink {
+  display: flex;
+  gap: 0.625rem;
+  align-items: center;
+  margin-bottom: 2.5rem;
+  cursor: pointer;
+}
+
+.backText {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 700;
+  color: #000000;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
+  width: 100%;
+  background-color: #0f172a;
+  height: 209px;
+}
+
+.footerText {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  text-align: center;
+  color: #ffffff;
+}
+
+.footerBold {
+  font-weight: 700;
+}
+
+/* Responsive styles for medium screens */
+@media (max-width: 768px) {
+  .header {
+    padding: 0 4rem;
+  }
+
+  .logoImage {
+    height: 120px;
+    left: 60px;
+    width: 120px;
+  }
+
+  .headerIcons {
+    right: 60px;
+  }
+
+  .headerTitle {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    right: 60px;
+  }
+
+  .mainContent {
+    padding: 2rem 4rem;
+  }
+
+  .inputRow {
+    flex-direction: column;
+  }
+
+  .inputFieldSmall {
+    width: 100%;
+  }
+}
+
+/* Responsive styles for small screens */
+@media (max-width: 640px) {
+  .header {
+    padding: 0 1.25rem;
+    height: 120px;
+  }
+
+  .logoImage {
+    top: 1.25rem;
+    left: 1.25rem;
+    width: 5rem;
+    height: 5rem;
+  }
+
+  .headerIcons {
+    right: 1.25rem;
+    gap: 1rem;
+  }
+
+  .headerTitle {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  .mainContent {
+    padding: 1.25rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  .imageUploadSection {
+    height: 250px;
+  }
+
+  .uploadIcon {
+    height: 150px;
+    width: 150px;
+  }
+
+  .uploadText {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .formSection {
+    padding: 1.25rem;
+  }
+
+  .inputText {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .textareaField {
+    height: 200px;
+  }
+
+  .createButton {
+    height: 44px;
+    width: 200px;
+  }
+
+  .buttonText {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .footerText {
+    padding: 0 1.25rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+}
