@@ -29,6 +29,8 @@ import CentroMundoXEditar from "./EditarEspacio/CentroMundoXEditar";
 import LaboratoriosEditar from "./EditarEspacio/LaboratoriosEditar";
 import Sala24Editar from "./EditarEspacio/Sala24Editar";
 import ContactPage from "./Contactos/ContactPage";
+import EspaciosDisponiblesAdministrador from "./EspacioAdministrador/EspacioDisponible";
+import PerfilUsuario from "./PerfilUsuario/PerfilUsuario";
 
 
 
@@ -67,6 +69,9 @@ ReactDOM.createRoot(root).render(
         <Route path="/editar-laboratorio" element={<LaboratoriosEditar/>} />
         <Route path="/editar-24" element={<Sala24Editar/>} />
         <Route path="/contactos" element={<ContactPage />} />
+        <Route path="/espacio-admin" element={<EspaciosDisponiblesAdministrador />} />
+        <Route path="/perfil" element={<PerfilUsuario/>} />
+
 
 
       </Routes>

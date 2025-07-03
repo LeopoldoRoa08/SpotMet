@@ -1,0 +1,324 @@
+.container {
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  background-color: #f5f5f5;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 64px;
+  width: 100%;
+  background-color: #f5f5f5;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.headerContent {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1266px;
+}
+
+.logo {
+  object-fit: cover;
+  align-items: flex-start;
+  padding: 0 14px;
+  aspect-ratio: 1.066;
+  width: 177px;
+}
+
+.navigation {
+  display: flex;
+  gap: 20px;
+  margin: auto 0;
+}
+
+.navIcon {
+  object-fit: contain;
+  flex-shrink: 0;
+  aspect-ratio: 0.96;
+  width: 65px;
+}
+
+.navIconSmall {
+  object-fit: contain;
+  flex-shrink: 0;
+  margin: auto 0;
+  aspect-ratio: 0.87;
+  width: 46px;
+}
+
+.titleSection {
+  align-self: flex-end;
+  margin-top: 24px;
+  margin-right: 80px;
+  font-size: 20px;
+  line-height: 1.2;
+  color: #0f172a;
+}
+
+.mainContent {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  margin-top: 48px;
+  width: 100%;
+  max-width: 1220px;
+}
+
+.createButton {
+  display: flex;
+  gap: 6px;
+  align-self: flex-start;
+  padding: 12px 20px;
+  font-size: 18px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: white;
+  background-color: #ea580c;
+  border-radius: 16px;
+  cursor: pointer;
+  border: none;
+}
+
+.createButtonText {
+  flex-grow: 1;
+  margin: auto 0;
+}
+
+.createButtonIcon {
+  object-fit: contain;
+  flex-shrink: 0;
+  width: 24px;
+  aspect-ratio: 1;
+}
+
+.spacesGrid {
+  margin-top: 64px;
+}
+
+.spacesGridSecond {
+  margin-top: 112px;
+}
+
+.gridRow {
+  display: flex;
+  gap: 20px;
+}
+
+.gridColumn {
+  width: 33.333%;
+  margin-left: 0;
+}
+
+.gridColumn:not(:first-child) {
+  margin-left: 20px;
+}
+
+.spaceImage {
+  object-fit: contain;
+  flex-grow: 1;
+  width: 100%;
+  border-radius: 24px;
+  aspect-ratio: 1.47;
+}
+
+.featuredSpace {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  flex-grow: 1;
+  font-size: 16px;
+  line-height: 1.2;
+  color: white;
+  border-radius: 24px;
+  background-blend-mode: normal;
+  aspect-ratio: 1.473;
+}
+
+.featuredSpaceBackground {
+  object-fit: cover;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.featuredSpaceContent {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  padding: 80px 32px 24px;
+  width: 100%;
+  border-radius: 24px;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.spaceCategory {
+  align-self: flex-start;
+  font-size: 12px;
+  line-height: 1.2;
+  font-weight: 600;
+  color: #ea580c;
+}
+
+.spaceTitle {
+  margin-top: 6px;
+  margin-right: 32px;
+  font-size: 24px;
+  line-height: 1.2;
+  font-weight: 900;
+}
+
+.spaceCapacity {
+  align-self: flex-start;
+  margin-top: 10px;
+}
+
+.editSection {
+  display: flex;
+  gap: 10px;
+  align-self: flex-end;
+  margin-top: 28px;
+  white-space: nowrap;
+}
+
+.editText {
+  margin: auto 0;
+}
+
+.editIcon {
+  object-fit: contain;
+  flex-shrink: 0;
+  width: 24px;
+  aspect-ratio: 1;
+}
+
+.dashboardLink {
+  display: flex;
+  gap: 6px;
+  align-self: flex-start;
+  margin-top: 64px;
+  font-size: 16px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: black;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.dashboardIcon {
+  object-fit: contain;
+  flex-shrink: 0;
+  width: 24px;
+  aspect-ratio: 1;
+}
+
+.dashboardText {
+  margin: auto 0;
+}
+
+.footer {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 96px 64px;
+  margin-top: 32px;
+  width: 100%;
+  font-size: 20px;
+  line-height: 1.2;
+  text-align: center;
+  color: white;
+  min-height: 209px;
+}
+
+.footerBackground {
+  object-fit: cover;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.footerContent {
+  position: relative;
+}
+
+.footerBold {
+  font-weight: 700;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .header {
+    padding: 0 20px;
+  }
+
+  .headerContent {
+    max-width: 100%;
+  }
+
+  .titleSection {
+    margin-right: 10px;
+  }
+
+  .mainContent {
+    margin-top: 40px;
+    max-width: 100%;
+  }
+
+  .createButton {
+    padding: 12px 20px;
+  }
+
+  .spacesGrid {
+    margin-top: 40px;
+  }
+
+  .spacesGridSecond {
+    margin-top: 40px;
+  }
+
+  .gridRow {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .gridColumn {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 40px;
+  }
+
+  .gridColumn:first-child {
+    margin-top: 0;
+  }
+
+  .featuredSpaceContent {
+    padding: 80px 20px 24px;
+  }
+
+  .spaceTitle {
+    margin-right: 10px;
+  }
+
+  .dashboardLink {
+    margin-top: 40px;
+  }
+
+  .footer {
+    padding: 96px 20px;
+    max-width: 100%;
+  }
+
+  .footerContent {
+    max-width: 100%;
+  }
+}
