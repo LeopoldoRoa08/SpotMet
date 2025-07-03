@@ -15,7 +15,13 @@ import ReservaX from "./Reserva/ReservaMundoX";
 import ReservaSala24horas from "./Reserva/ReservaSala24";
 import Reservasalones from "./Reserva/ReservaSalones";
 import Pagocheck from "./PagoCorrecto/PagoCorrecto";
-import EspacioCrear from "./CrearEspacio/EspaciosDisponiblesCrear"
+import VerAuditorio from "./VerEspacio/VerAuditorio";
+import VerAulas from "./VerEspacio/VerAulas";
+import VerCanchas from "./VerEspacio/VerCanchas";
+import VerCentroMundoX from "./VerEspacio/VerCentroMundoX";
+import VerLaboratorios from "./VerEspacio/VerLaboratorios";
+import VerSala24 from "./VerEspacio/VerSala24";
+import EspacioCrear from "./CrearEspacio/EspaciosDisponiblesCrear";
 import EditarAuditorio from "./EditarEspacio/Auditorio"
 import EditarAulas from "./EditarEspacio/Aulas"
 import EditarCanchas from "./EditarEspacio/CanchasEditar";
@@ -43,7 +49,12 @@ ReactDOM.createRoot(root).render(
         <Route path="/pago" element={<Pagocheck/>} />
         <Route path="/24horas" element={<ReservaSala24horas/>} />
         <Route path="/salon" element={< Reservasalones/>} />
-        <Route path="/reseñas" element={<Reseñas/>} />
+        <Route path="/ver-auditorio" element={<VerAuditorio/>} />
+        <Route path="/ver-aulas" element={<VerAulas/>} />
+        <Route path="/ver-canchas" element={<VerCanchas/>} />
+        <Route path="/ver-centrox" element={<VerCentroMundoX/>} />
+        <Route path="/ver-laboratorio" element={<VerLaboratorios/>} />
+        <Route path="/ver-sala24" element={<VerSala24/>} />
         <Route path="/ver-espacios" element={<VerEspaciosGeneral/>} />
         <Route path="/espacio-crear" element={<EspacioCrear/>} />
         <Route path="/editar-auditorio" element={<EditarAuditorio/>} />
