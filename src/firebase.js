@@ -1,10 +1,7 @@
-// Import the functions you need from the SDKs you need
+// src/firebase.js
 import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider } from 'firebase/auth';
-
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-// Your web app's Firebase configuration
+import { getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
   apiKey: "AIzaSyA9j5sRAaNy2AMzvunSSEnQSmWR6FcYlnQ",
@@ -15,10 +12,35 @@ const firebaseConfig = {
   appId: "1:846519206059:web:14b2b5a5697ddfc264f7ee",
 };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
+class FirebaseSingleton {
+  static instance = null;
 
-// Initialize Firebase Authentication and get a reference to the service
-export const auth = getAuth(app);
-export const googleProvider = new GoogleAuthProvider(app);
-export default app;
+  constructor() {
+    if (!FirebaseSingleton.instance) {
+      this.app = initializeApp(firebaseConfig);
+      this.auth = getAuth(this.app);
+      this.googleProvider = new GoogleAuthProvider(this.app);
+      this.db = getFirestore(this.app);
+      FirebaseSingleton.instance = this;
+    }
+    return FirebaseSingleton.instance;
+  }
+
+  static getInstance() {
+    if (!FirebaseSingleton.instance) {
+      FirebaseSingleton.instance = new FirebaseSingleton();
+    }
+    return FirebaseSingleton.instance;
+  }
+}
+
+// Inicialización y exportaciones
+const firebase = new FirebaseSingleton();
+
+// Exporta la instancia completa si la necesitas
+export default firebase;
+
+// Exporta los métodos individuales para compatibilidad con tu código existente
+export const auth = firebase.auth;
+export const googleProvider = firebase.googleProvider;
+export const db = firebase.db;

@@ -71,7 +71,8 @@ export const RegistrarUsuario = () => {
       <div className="main-content">
         <div className="title">Crear cuenta</div>
 
-          <form onSubmit={handleSubmit} className="content-wrapper">  
+          <form onSubmit={handleSubmit} className="content-wrapper"> 
+          <div style={{display: "flex"}}>
           <div className="form-section">
             <div className="form-fields">
               <input
@@ -153,7 +154,7 @@ export const RegistrarUsuario = () => {
               </div>
             </div>
           </div>
-          
+        </div>
           <div className="buttons-section">
             <button 
               type="submit" 
@@ -163,7 +164,7 @@ export const RegistrarUsuario = () => {
               {isSubmitting ? 'Registrando...' : 'Registrarme'}
             </button>
             
-            <Link to="/iniciar-sesion" className="login-button">
+            <Link to="/Login" className="login-button">
               Ya tengo cuenta
             </Link>
           </div>

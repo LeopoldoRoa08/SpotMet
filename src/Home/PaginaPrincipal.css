@@ -9,6 +9,7 @@ body, html {
   overflow: hidden;
   flex-direction: column;
   background-color: #F4F4F4;
+  width: 100%;
 }
 
 
@@ -35,47 +36,47 @@ body, html {
   background-color: black;
 }
 
-.hero-text {
+.home-hero-text {
   position: relative;
   z-index: 1;
 }
 
-.hero-text-bold {
+.home-hero-text-bold {
   font-family: Poppins, -apple-system, Roboto, Helvetica, sans-serif;
   font-weight: 800;
   font-style: italic;
 }
 
-.hero-text-normal {
+.home-hero-text-normal {
   font-family: Poppins, -apple-system, Roboto, Helvetica, sans-serif;
 }
 
-.hero-text-unimet {
+.home-hero-text-unimet {
   font-family: Poppins, -apple-system, Roboto, Helvetica, sans-serif;
   font-weight: 900;
   color: rgba(231, 111, 42, 1);
 }
 
 /* Orange Section */
-.orange-section {
+.home-orange-section {
     align-self: center;
     padding-left: 4rem;
     padding-right: 4rem;
     background-color: #ea580c;
 }
 
-.orange-content {
+.home-orange-content {
   display: flex;
   gap: 1.25rem;
   flex-direction: row;
   align-items: center;
 }
 
-.text-column {
+.home-text-column {
   width: 60%;
 }
 
-.description-text {
+.home-description-text {
   z-index: 10;
   align-self: stretch;
   margin: auto 0;
@@ -83,22 +84,22 @@ body, html {
   color: white;
 }
 
-.description-normal {
+.home-description-normal {
   font-family: Roboto, -apple-system, Roboto, Helvetica, sans-serif;
 }
 
-.description-bold {
+.home-description-bold {
   font-family: Roboto, -apple-system, Roboto, Helvetica, sans-serif;
   font-weight: 700;
   color: rgba(3, 0, 39, 1);
 }
 
-.image-column {
+.home-image-column {
   margin-left: 1.25rem;
   width: 40%;
 }
 
-.orange-image {
+.home-orange-image {
     object-fit: contain;
     align-self: stretch;
     width: 80%;
@@ -111,7 +112,7 @@ body, html {
 }
 
 /* Opportunity Section */
-.opportunity-section {
+.home-opportunity-section {
   align-self: center;
   margin-top: 5rem;
   font-size: 2.25rem;
@@ -120,26 +121,26 @@ body, html {
   color: black;
 }
 
-.opportunity-text-normal {
+.home-opportunity-text-normal {
   font-family: Roboto, -apple-system, Roboto, Helvetica, sans-serif;
   font-weight: 500;
   color: rgb(0, 0, 0);
 }
 
-.opportunity-text-bold {
+.home-opportunity-text-bold {
   font-family: Roboto, -apple-system, Roboto, Helvetica, sans-serif;
   font-weight: 800;
   color: rgb(0, 0, 0);
 }
 
-.opportunity-text-orange {
+.home-opportunity-text-orange {
   font-family: Roboto, -apple-system, Roboto, Helvetica, sans-serif;
   font-weight: 800;
   color: rgba(238, 93, 8, 1);
 }
 
 /* Explore Section */
-.explore-section {
+.home-explore-section {
   padding-left: 1px;
   padding-right: 1px;
   margin-top: 5rem;
@@ -149,7 +150,7 @@ body, html {
   color: #0f172a;
 }
 
-.explore-content {
+.home-explore-content {
   display: flex;
   position: relative;
   flex-direction: column;
@@ -158,7 +159,7 @@ body, html {
   min-height: 688px;
 }
 
-.explore-background {
+.home-explore-background {
   object-fit: cover;
   position: absolute;
   inset: 0;
@@ -166,7 +167,7 @@ body, html {
   height: 100%;
 }
 
-.explore-banner {
+.home-explore-banner {
   display: flex;
   position: relative;
   flex-direction: column;
@@ -178,7 +179,7 @@ body, html {
   background-color: #ea580c;
 }
 
-.banner-content {
+.home-banner-content {
   display: flex;
   z-index: 10;
   flex-wrap: wrap;
@@ -193,22 +194,22 @@ body, html {
   width: 1202px;
 }
 
-.banner-text {
+.home-banner-text {
   margin: auto 0;
   color: black;
   font-family: 'Roboto', sans-serif;
   margin-right: 20%;
 }
 
-.banner-text-bold {
+.home-banner-text-bold {
   font-weight: 700;
 }
 
-.banner-text-medium {
+.home-banner-text-medium {
   font-weight: 600;
 }
 
-.banner-icon {
+.home-banner-icon {
   object-fit: contain;
   z-index: 10;
   flex-shrink: 0;
@@ -217,7 +218,7 @@ body, html {
   transform: translateX(20px);
 }
 
-.explore-title {
+.home-explore-title {
   position: relative;
   align-self: center;
   margin-top: 12rem;
@@ -227,7 +228,7 @@ body, html {
   font-family: 'Roboto', sans-serif;
 }
 
-.explore-button-section {
+.home-explore-button-section {
   display: flex;
   position: relative;
   flex-direction: column;
@@ -242,7 +243,7 @@ body, html {
   
 }
 
-.explore-button {
+.home-explore-button {
   padding-left: 2.75rem;
   padding-right: 2.75rem;
   padding-top: 1.5rem;
@@ -260,16 +261,16 @@ body, html {
 }
 /* Responsive Design */
 @media (max-width: 768px) {
-  .header-section {
+  .home-header-section {
     padding-left: 1.25rem;
     padding-right: 1.25rem;
   }
 
-  .header-content {
+  .home-header-content {
     margin-bottom: 0.625rem;
   }
 
-  .hero-section {
+  .home-hero-section {
     padding-left: 1.25rem;
     padding-right: 1.25rem;
     padding-top: 6rem;
@@ -278,81 +279,81 @@ body, html {
     line-height: 61px;
   }
 
-  .orange-section {
+  .home-orange-section {
     padding-left: 1.25rem;
     padding-right: 1.25rem;
   }
 
-  .orange-content {
+  .home-orange-content {
     flex-direction: column;
     gap: 0;
   }
 
-  .text-column {
+  .home-text-column {
     margin-left: 0;
     width: 100%;
   }
 
-  .description-text {
+  .home-description-text {
     margin-top: 2.5rem;
   }
 
-  .image-column {
+  .home-image-column {
     margin-left: 0;
     width: 100%;
   }
 
-  .orange-image {
+  .home-orange-image {
     margin-top: 2.5rem;
   }
 
-  .opportunity-section {
+  .home-opportunity-section {
     margin-top: 2.5rem;
   }
 
-  .explore-section {
+  .home-explore-section {
     margin-top: 2.5rem;
   }
 
-  .explore-content {
+  .home-explore-content {
     padding-left: 1.25rem;
     padding-right: 1.25rem;
     padding-top: 6rem;
     padding-bottom: 7rem;
   }
 
-  .banner-content {
+  .home-banner-content {
     padding-left: 1.25rem;
     padding-right: 1.25rem;
     margin-bottom: 0.625rem;
   }
 
-  .banner-icon {
+  .home-banner-icon {
     margin-right: -0.875rem;
   }
 
-  .explore-title {
+  .home-explore-title {
     margin-top: 2.5rem;
   }
 
-  .explore-button-section {
+  .home-explore-button-section {
     padding-left: 1.25rem;
     padding-right: 1.25rem;
   }
 
-  .explore-button {
+  .home-explore-button {
     padding-left: 1.25rem;
     padding-right: 1.25rem;
   }
 
-  .footer-section {
+  .home-footer-section {
     padding-left: 1.25rem;
     padding-right: 1.25rem;
     padding-top: 6rem;
     padding-bottom: 7rem;
   }
 /* Icono de usuario profesional - Versión negra funcional */
-.user-icon-button {
+.home-user-icon-button {
   position: fixed;
   top: 20px;
   right: 20px;
@@ -366,15 +367,15 @@ body, html {
   transition: transform 0.2s;
 }
 
-.user-icon-button:hover {
+.home-user-icon-button:hover {
   transform: scale(1.1);
 }
 
-.user-icon-button:active {
+.home-user-icon-button:active {
   transform: scale(0.95);
 }
 
-.user-icon-symbol {
+.home-user-icon-symbol {
   display: block;
   width: 24px;
   height: 24px;
@@ -384,7 +385,7 @@ body, html {
   position: relative;
 }
 
-.user-icon-symbol::after {
+.home-user-icon-symbol::after {
   content: "";
   position: absolute;
   bottom: -8px;

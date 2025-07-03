@@ -56,6 +56,7 @@
 .footer-section {
     background-color: #030027;
     display: flex;
+    flex-direction: column;
     font-size: 1.25rem;
     text-align: center;
     color: white;
