@@ -28,6 +28,8 @@ import EditarCanchas from "./EditarEspacio/CanchasEditar";
 import CentroMundoXEditar from "./EditarEspacio/CentroMundoXEditar";
 import LaboratoriosEditar from "./EditarEspacio/LaboratoriosEditar";
 import Sala24Editar from "./EditarEspacio/Sala24Editar";
+import ContactPage from "./Contactos/ContactPage";
+
 
 
 
@@ -63,6 +65,7 @@ ReactDOM.createRoot(root).render(
         <Route path="/editar-centrox" element={<CentroMundoXEditar/>} />
         <Route path="/editar-laboratorio" element={<LaboratoriosEditar/>} />
         <Route path="/editar-24" element={<Sala24Editar/>} />
+        <Route path="/contactos" element={<ContactPage />} />
 
 
       </Routes>
