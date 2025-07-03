@@ -1,6 +1,6 @@
-"use client";
+
 import React, { useState } from "react";
-import styles from "./PerfilUsuario.css";
+import   "./PerfilUsuario.css";
 
 const PerfilDeUsuario = ({ onSave, onBackToDashboard, initialData = {} }) => {
   const [formData, setFormData] = useState({
@@ -93,7 +93,7 @@ const PerfilDeUsuario = ({ onSave, onBackToDashboard, initialData = {} }) => {
       viewBox="0 0 27 20"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={styles.passwordToggle}
+      className='passwordToggle'
       onClick={onClick}
     >
       {isVisible ? (
@@ -111,35 +111,35 @@ const PerfilDeUsuario = ({ onSave, onBackToDashboard, initialData = {} }) => {
   );
 
   const FormField = ({ label, type, placeholder, value, onChange, error, showToggle, onToggle, isVisible }) => (
-    <div className={styles.formField}>
-      <div className={styles.fieldLabel}>
+    <div className={'formField'}>
+      <div className={'fieldLabel'}>
         {label}
       </div>
-      <div className={styles.inputWrapper}>
+      <div className={'inputWrapper'}>
         <input
           type={showToggle ? (isVisible ? "text" : "password") : type}
           placeholder={placeholder}
           value={value}
           onChange={(e) => onChange(e.target.value)}
-          className={`${styles.input} ${error ? styles.inputError : ""}`}
+          className={`${input} ${error ? inputError : ""}`}
         />
         {showToggle && (
           <EyeIcon isVisible={isVisible} onClick={onToggle} />
         )}
       </div>
-      {error && <div className={styles.errorMessage}>{error}</div>}
+      {error && <div className={'errorMessage'}>{error}</div>}
     </div>
   );
 
   return (
-    <div className={styles.container}>
+    <div className={'container'}>
       {/* Header Section */}
-      <div className={styles.header}>
-        <div className={styles.headerBackground} />
+      <div className={'header'}>
+        <div className={'headerBackground'} />
         <img
           src="https://cdn.builder.io/api/v1/image/assets/TEMP/2fe373f9cb448b3bdec8807130077642a8a0cb6b?width=354"
           alt="Profile"
-          className={styles.profileImage}
+          className={'profileImage'}
         />
 
         {/* User Icon */}
@@ -149,7 +149,7 @@ const PerfilDeUsuario = ({ onSave, onBackToDashboard, initialData = {} }) => {
           viewBox="0 0 65 68"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className={styles.userIcon}
+          className={'userIcon'}
         >
           <path
             d="M27.0846 34.0002C24.1055 34.0002 21.5551 32.8904 19.4336 30.671C17.3121 28.4516 16.2513 25.7835 16.2513 22.6668C16.2513 19.5502 17.3121 16.8821 19.4336 14.6627C21.5551 12.4432 24.1055 11.3335 27.0846 11.3335C30.0638 11.3335 32.6142 12.4432 34.7357 14.6627C36.8572 16.8821 37.918 19.5502 37.918 22.6668C37.918 25.7835 36.8572 28.4516 34.7357 30.671C32.6142 32.8904 30.0638 34.0002 27.0846 34.0002Z"
@@ -164,7 +164,7 @@ const PerfilDeUsuario = ({ onSave, onBackToDashboard, initialData = {} }) => {
           viewBox="0 0 46 53"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className={styles.menuIcon}
+          className={'menuIcon'}
         >
           <path
             d="M5.75 39.75V35.3333H40.25V39.75H5.75ZM5.75 28.7083V24.2917H40.25V28.7083H5.75ZM5.75 17.6667V13.25H40.25V17.6667H5.75Z"
@@ -174,12 +174,12 @@ const PerfilDeUsuario = ({ onSave, onBackToDashboard, initialData = {} }) => {
       </div>
 
       {/* Main Content */}
-      <div className={styles.mainContent}>
-        <h1 className={styles.title}>Editar Perfil</h1>
+      <div className={'mainContent'}>
+        <h1 className={'title'}>Editar Perfil</h1>
 
-        <form className={styles.formContainer} onSubmit={(e) => e.preventDefault()}>
+        <form className={'formContainer'} onSubmit={(e) => e.preventDefault()}>
           {/* First Row */}
-          <div className={styles.formRow}>
+          <div className={'formRow'}>
             <FormField
               label="Nombre:"
               type="text"
@@ -201,7 +201,7 @@ const PerfilDeUsuario = ({ onSave, onBackToDashboard, initialData = {} }) => {
           </div>
 
           {/* Second Row */}
-          <div className={styles.formRow}>
+          <div className={'formRow'}>
             <FormField
               label="Apellido:"
               type="text"
@@ -223,7 +223,7 @@ const PerfilDeUsuario = ({ onSave, onBackToDashboard, initialData = {} }) => {
           </div>
 
           {/* Third Row */}
-          <div className={styles.formRow}>
+          <div className={'formRow'}>
             <FormField
               label="Carrera:"
               type="text"
@@ -244,86 +244,86 @@ const PerfilDeUsuario = ({ onSave, onBackToDashboard, initialData = {} }) => {
         </form>
 
         {/* Save Button */}
-        <div className={styles.saveButtonContainer}>
+        <div className={'saveButtonContainer'}>
           <button
-            className={styles.saveButton}
+            className={'saveButton'}
             onClick={handleSave}
             type="button"
           >
-            <span className={styles.saveButtonText}>Guardar</span>
+            <span className={'saveButtonText'}>Guardar</span>
           </button>
         </div>
 
         {/* Back Button */}
-        <div className={styles.backButton} onClick={handleBackToDashboard}>
+        <div className={'backButton'} onClick={handleBackToDashboard}>
           <svg
             width="24"
             height="24"
             viewBox="0 0 24 24"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            className={styles.backArrow}
+            className={'backArrow'}
           >
             <path
               d="M7.825 11L20 11V13L7.825 13L13.425 18.6L12 20L4 12L12 4L13.425 5.4L7.825 11Z"
               fill="#EA3323"
             />
           </svg>
-          <span className={styles.backText}>Dashboard</span>
+          <span className={'backText'}>Dashboard</span>
         </div>
       </div>
 
       {/* Side Panel */}
-      <div className={styles.sidePanel}>
-        <div className={styles.sidePanelPlate} />
-        <div className={styles.dotPattern}>
-          <div className={styles.dotGrid}>
-            <div className={styles.dotColumn} />
-            <div className={styles.dotColumn}>
+      <div className={'sidePanel'}>
+        <div className={'sidePanelPlate'} />
+        <div className={'dotPattern'}>
+          <div className={'dotGrid'}>
+            <div className={'dotColumn'} />
+            <div className={'dotColumn'}>
               <img
                 src="https://cdn.builder.io/api/v1/image/assets/TEMP/f2e005deee054c04d0983f882eb92e7d6ab85d3b?width=808"
                 alt="Pattern"
-                className={styles.patternImage}
+                className={'patternImage'}
               />
             </div>
-            <div className={styles.dotColumn} />
+            <div className={'dotColumn'} />
           </div>
         </div>
 
-        <div className={styles.profileSection}>
+        <div className={'profileSection'}>
           <svg
             width="213"
             height="213"
             viewBox="0 0 213 213"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            className={styles.profileCircleBg}
+            className={'profileCircleBg'}
           >
             <circle cx="106.5" cy="106.5" r="106.5" fill="white" />
           </svg>
-          <div className={styles.profileImageCircle} />
-          <p className={styles.profileImageLabel}>
+          <div className={'profileImageCircle'} />
+          <p className={'profileImageLabel'}>
             Añadir Foto de Perfil
           </p>
         </div>
       </div>
 
       {/* Footer */}
-      <footer className={styles.footer}>
+      <footer className={'footer'}>
         <svg
           width="1500"
           height="209"
           viewBox="0 0 1500 209"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className={styles.footerBackground}
+          className={'footerBackground'}
         >
           <path d="M0 0H1500V209H0V0Z" fill="#030027" />
         </svg>
-        <div className={styles.footerText}>
+        <div className={'footerText'}>
           Copyright © 2025 - Spotmet | Síguenos:
-          <span className={styles.footerBold}> Instagram</span> |
-          <span className={styles.footerBold}> Facebook</span>
+          <span className={'footerBold'}> Instagram</span> |
+          <span className={'footerBold'}> Facebook</span>
         </div>
       </footer>
     </div>
