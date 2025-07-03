@@ -1,7 +1,9 @@
 "use client";
-import React from "react";
+import React, { useState } from 'react';
+import { useNavigate } from "react-router-dom";
+import "./Sala24Editar.css"
 
-export const EditSpacePage = ({ className = "" }) => {
+export const Sala24Editar = ({ className = "" }) => {
   return (
     <div className={`min-h-screen bg-neutral-100 ${className}`}>
       {/* Header */}
@@ -144,4 +146,4 @@ function BackArrowIcon() {
   );
 }
 
-export default EditSpacePage;
+export default Sala24Editar;

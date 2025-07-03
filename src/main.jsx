@@ -15,8 +15,13 @@ import ReservaX from "./Reserva/ReservaMundoX";
 import ReservaSala24horas from "./Reserva/ReservaSala24";
 import Reservasalones from "./Reserva/ReservaSalones";
 import Pagocheck from "./PagoCorrecto/PagoCorrecto";
-
-
+import EspacioCrear from "./CrearEspacio/EspaciosDisponiblesCrear"
+import EditarAuditorio from "./EditarEspacio/Auditorio"
+import EditarAulas from "./EditarEspacio/Aulas"
+import EditarCanchas from "./EditarEspacio/CanchasEditar";
+import CentroMundoXEditar from "./EditarEspacio/CentroMundoXEditar";
+import LaboratoriosEditar from "./EditarEspacio/LaboratoriosEditar";
+import Sala24Editar from "./EditarEspacio/Sala24Editar";
 
 
 
@@ -40,6 +45,13 @@ ReactDOM.createRoot(root).render(
         <Route path="/salon" element={< Reservasalones/>} />
         <Route path="/reseñas" element={<Reseñas/>} />
         <Route path="/ver-espacios" element={<VerEspaciosGeneral/>} />
+        <Route path="/espacio-crear" element={<EspacioCrear/>} />
+        <Route path="/editar-auditorio" element={<EditarAuditorio/>} />
+        <Route path="/editar-aulas" element={<EditarAulas/>} />
+        <Route path="/editar-canchas" element={<EditarCanchas/>} />
+        <Route path="/editar-centrox" element={<CentroMundoXEditar/>} />
+        <Route path="/editar-laboratorio" element={<LaboratoriosEditar/>} />
+        <Route path="/editar-24" element={<Sala24Editar/>} />
 
 
       </Routes>
