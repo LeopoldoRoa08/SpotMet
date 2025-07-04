@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "./PerfilUsuario.module.css"; // Cambiado a .module.css
+import "./PerfilUsuario.css"; 
 
 const PerfilDeUsuario = ({ onSave, onBackToDashboard, initialData = {} }) => {
   const [formData, setFormData] = useState({

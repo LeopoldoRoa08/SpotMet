@@ -41,7 +41,7 @@ function Resenas() {
     "Economía",
     "Contaduría",
     "Derecho",
-
+    "Estudios Internacionales",
   ];
 
   // Sample profile images (in a real app, these would come from user data)
@@ -60,7 +60,7 @@ function Resenas() {
             <img src={IngQuimica} alt="Profile" className="reviewer-image" />
             <div>
               <span className="reviewer-name">Valeria Solorzano</span>
-              <span className="reviewer-program">, Ingeniería Química</span>
+              <span className="reviewer-program">. Ingeniería Química</span>
             </div>
           </div>
           <p className="review-text">
@@ -79,7 +79,7 @@ function Resenas() {
             <img src={IngCivil} alt="Profile" className="reviewer-image" />
             <div>
               <span className="reviewer-name">Santiago Zambrano</span>
-              <span className="reviewer-program">, Ingeniería Civil</span>
+              <span className="reviewer-program">. Ingeniería Civil</span>
             </div>
           </div>
           <p className="review-text">
@@ -98,7 +98,7 @@ function Resenas() {
             <img src={Psicologia} alt="Profile" className="reviewer-image" />
             <div>
               <span className="reviewer-name">María Atilano</span>
-              <span className="reviewer-program">, Psicología</span>
+              <span className="reviewer-program">. Psicología</span>
             </div>
           </div>
           <p className="review-text">
@@ -117,7 +117,7 @@ function Resenas() {
             <img src={Liberales} alt="Profile" className="reviewer-image" />
             <div>
               <span className="reviewer-name">Luis Torrealba</span>
-              <span className="reviewer-program">, Estudios Liberales</span>
+              <span className="reviewer-program">. Estudios Liberales</span>
             </div>
           </div>
           <p className="review-text">
@@ -136,7 +136,7 @@ function Resenas() {
             <img src={IngElectrica} alt="Profile" className="reviewer-image" />
             <div>
               <span className="reviewer-name">Daniel Rodrigues</span>
-              <span className="reviewer-program">, Ingeniería Eléctrica</span>
+              <span className="reviewer-program">. Ingeniería Eléctrica</span>
             </div>
           </div>
           <p className="review-text">
@@ -155,7 +155,7 @@ function Resenas() {
             <img src={Idiomas} alt="Profile" className="reviewer-image" />
             <div>
               <span className="reviewer-name">Aldebaran Campos</span>
-              <span className="reviewer-program">, Idiomas Modernos</span>
+              <span className="reviewer-program">. Idiomas Modernos</span>
             </div>
           </div>
           <p className="review-text">
