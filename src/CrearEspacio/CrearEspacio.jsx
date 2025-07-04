@@ -1,17 +1,18 @@
 "use client";
-import React, { useState } from 'react';
-import  './CrearEspacio.css';
+import * as React from "react";
+import './CrearEspacio.css';
 
-function EspaciosDisponiblesCrear() {
+
+function CrearEspacio() {
   return (
-    <div className={styles.container}>
-      <div className={styles.header}>
+    <div className="container">
+      <div className="header">
         <img
           src="https://cdn.builder.io/api/v1/image/assets/TEMP/7bf96a450be474661dca0a642c458df2b0633b50?width=354"
           alt=""
-          className={styles.logoImage}
+          className= "logoImage"
         />
-        <div className={styles.headerIcons}>
+        <div className="headerIcons">
           <div>
             <div
               dangerouslySetInnerHTML={{
@@ -29,7 +30,7 @@ function EspaciosDisponiblesCrear() {
             />
           </div>
         </div>
-        <div className={styles.headerTitle}>
+        <div className="headerTitle">
           Crear nuevo espacio
         </div>
       </div>
@@ -115,15 +116,8 @@ function EspaciosDisponiblesCrear() {
         </div>
       </div>
 
-      <div className={styles.footer}>
-        <div className={styles.footerText}>
-          Copyright © 2025 - Spotmet | Síguenos:
-          <div className={styles.footerBold}>Instagram</div>|
-          <div className={styles.footerBold}>Facebook</div>
-        </div>
-      </div>
     </div>
   );
 }
 
-export default EspaciosDisponiblesCrear;
+export default CrearEspacio;
