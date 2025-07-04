@@ -14,6 +14,10 @@ function Header() {
   const [userEmail, setUserEmail] = useState("")
   useEffect(() => {
     setUserEmail(localStorage.getItem("user"))
+    console.log(location.pathname)
+    if(!["/", "/login", "/register"].includes(location.pathname) && !localStorage.getItem("user")){ 
+      navigate("/login");
+    }
   }, [location]);
   
   function toggleSidebar() {
