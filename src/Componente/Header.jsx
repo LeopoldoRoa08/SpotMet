@@ -48,7 +48,7 @@ function Header() {
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a href="/ver-espacios">
                   <img src = "https://cdn.builder.io/api/v1/image/assets/0ee00be008dd423aadc13fb6ab914f24/73bf00df99d1d8e96b5068d4ff0c248cc54c1e04?placeholderIfAbsent=true" alt="Ver espacios icon" class="nav-icon"></img>
                   <span>VER ESPACIOS</span>
                 </a>
@@ -60,7 +60,7 @@ function Header() {
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a href="contactos">
                   <img src = "https://cdn.builder.io/api/v1/image/assets/0ee00be008dd423aadc13fb6ab914f24/c2b5d287587c9ea7108d0e685a7bd9800e4f9ad3?placeholderIfAbsent=true" alt="Contáctanos icon" class="nav-icon contact"></img>
                   <span>CONTÁCTANOS</span>
                 </a>

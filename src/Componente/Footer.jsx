@@ -16,7 +16,7 @@ function Footer() {
           <span className="footer-bold">Facebook</span>
         </div>
           <button className="footer-reseñas" 
-          onClick={()=> navigate("/reseñas")}
+          onClick={()=> navigate("/reseña")}
           >VER RESEÑAS</button>
       </div>
   
