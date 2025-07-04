@@ -29,7 +29,7 @@ import LaboratoriosEditar from "./EditarEspacio/LaboratoriosEditar";
 import Sala24Editar from "./EditarEspacio/Sala24Editar";
 import ContactPage from "./Contactos/ContactPage";
 import EspaciosDisponiblesAdministrador from "./EspacioAdministrador/EspacioDisponible";
-import Dashboard from "./TablerodelADMIN/DashBoard";
+import Dashboard from "./Tablerodeladmin/DashBoard";
 import ReportesAdministrador from "./ReportesAdministrador/ReportesAdministrador";
 import PerfilUsuario from "./PerfilUsuario/PerfilUsuario";
 import CrearEspacio from "./CrearEspacio/EspaciosDisponiblesCrear";

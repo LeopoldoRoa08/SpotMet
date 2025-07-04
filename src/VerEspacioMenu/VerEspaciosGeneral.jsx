@@ -1,6 +1,7 @@
 import React from "react";
 import "./VerEspaciosGeneral.css";
 
+
 // Integrated Arrow6 component
 const Arrow6 = ({ className }) => {
   return (
@@ -334,58 +335,10 @@ export const VerEspaciosGeneral = () => {
             src="https://c.animaapp.com/vqVWvgRh/img/image-2.png"
           />
 
-          <div className="text-wrapper-10">Nuestros espacios</div>
+          <div className="text-wrapper-10">Nuestros 
+            espacios</div>
         </div>
 
-        <div className="overlap-6">
-          <p className="copyright">
-            <span className="span">
-              Copyright © 2025 - Spotmet | Síguenos:{" "}
-            </span>
-
-            <span className="text-wrapper-11">Instagram</span>
-
-            <span className="span"> | </span>
-
-            <span className="text-wrapper-11">Facebook</span>
-          </p>
-
-          <img
-            className="rectangle-4"
-            alt="Rectangle"
-            src="https://c.animaapp.com/vqVWvgRh/img/rectangle-69.svg"
-          />
-
-          <p className="copyright">
-            <span className="span">
-              Copyright © 2025 - Spotmet | Síguenos:{" "}
-            </span>
-
-            <span className="text-wrapper-11">Instagram</span>
-
-            <span className="span"> | </span>
-
-            <span className="text-wrapper-11">Facebook</span>
-          </p>
-
-          <img
-            className="rectangle-4"
-            alt="Rectangle"
-            src="https://c.animaapp.com/vqVWvgRh/img/rectangle-69.svg"
-          />
-
-          <p className="copyright">
-            <span className="span">
-              Copyright © 2025 - Spotmet | Síguenos:{" "}
-            </span>
-
-            <span className="text-wrapper-11">Instagram</span>
-
-            <span className="span"> | </span>
-
-            <span className="text-wrapper-11">Facebook</span>
-          </p>
-        </div>
 
         <div className="overlap-group-wrapper">
           <div className="overlap-7">
@@ -407,52 +360,7 @@ export const VerEspaciosGeneral = () => {
           </div>
         </div>
 
-        <div className="overlap-8">
-          <div className="group-6">
-            <img
-              className="frame-2"
-              alt="Frame"
-              src="https://c.animaapp.com/vqVWvgRh/img/frame.svg"
-            />
-
-            <img
-              className="image-2"
-              alt="Image"
-              src="https://c.animaapp.com/vqVWvgRh/img/image-1-1@2x.png"
-            />
-
-            <Menu2 className="menu" color="#EE5D08" />
-          </div>
-
-          <div className="rectangle-5" />
-
-          <img
-            className="image-3"
-            alt="Image"
-            src="https://c.animaapp.com/vqVWvgRh/img/image-7@2x.png"
-          />
-
-          <img
-            className="image-3"
-            alt="Image"
-            src="https://c.animaapp.com/vqVWvgRh/img/image-7@2x.png"
-          />
-
-          <Menu2 className="menu-2" color="#EE5D08" />
-          <img
-            className="frame-3"
-            alt="Frame"
-            src="https://c.animaapp.com/vqVWvgRh/img/frame-1.svg"
-          />
-
-          <div className="frame-3">
-            <img
-              className="vector"
-              alt="Vector"
-              src="https://c.animaapp.com/vqVWvgRh/img/vector.svg"
-            />
-          </div>
-        </div>
+        
 
         <div className="overlap-9">
           <div className="text-wrapper-12">&gt;</div>
@@ -476,4 +384,6 @@ export const VerEspaciosGeneral = () => {
       </div>
     </div>
   );
+
 };
+export default VerEspaciosGeneral;
