@@ -124,9 +124,9 @@ function Reseñas() {
     });
   };
 
-  const ReviewCard = ({ review, compact = false }) => {
+  const ReviewCard = ({ review }) => {
     return (
-      <div className={`review-card ${compact ? 'compact' : ''}`}>
+      <div className="review-card">
         <div className="review-header">
           <img src={review.avatar} alt={review.name} className="review-avatar" />
           <div className="review-user-info">
@@ -142,7 +142,7 @@ function Reseñas() {
                 key={index}
                 src={star.src} 
                 alt={star.filled ? "Filled star" : "Empty star"} 
-                className={`star ${star.filled ? 'filled' : ''}`}
+                className="star"
               />
             ))}
           </div>
@@ -153,114 +153,105 @@ function Reseñas() {
 
   const ReviewForm = () => {
     return (
-      <form className="review-form" onSubmit={handleSubmit}>
-        <h2 className="form-title">Deja tu reseña</h2>
-        <div className="form-group">
-          <label htmlFor="name">Nombre:</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="program">Programa:</label>
-          <input
-            type="text"
-            id="program"
-            name="program"
-            value={formData.program}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="review">Reseña:</label>
-          <textarea
-            id="review"
-            name="review"
-            value={formData.review}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label>Calificación:</label>
-          <div className="rating-stars">
-            {[1, 2, 3, 4, 5].map((star) => (
-              <span
-                key={star}
-                className={`star ${star <= formData.rating ? 'filled' : ''}`}
-                onClick={() => handleRatingChange(star)}
-              >
-                ★
-              </span>
-            ))}
+      <div className="form-section">
+        <h2 className="form-title">Compartenos tus ideas y experiencias aquí</h2>
+        
+        <form onSubmit={handleSubmit} className="review-form">
+          <div className="form-row">
+            <div className="form-col">
+              <div className="form-group">
+                <label htmlFor="name">Nombre:</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+            </div>
+            <div className="form-col">
+              <div className="form-group">
+                <label htmlFor="program">Carrera:</label>
+                <input
+                  type="text"
+                  id="program"
+                  name="program"
+                  value={formData.program}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+            </div>
           </div>
-        </div>
-        <button type="submit" className="submit-button">
-          Enviar Reseña
-        </button>
-      </form>
+
+          <div className="form-group">
+            <label htmlFor="review">Reseña:</label>
+            <textarea
+              id="review"
+              name="review"
+              value={formData.review}
+              onChange={handleChange}
+              required
+              placeholder="Escriba su reseña aquí..."
+            />
+          </div>
+
+          <div className="form-group">
+            <label>Calificación:</label>
+            <div className="review-stars">
+              {[1, 2, 3, 4, 5].map((star) => (
+                <span
+                  key={star}
+                  style={{
+                    fontSize: '24px',
+                    color: star <= formData.rating ? '#ffc107' : '#ddd',
+                    cursor: 'pointer'
+                  }}
+                  onClick={() => handleRatingChange(star)}
+                >
+                  ★
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <button type="submit" className="submit-button">
+            Enviar Reseña
+          </button>
+        </form>
+      </div>
     );
   };
 
   return (
     <div className="reseñas-container">
-
       {/* Hero Section */}
       <div className="hero-section">
-        <img
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/66edb4f0f5d8b12414fa1399fbbf064dce585597?placeholderIfAbsent=true&apiKey=b3c1de37907348cdbf57798a458478a7"
-          className="hero-background"
-          alt="Background"
-        />
         <h1 className="hero-title">¡Compartenos tu opinión!</h1>
       </div>
 
       {/* Reviews Section */}
       <div className="reviews-section">
-        {/* First Row - Two Reviews */}
-        <div className="reviews-row-first">
-          <ReviewCard review={reviews[0]} />
-          <ReviewCard review={reviews[1]} />
-        </div>
-
-        {/* Second Row - Two Reviews */}
-        <div className="reviews-row-second">
-          <div className="review-wrapper-left">
-            <ReviewCard review={reviews[2]} compact />
+        <div className="reviews-columns-container">
+          {/* Columna izquierda */}
+          <div className="reviews-column">
+            <ReviewCard review={reviews[0]} />
+            <ReviewCard review={reviews[2]} />
+            <ReviewCard review={reviews[4]} />
           </div>
-          <div className="review-wrapper-right">
-            <ReviewCard review={reviews[3]} compact />
-          </div>
-        </div>
-
-        {/* Third Row - Two Reviews */}
-        <div className="reviews-row-third">
-          <div className="review-wrapper-left">
-            <ReviewCard review={reviews[4]} compact />
-          </div>
-          <div className="review-wrapper-right">
-            <ReviewCard review={reviews[5]} compact />
+          
+          {/* Columna derecha */}
+          <div className="reviews-column">
+            <ReviewCard review={reviews[1]} />
+            <ReviewCard review={reviews[3]} />
+            <ReviewCard review={reviews[5]} />
           </div>
         </div>
 
         {/* Review Form Section */}
-        <div className="form-section">
-          <div className="home-link">
-            <img
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/c42ec600022b3fae885d2bbdd8394046eae346c4?placeholderIfAbsent=true&apiKey=b3c1de37907348cdbf57798a458478a7"
-              className="home-icon"
-              alt="Home"
-            />
-            <div className="home-text">Inicio</div>
-          </div>
-          <ReviewForm />
-        </div>
+        <ReviewForm />
       </div>
     </div>
   );

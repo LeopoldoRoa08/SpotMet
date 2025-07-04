@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './ReservaCanchas.css';
+import cancha from './Canchas.png'; 
 
 function ReservaCanchas() {
   const navigate = useNavigate();
@@ -121,7 +122,7 @@ function ReservaCanchas() {
                   alt="Fondo del espacio"
                 />
                 <img
-                  src="Canchas.png"
+                  src= {cancha}
                   className="space-main-image"
                   alt="Ciudad Deportiva"
                 />

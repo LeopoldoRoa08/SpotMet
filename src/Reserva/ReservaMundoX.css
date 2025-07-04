@@ -1,29 +1,80 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-
+/* Estilos para centrado */
 .reserva-container {
   display: flex;
-  overflow: hidden;
   flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
   background-color: #f4f4f5;
+  padding: 20px 0;
 }
 
+.main-content {
+  width: 100%;
+  max-width: 1400px;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.booking-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 2.5rem;
+}
+
+.booking-grid {
+  width: 100%;
+  max-width: 1310px;
+  display: flex;
+  gap: 1.25rem;
+}
+
+/* Estilos para el calendario funcional */
+.form-input-with-icon {
+  position: relative;
+  display: flex;
+  gap: 1.25rem;
+  justify-content: space-between;
+  padding: 0.75rem 1.25rem;
+  margin-top: 0.5rem;
+  background-color: white;
+  border-radius: 29px;
+  color: #d4d4d8;
+  align-items: center;
+}
+
+.date-input {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  cursor: pointer;
+}
+
+.input-icon {
+  object-fit: contain;
+  flex-shrink: 0;
+  aspect-ratio: 0.92;
+  width: 23px;
+  pointer-events: none;
+  position: absolute;
+  right: 15px;
+}
+
+/* Mantén todos los demás estilos exactamente iguales */
 .reservas-title {
   align-self: flex-end;
   margin-top: 1rem;
   margin-right: 6rem;
   font-size: 1.25rem;
   color: #0f172a;
-}
-
-.main-content {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding-left: 5rem;
-  padding-right: 5rem;
-  margin-top: 1rem;
-  width: 100%;
+  font-family: Poppins, -apple-system, Roboto, Helvetica, sans-serif;
 }
 
 .space-info-section {
@@ -88,12 +139,14 @@
 .space-type {
   font-size: 0.75rem;
   color: #52525b;
+  font-family: Poppins, -apple-system, Roboto, Helvetica, sans-serif;
 }
 
 .space-name {
   margin-top: 0.25rem;
   font-size: 1.5rem;
   font-weight: 600;
+  font-family: Poppins, -apple-system, Roboto, Helvetica, sans-serif;
 }
 
 .center-name {
@@ -102,18 +155,7 @@
   font-size: 3rem;
   font-weight: 900;
   transform: rotate(4.671684489127985e-19rad);
-}
-
-.booking-section {
-  align-self: flex-end;
-  margin-top: 2.5rem;
-  width: 100%;
-  max-width: 1310px;
-}
-
-.booking-grid {
-  display: flex;
-  gap: 1.25rem;
+  font-family: Poppins, -apple-system, Roboto, Helvetica, sans-serif;
 }
 
 .form-column {
@@ -138,6 +180,7 @@
   margin-left: 0.875rem;
   font-weight: 600;
   color: #0f172a;
+  font-family: Poppins, -apple-system, Roboto, Helvetica, sans-serif;
 }
 
 .form-input {
@@ -146,6 +189,9 @@
   background-color: white;
   border-radius: 29px;
   color: #d4d4d8;
+  font-family: Poppins, -apple-system, Roboto, Helvetica, sans-serif;
+  border: none;
+  outline: none;
 }
 
 .form-row {
@@ -164,24 +210,6 @@
   white-space: nowrap;
   flex-basis: 0;
   width: fit-content;
-}
-
-.form-input-with-icon {
-  display: flex;
-  gap: 1.25rem;
-  justify-content: space-between;
-  padding: 0.75rem 1.25rem;
-  margin-top: 0.5rem;
-  background-color: white;
-  border-radius: 29px;
-  color: #d4d4d8;
-}
-
-.input-icon {
-  object-fit: contain;
-  flex-shrink: 0;
-  aspect-ratio: 0.92;
-  width: 23px;
 }
 
 .input-icon-time {
@@ -210,79 +238,87 @@
   width: 100%;
   font-size: 1.25rem;
   background-color: white;
-  border-radius: 59px;
+  border-radius: 60px;
+  align-items: center;
+  justify-content: center;
 }
 
 .checkout-content {
-  display: flex;
-  flex-direction: column;
+  width: 100%;
+  font-family: Poppins, -apple-system, Roboto, Helvetica, sans-serif;
 }
 
 .checkout-row {
   display: flex;
-  gap: 2.5rem;
-}
-
-.checkout-labels {
-  display: flex;
   flex-direction: column;
-  flex: 1;
-  font-weight: 500;
-  color: black;
-}
-
-.checkout-title {
-  margin-right: 0.5rem;
-}
-
-.checkout-item {
-  align-self: flex-start;
-  margin-top: 1.25rem;
-  color: #737373;
-}
-
-.checkout-item:nth-child(3) {
+  gap: 1rem;
   margin-top: 1.5rem;
 }
 
-.checkout-total-label {
-  align-self: flex-start;
-  margin-top: 2.5rem;
-  font-weight: 700;
+.checkout-items-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
 }
 
-.checkout-values {
+.checkout-item {
   display: flex;
   flex-direction: column;
-  flex: 1;
-  align-self: flex-end;
-  margin-top: 2.75rem;
+  align-items: flex-start;
+  color: #737373;
+  font-family: Poppins, -apple-system, Roboto, Helvetica, sans-serif;
+}
+
+.checkout-item label {
+  font-size: 0.875rem;
   color: #737373;
 }
 
-.checkout-value {
-  margin-left: 0.125rem;
+.checkout-item span {
+  font-weight: 500;
+  font-size: 1rem;
+  color: #0f172a;
 }
 
-.checkout-value:nth-child(2) {
-  align-self: flex-end;
+.checkout-total {
+  border-top: 1px solid #eee;
+  padding-top: 1rem;
   margin-top: 1rem;
 }
 
-.checkout-total-value {
-  margin-top: 1.75rem;
+.checkout-total label {
   font-weight: 700;
-  color: black;
+  font-size: 1rem;
+}
+
+.checkout-total span {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.checkout-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  grid-column: span 2;
+  font-family: Poppins, -apple-system, Roboto, Helvetica, sans-serif;
+}
+
+.payment-methods-container {
+  margin-top: 2rem;
+  text-align: center;
 }
 
 .payment-methods {
-  object-fit: contain;
-  align-self: center;
-  margin-top: 0.75rem;
-  margin-left: 0.875rem;
-  max-width: 100%;
-  aspect-ratio: 1.79;
-  width: 282px;
+  max-width: 200px;
+  margin-top: 0.5rem;
+}
+
+.payment-methods-container img {
+  max-width: 200px;
+  margin-top: 0.5rem;
 }
 
 .pay-button {
@@ -298,6 +334,8 @@
   width: 268px;
   text-align: center;
   cursor: pointer;
+  font-family: Poppins, -apple-system, Roboto, Helvetica, sans-serif;
+  border: none;
 }
 
 .breadcrumb {
@@ -309,6 +347,7 @@
   font-weight: 700;
   color: black;
   white-space: nowrap;
+  cursor: pointer;
 }
 
 .breadcrumb-icon {
@@ -322,16 +361,22 @@
   margin: auto 0;
 }
 
+.error {
+  border: 1px solid #ff4444 !important;
+}
+
+.error-message {
+  color: #ff4444;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  margin-left: 0.875rem;
+}
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .header-content {
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
-  }
-
   .reservas-title {
     margin-right: 0.625rem;
+    align-self: center;
   }
 
   .main-content {
@@ -348,6 +393,7 @@
     margin-left: 0;
     width: 100%;
   }
+
   .space-image-container {
     margin-top: 2.5rem;
   }
@@ -373,6 +419,7 @@
   .booking-form {
     margin-top: 2.5rem;
   }
+
   .checkout-container {
     margin-top: 2.5rem;
   }
@@ -380,6 +427,25 @@
   .checkout-card {
     padding-left: 1.25rem;
     padding-right: 1.25rem;
+  }
+
+  .checkout-items-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .checkout-item {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .checkout-total {
+    border-top: 1px solid #eee;
+    padding-top: 0.5rem;
+    margin-top: 0.5rem;
+    width: 100%;
   }
 
   .pay-button {
@@ -390,12 +456,6 @@
   .breadcrumb {
     margin-top: 2.5rem;
     margin-left: 0.625rem;
-  }
-
-  .footer {
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
-    margin-top: 2.5rem;
   }
 
   .booking-section {

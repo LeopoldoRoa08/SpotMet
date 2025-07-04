@@ -1,9 +1,6 @@
 /* PerfilDeAdmin Component Styles */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-/* Custom styles that complement Tailwind CSS */
-.perfil-de-admin {
-  /* Any custom styles that can't be achieved with Tailwind can go here */
-}
 
 /* Ensure proper font weights for spans in footer */
 .footer-social-links .font-bold {
