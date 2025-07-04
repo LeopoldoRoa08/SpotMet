@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from 'react';
-import  './CrearEspacio.css';
+import styles from './EspaciosDisponiblesCrear.module.css';
 
 function EspaciosDisponiblesCrear() {
   return (
