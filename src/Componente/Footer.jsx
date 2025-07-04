@@ -15,7 +15,9 @@ function Footer() {
           <span className="footer-bold">Instagram</span> |{" "}
           <span className="footer-bold">Facebook</span>
         </div>
-        
+          <button className="footer-reseñas" 
+          onClick={()=> navigate("/reseñas")}
+          >VER RESEÑAS</button>
       </div>
   
   )
