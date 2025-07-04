@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./PerfilUsuario.css";
+import styles from "./PerfilUsuario.module.css"; // Cambiado a .module.css
 
 const PerfilDeUsuario = ({ onSave, onBackToDashboard, initialData = {} }) => {
   const [formData, setFormData] = useState({
@@ -21,7 +21,6 @@ const PerfilDeUsuario = ({ onSave, onBackToDashboard, initialData = {} }) => {
       [field]: value
     }));
 
-    // Clear error when user starts typing
     if (errors[field]) {
       setErrors(prev => ({
         ...prev,
@@ -131,46 +130,8 @@ const PerfilDeUsuario = ({ onSave, onBackToDashboard, initialData = {} }) => {
   );
 
   return (
-    <div className= "container">
-      {/* Header Section */}
-      <div className={styles.header}>
-        <div className={styles.headerBackground} />
-        <img
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/2fe373f9cb448b3bdec8807130077642a8a0cb6b?width=354"
-          alt="Profile"
-          className={styles.profileImage}
-        />
-
-        {/* User Icon */}
-        <svg
-          width="65"
-          height="68"
-          viewBox="0 0 65 68"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className={styles.userIcon}
-        >
-          <path
-            d="M27.0846 34.0002C24.1055 34.0002 21.5551 32.8904 19.4336 30.671C17.3121 28.4516 16.2513 25.7835 16.2513 22.6668C16.2513 19.5502 17.3121 16.8821 19.4336 14.6627C21.5551 12.4432 24.1055 11.3335 27.0846 11.3335C30.0638 11.3335 32.6142 12.4432 34.7357 14.6627C36.8572 16.8821 37.918 19.5502 37.918 22.6668C37.918 25.7835 36.8572 28.4516 34.7357 30.671C32.6142 32.8904 30.0638 34.0002 27.0846 34.0002Z"
-            fill="#030027"
-          />
-        </svg>
-
-        {/* Menu Icon */}
-        <svg
-          width="46"
-          height="53"
-          viewBox="0 0 46 53"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className={styles.menuIcon}
-        >
-          <path
-            d="M5.75 39.75V35.3333H40.25V39.75H5.75ZM5.75 28.7083V24.2917H40.25V28.7083H5.75ZM5.75 17.6667V13.25H40.25V17.6667H5.75Z"
-            fill="#EE5D08"
-          />
-        </svg>
-      </div>
+    <div className={styles.container}>
+      
 
       {/* Main Content */}
       <div className={styles.mainContent}>
@@ -307,24 +268,7 @@ const PerfilDeUsuario = ({ onSave, onBackToDashboard, initialData = {} }) => {
         </div>
       </div>
 
-      {/* Footer */}
-      <footer className={styles.footer}>
-        <svg
-          width="1500"
-          height="209"
-          viewBox="0 0 1500 209"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className={styles.footerBackground}
-        >
-          <path d="M0 0H1500V209H0V0Z" fill="#030027" />
-        </svg>
-        <div className={styles.footerText}>
-          Copyright © 2025 - Spotmet | Síguenos:
-          <span className={styles.footerBold}> Instagram</span> |
-          <span className={styles.footerBold}> Facebook</span>
-        </div>
-      </footer>
+      
     </div>
   );
 };

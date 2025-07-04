@@ -32,13 +32,7 @@ import EspaciosDisponiblesAdministrador from "./EspacioAdministrador/EspacioDisp
 import Dashboard from "./TablerodelADMIN/DashBoard";
 import ReportesAdministrador from "./ReportesAdministrador/ReportesAdministrador";
 import PerfilUsuario from "./PerfilUsuario/PerfilUsuario";
-import CrearEspacio from "./CrearEspacio/CrearEspacio";
-
-
-
-
-
-
+import CrearEspacio from "./CrearEspacio/EspaciosDisponiblesCrear";
 
 const root = document.getElementById("root");
 //Cambiamos algo de prueba
