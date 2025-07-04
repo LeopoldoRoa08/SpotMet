@@ -121,25 +121,15 @@ const EditarPerfilDeUsuario = () => {
             
             {/* Menu and Vector Icons */}
             <div className="menu-2">
-              <svg
-                fill="none"
-                height="24"
-                viewBox="0 0 24 24"
-                width="24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
+              
                 <path
                   d="M3 18V16H21V18H3ZM3 13V11H21V13H3ZM3 8V6H21V8H3Z"
                   fill="#EE5D08"
                 />
-              </svg>
+            
             </div>
             <div className="vector-wrapper">
-              <img
-                className="vector-2"
-                alt="Vector"
-                src="https://c.animaapp.com/6Q6bSWum/img/vector-2.svg"
-              />
+             
             </div>
           </div>
 

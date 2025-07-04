@@ -1,451 +1,745 @@
-/* Dashboard Styles */
-.dashboard-container {
-  position: relative;
-  width: 100%;
-  min-height: 100vh;
+.dashboard {
   background-color: #f5f5f5;
-  padding: 0 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
 }
 
-/* Header Styles */
-.dashboard-header {
+.dashboard .div {
+  background-color: #f5f5f5;
+  height: 1410px;
+  position: relative;
+  width: 1500px;
+}
+
+.dashboard .overlap {
+  height: 172px;
+  left: 0;
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
-  background-color: #f5f5f5;
-  height: 166px;
+  width: 1500px;
 }
 
-.profile-image {
+.dashboard .menu {
+  height: 53px !important;
+  left: 1319px !important;
+  position: absolute !important;
+  top: 64px !important;
+  width: 46px !important;
+}
+
+.dashboard .image {
+  height: 166px;
+  left: 119px;
+  object-fit: cover;
   position: absolute;
-  border-radius: 50%;
-  height: 177px;
-  left: 133px;
-  top: -5px;
+  top: 0;
   width: 177px;
 }
 
-.user-icon-wrapper {
-  position: absolute;
-  left: 1253px;
-  top: 49px;
-}
-
-.user-icon {
-  width: 65px;
+.dashboard .frame {
   height: 68px;
-}
-
-.menu-icon-wrapper {
+  left: 1233px;
   position: absolute;
-  left: 1339px;
-  top: 56px;
+  top: 54px;
+  width: 65px;
 }
 
-.menu-icon {
-  width: 46px;
-  height: 53px;
-}
-
-/* Dashboard Title */
-.dashboard-title {
+.dashboard .rectangle {
+  background-color: #f5f5f5;
+  box-shadow: 0px 4px 10px #00000026;
+  height: 166px;
+  left: 0;
   position: absolute;
-  font-size: 2.25rem;
-  left: 100px;
-  color: #0f172a;
-  top: 226px;
-  font-family: 'Roboto', sans-serif;
+  top: 0;
+  width: 1500px;
+}
+
+.dashboard .img {
+  height: 172px;
+  left: 133px;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  width: 177px;
+}
+
+.dashboard .menu-2 {
+  height: 53px !important;
+  left: 1339px !important;
+  position: absolute !important;
+  top: 56px !important;
+  width: 46px !important;
+}
+
+.dashboard .vector-wrapper {
+  height: 68px;
+  left: 1253px;
+  position: absolute;
+  top: 49px;
+  width: 65px;
+}
+
+.dashboard .vector {
+  height: 48px;
+  left: 5px;
+  position: absolute;
+  top: 11px;
+  width: 54px;
+}
+
+.dashboard .overlap-group {
+  background-image: url(https://c.animaapp.com/ABslCAp5/img/rectangle-67.svg);
+  background-size: 100% 100%;
+  height: 202px;
+  left: 0;
+  position: absolute;
+  top: 1208px;
+  width: 1500px;
+}
+
+.dashboard .copyright {
+  color: #ffffff;
+  font-family: "Inter", Helvetica;
+  font-size: 20px;
   font-weight: 400;
-}
-
-/* Action Buttons */
-.action-buttons {
-  display: flex;
+  left: 377px;
+  letter-spacing: 0;
+  line-height: normal;
   position: absolute;
-  gap: 24px;
-  right: 120px;
-  top: 274px;
-}
-
-.action-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 6px;
-  height: 29px;
-  width: 111px;
-  border: none;
-  cursor: pointer;
-  font-family: 'Roboto', sans-serif;
-}
-
-.action-button span {
-  font-size: 0.875rem;
   text-align: center;
-  color: white;
+  top: 97px;
+  white-space: nowrap;
+  width: 752px;
 }
 
-.action-button-primary {
-  background-color: #ea580c;
-}
-
-.action-button-secondary {
-  background-color: #0f172a;
-}
-
-/* Stats Section */
-.stats-section {
-  display: flex;
-  position: absolute;
-  gap: 56px;
-  left: 120px;
-  top: 329px;
-}
-
-.stat-card {
-  position: relative;
-  padding: 24px;
-  background-color: white;
-  border-radius: 12px;
-  height: 158px;
-  width: 276px;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
-}
-
-.stat-title {
-  margin-bottom: 24px;
-  font-size: 1rem;
-  color: #525252;
-  font-family: 'Roboto', sans-serif;
+.dashboard .text-wrapper {
+  color: #ffffff;
+  font-family: "Inter", Helvetica;
+  font-size: 20px;
   font-weight: 400;
+  letter-spacing: 0;
 }
 
-.stat-value {
-  margin-bottom: 16px;
-  font-size: 1.875rem;
+.dashboard .span {
   font-weight: 700;
-  color: #171717;
-  font-family: 'Roboto', sans-serif;
 }
 
-.stat-percentage {
-  display: flex;
-  position: absolute;
-  bottom: 24px;
-  left: 24px;
-  gap: 8px;
-  align-items: center;
-  padding: 0 12px;
-  width: auto;
-  border-radius: 16px;
-  height: 33px;
-}
-
-.stat-arrow {
-  width: 20px;
-  height: 20px;
-}
-
-.percentage-text {
-  font-size: 1rem;
-  font-weight: 700;
-  font-family: 'Roboto', sans-serif;
-}
-
-/* Reservations Section */
-.reservations-section {
-  position: absolute;
-  padding: 48px;
-  background-color: white;
-  border-radius: 12px;
+.dashboard .overlap-2 {
+  background-color: #ffffff;
+  border-radius: 10px;
+  height: 542px;
   left: 70px;
+  position: absolute;
   top: 550px;
   width: 1359px;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
 }
 
-.reservations-title {
-  margin-bottom: 28px;
-  font-size: 1.5rem;
+.dashboard .text-wrapper-2 {
+  color: #030027;
+  font-family: "Roboto", Helvetica;
+  font-size: 26px;
   font-weight: 500;
-  color: #0f172a;
-  font-family: 'Roboto', sans-serif;
+  left: 40px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 39px;
+  white-space: nowrap;
 }
 
-.reservations-list {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.reservation-item {
-  display: flex;
-  position: relative;
-  align-items: center;
-  margin-bottom: 20px;
-  height: 79px;
-}
-
-.reservation-image {
-  margin-right: 32px;
-  width: 112px;
-  border-radius: 12px;
+.dashboard .group {
   height: 76px;
-  object-fit: cover;
-}
-
-.reservation-content {
-  flex: 1;
-}
-
-.reservation-title {
-  margin-bottom: 6px;
-  font-size: 1.5rem;
-  font-weight: 500;
-  color: #171717;
-  font-family: 'Roboto', sans-serif;
-}
-
-.reservation-category {
-  font-size: 1.25rem;
-  font-style: italic;
-  font-weight: 700;
-  color: #ea580c;
-  font-family: 'Roboto', sans-serif;
-}
-
-.reservation-price,
-.reservation-time,
-.reservation-date {
-  position: relative;
-  margin-right: 96px;
-}
-
-.reservation-date {
-  margin-right: 48px;
-}
-
-.price-icon-container,
-.time-icon-container,
-.date-icon-container {
-  position: relative;
-}
-
-.price-circle,
-.time-circle,
-.date-circle {
-  width: 50px;
-  height: 50px;
-}
-
-.price-symbol {
+  left: 50px;
   position: absolute;
-  font-size: 1.5rem;
+  top: 108px;
+  width: 1217px;
+}
+
+.dashboard .text-wrapper-3 {
+  color: #121212;
+  font-family: "Roboto", Helvetica;
+  font-size: 24px;
   font-weight: 500;
-  color: #ea580c;
-  left: 18px;
+  left: 144px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
   top: 11px;
-  font-family: 'Roboto', sans-serif;
+  white-space: nowrap;
 }
 
-.time-icon,
-.date-icon {
-  width: 25px;
-  height: 25px;
+.dashboard .text-wrapper-4 {
+  color: #121212;
+  font-family: "Roboto", Helvetica;
+  font-size: 17px;
+  font-weight: 400;
+  left: 809px;
+  letter-spacing: 0;
+  line-height: normal;
   position: absolute;
-  left: 12px;
-  top: 12px;
+  text-align: center;
+  top: 55px;
+  white-space: nowrap;
 }
 
-.date-icon {
-  width: 23px;
+.dashboard .text-wrapper-5 {
+  color: #ee5c08;
+  font-family: "Roboto", Helvetica;
+  font-size: 19px;
+  font-style: italic;
+  font-weight: 600;
+  left: 144px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 44px;
+  white-space: nowrap;
+}
+
+.dashboard .lidera {
+  height: 76px;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  width: 112px;
+}
+
+.dashboard .div-wrapper {
+  background-color: #ffe7da;
+  border-radius: 25px;
+  height: 50px;
+  left: 804px;
+  position: absolute;
+  top: 0;
+  width: 50px;
+}
+
+.dashboard .text-wrapper-6 {
+  color: #ee5c08;
+  font-family: "Roboto", Helvetica;
+  font-size: 24px;
+  font-weight: 500;
+  left: 18px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 11px;
+  white-space: nowrap;
+}
+
+.dashboard .text-wrapper-7 {
+  color: #121212;
+  font-family: "Roboto", Helvetica;
+  font-size: 17px;
+  font-weight: 400;
+  left: 948px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 55px;
+  white-space: nowrap;
+}
+
+.dashboard .text-wrapper-8 {
+  color: #121212;
+  font-family: "Roboto", Helvetica;
+  font-size: 17px;
+  font-weight: 400;
+  left: 1074px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 55px;
+  white-space: nowrap;
+}
+
+.dashboard .frame-wrapper {
+  background-color: #edebff;
+  border-radius: 25px;
+  height: 50px;
+  left: 959px;
+  position: absolute;
+  top: 0;
+  width: 50px;
+}
+
+.dashboard .frame-2 {
   height: 25px;
   left: 13px;
+  position: absolute;
+  top: 12px;
+  width: 25px;
 }
 
-.reservation-price-text,
-.reservation-time-text,
-.reservation-date-text {
+.dashboard .img-wrapper {
+  background-color: #ecebff;
+  border-radius: 25px;
+  height: 50px;
+  left: 1114px;
   position: absolute;
-  left: 50%;
-  font-size: 1.125rem;
+  top: 0;
+  width: 50px;
+}
+
+.dashboard .frame-3 {
+  height: 25px;
+  left: 14px;
+  position: absolute;
+  top: 12px;
+  width: 23px;
+}
+
+.dashboard .group-2 {
+  height: 79px;
+  left: 50px;
+  position: absolute;
+  top: 243px;
+  width: 1217px;
+}
+
+.dashboard .text-wrapper-9 {
+  color: #121212;
+  font-family: "Roboto", Helvetica;
+  font-size: 24px;
+  font-weight: 500;
+  left: 144px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 14px;
+  white-space: nowrap;
+}
+
+.dashboard .text-wrapper-10 {
+  color: #121212;
+  font-family: "Roboto", Helvetica;
+  font-size: 17px;
+  font-weight: 400;
+  left: 814px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
   text-align: center;
-  transform: translateX(-50%);
-  color: #171717;
-  top: 55px;
-  font-family: 'Roboto', sans-serif;
+  top: 58px;
+  white-space: nowrap;
 }
 
-.reservation-menu {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-}
-
-.menu-dots {
-  width: 24px;
-  height: 24px;
-  transform: rotate(90deg);
-}
-
-.reservation-divider {
-  margin: 20px 0;
-  width: 100%;
-  height: 1px;
-  background-color: #e5e5e5;
-  border: none;
-}
-
-/* Footer */
-.dashboard-footer {
+.dashboard .text-wrapper-11 {
+  color: #ee5c08;
+  font-family: "Roboto", Helvetica;
+  font-size: 19px;
+  font-style: italic;
+  font-weight: 600;
+  left: 144px;
+  letter-spacing: 0;
+  line-height: normal;
   position: absolute;
-  bottom: 0;
+  top: 47px;
+  white-space: nowrap;
+}
+
+.dashboard .overlap-3 {
+  height: 79px;
   left: 0;
-  width: 100%;
-  height: 209px;
-}
-
-.footer-background {
-  width: 100%;
-  height: 100%;
-  background-color: #030027;
-}
-
-.footer-content {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  font-size: 1.25rem;
+  top: 0;
+  width: 112px;
+}
+
+.dashboard .lidera-2 {
+  height: 76px;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  top: 3px;
+  width: 112px;
+}
+
+.dashboard .image-2 {
+  height: 79px;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  width: 112px;
+}
+
+.dashboard .overlap-4 {
+  background-color: #ffe7da;
+  border-radius: 25px;
+  height: 50px;
+  left: 804px;
+  position: absolute;
+  top: 3px;
+  width: 50px;
+}
+
+.dashboard .text-wrapper-12 {
+  color: #121212;
+  font-family: "Roboto", Helvetica;
+  font-size: 17px;
+  font-weight: 400;
+  left: 949px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
   text-align: center;
-  color: white;
-  transform: translate(-50%, -50%);
-  font-family: 'Roboto', sans-serif;
+  top: 58px;
+  white-space: nowrap;
 }
 
-.footer-bold {
+.dashboard .text-wrapper-13 {
+  color: #121212;
+  font-family: "Roboto", Helvetica;
+  font-size: 17px;
+  font-weight: 400;
+  left: 1074px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 58px;
+  white-space: nowrap;
+}
+
+.dashboard .overlap-5 {
+  background-color: #edebff;
+  border-radius: 25px;
+  height: 50px;
+  left: 959px;
+  position: absolute;
+  top: 3px;
+  width: 50px;
+}
+
+.dashboard .overlap-6 {
+  background-color: #ecebff;
+  border-radius: 25px;
+  height: 50px;
+  left: 1114px;
+  position: absolute;
+  top: 3px;
+  width: 50px;
+}
+
+.dashboard .line {
+  height: 1px;
+  left: 54px;
+  object-fit: cover;
+  position: absolute;
+  top: 214px;
+  width: 1252px;
+}
+
+.dashboard .group-3 {
+  height: 76px;
+  left: 50px;
+  position: absolute;
+  top: 384px;
+  width: 1217px;
+}
+
+.dashboard .text-wrapper-14 {
+  color: #000000;
+  font-family: "Roboto", Helvetica;
+  font-size: 20px;
+  font-weight: 500;
+  left: 144px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 11px;
+  white-space: nowrap;
+}
+
+.dashboard .image-wrapper {
+  background-image: url(https://c.animaapp.com/ABslCAp5/img/lidera-6-2-2@2x.png);
+  background-position: 50% 50%;
+  background-size: cover;
+  height: 76px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 112px;
+}
+
+.dashboard .image-3 {
+  height: 76px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 112px;
+}
+
+.dashboard .text-wrapper-15 {
+  color: #121212;
+  font-family: "Roboto", Helvetica;
+  font-size: 17px;
+  font-weight: 400;
+  left: 949px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 55px;
+  white-space: nowrap;
+}
+
+.dashboard .line-2 {
+  height: 1px;
+  left: 54px;
+  object-fit: cover;
+  position: absolute;
+  top: 352px;
+  width: 1252px;
+}
+
+.dashboard .frame-4 {
+  height: 24px;
+  left: 1282px;
+  position: absolute;
+  top: 134px;
+  width: 24px;
+}
+
+.dashboard .frame-5 {
+  height: 24px;
+  left: 1282px;
+  position: absolute;
+  top: 270px;
+  width: 24px;
+}
+
+.dashboard .frame-6 {
+  height: 24px;
+  left: 1282px;
+  position: absolute;
+  top: 410px;
+  width: 24px;
+}
+
+.dashboard .text-wrapper-16 {
+  color: #030027;
+  font-family: "Hammersmith One", Helvetica;
+  font-size: 38px;
+  font-weight: 400;
+  left: 100px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 225px;
+}
+
+.dashboard .group-4 {
+  height: 158px;
+  left: 120px;
+  position: absolute;
+  top: 329px;
+  width: 1284px;
+}
+
+.dashboard .overlap-group-2 {
+  background-color: #ffffff;
+  border-radius: 10px;
+  height: 158px;
+  left: 984px;
+  position: absolute;
+  top: 0;
+  width: 276px;
+}
+
+.dashboard .overlap-7 {
+  background-color: #edf9f5;
+  border-radius: 16.5px;
+  height: 33px;
+  left: 24px;
+  position: absolute;
+  top: 109px;
+  width: 83px;
+}
+
+.dashboard .text-wrapper-17 {
+  color: #278642;
+  font-family: "Roboto", Helvetica;
+  font-size: 16px;
+  font-weight: 600;
+  left: 27px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 8px;
+  white-space: nowrap;
+}
+
+.dashboard .frame-7 {
+  height: 20px;
+  left: 7px;
+  position: absolute;
+  top: 7px;
+  width: 20px;
+}
+
+.dashboard .text-wrapper-18 {
+  color: #373737;
+  font-family: "Roboto", Helvetica;
+  font-size: 16px;
+  font-weight: 400;
+  left: 23px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 19px;
+  white-space: nowrap;
+}
+
+.dashboard .text-wrapper-19 {
+  color: #121212;
+  font-family: "Roboto", Helvetica;
+  font-size: 29px;
   font-weight: 700;
+  left: 23px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 60px;
+  white-space: nowrap;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .dashboard-container {
-    padding: 20px 0;
-  }
-
-  .profile-image {
-    left: 20px;
-    height: 120px;
-    width: 120px;
-  }
-
-  .dashboard-title {
-    left: 20px;
-    font-size: 1.875rem;
-    top: 180px;
-  }
-
-  .action-buttons {
-    right: 20px;
-    flex-direction: column;
-    gap: 10px;
-    top: 230px;
-  }
-
-  .stats-section {
-    left: 20px;
-    flex-direction: column;
-    gap: 20px;
-    top: 300px;
-  }
-
-  .stat-card {
-    width: 100%;
-  }
-
-  .reservations-section {
-    left: 20px;
-    padding: 20px;
-    top: 800px;
-    width: calc(100% - 40px);
-  }
-
-  .reservation-item {
-    flex-wrap: wrap;
-    padding: 20px 0;
-    height: auto;
-  }
-
-  .reservation-image {
-    margin-bottom: 16px;
-  }
-
-  .reservation-content {
-    margin-bottom: 16px;
-    width: 100%;
-  }
-
-  .reservation-price,
-  .reservation-time,
-  .reservation-date {
-    margin-right: 20px;
-    margin-bottom: 10px;
-  }
+.dashboard .overlap-8 {
+  background-color: #ffffff;
+  border-radius: 10px;
+  height: 158px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 276px;
 }
 
-@media (max-width: 640px) {
-  .profile-image {
-    width: 80px;
-    height: 80px;
-  }
+.dashboard .overlap-9 {
+  background-color: #edf9f5;
+  border-radius: 16.5px;
+  height: 33px;
+  left: 24px;
+  position: absolute;
+  top: 109px;
+  width: 70px;
+}
 
-  .dashboard-title {
-    font-size: 1.5rem;
-    top: 120px;
-  }
+.dashboard .overlap-10 {
+  background-color: #ffffff;
+  border-radius: 10px;
+  height: 158px;
+  left: 328px;
+  position: absolute;
+  top: 0;
+  width: 276px;
+}
 
-  .action-buttons {
-    top: 170px;
-  }
+.dashboard .overlap-11 {
+  background-color: #edf9f5;
+  border-radius: 16.5px;
+  height: 33px;
+  left: 24px;
+  position: absolute;
+  top: 109px;
+  width: 92px;
+}
 
-  .stats-section {
-    top: 220px;
-  }
+.dashboard .frame-8 {
+  height: 20px;
+  left: 7px;
+  position: absolute;
+  top: 8px;
+  width: 20px;
+}
 
-  .stat-card {
-    padding: 16px;
-  }
+.dashboard .overlap-12 {
+  background-color: #ffffff;
+  border-radius: 10px;
+  height: 158px;
+  left: 656px;
+  position: absolute;
+  top: 0;
+  width: 276px;
+}
 
-  .reservations-section {
-    padding: 16px 20px;
-    top: 600px;
-  }
+.dashboard .overlap-13 {
+  background-color: #fcf4f0;
+  border-radius: 16.5px;
+  height: 33px;
+  left: 24px;
+  position: absolute;
+  top: 109px;
+  width: 92px;
+}
 
-  .reservation-item {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+.dashboard .text-wrapper-20 {
+  color: #db4346;
+  font-family: "Roboto", Helvetica;
+  font-size: 16px;
+  font-weight: 600;
+  left: 27px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 8px;
+  white-space: nowrap;
+}
 
-  .reservation-image {
-    margin-bottom: 16px;
-    width: 100%;
-    height: 150px;
-  }
+.dashboard .overlap-14 {
+  border-radius: 6px;
+  height: 29px;
+  left: 1121px;
+  position: absolute;
+  top: 274px;
+  width: 111px;
+}
 
-  .reservation-price,
-  .reservation-time,
-  .reservation-date {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-  }
+.dashboard .rectangle-2 {
+  background-color: #ee5c08;
+  border-radius: 6px;
+  height: 29px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 111px;
+}
 
-  .reservation-price-text,
-  .reservation-time-text,
-  .reservation-date-text {
-    position: static;
-    transform: none;
-  }
+.dashboard .text-wrapper-21 {
+  color: #ffffff;
+  font-family: "Roboto", Helvetica;
+  font-size: 13px;
+  font-weight: 400;
+  left: 11px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 5px;
+  white-space: nowrap;
+  width: 89px;
+}
+
+.dashboard .overlap-15 {
+  border-radius: 6px;
+  height: 29px;
+  left: 1254px;
+  position: absolute;
+  top: 274px;
+  width: 111px;
+}
+
+.dashboard .rectangle-3 {
+  background-color: #030027;
+  border-radius: 6px;
+  height: 29px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 111px;
 }
