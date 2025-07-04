@@ -29,7 +29,11 @@ import LaboratoriosEditar from "./EditarEspacio/LaboratoriosEditar";
 import Sala24Editar from "./EditarEspacio/Sala24Editar";
 import ContactPage from "./Contactos/ContactPage";
 import EspaciosDisponiblesAdministrador from "./EspacioAdministrador/EspacioDisponible";
+<<<<<<< HEAD
 
+=======
+import PerfilUsuario from "./PerfilUsuario/PerfilUsuario";
+>>>>>>> parent of 58bceb3 (Falta corregir detalles, pero ya esta casi listo)
 
 
 
@@ -67,7 +71,12 @@ ReactDOM.createRoot(root).render(
         <Route path="/editar-laboratorio" element={<LaboratoriosEditar/>} />
         <Route path="/editar-24" element={<Sala24Editar/>} />
         <Route path="/contactos" element={<ContactPage />} />
+<<<<<<< HEAD
         <Route path="/espacioAdmin" element={<EspaciosDisponiblesAdministrador />} />
+=======
+        <Route path="/espacio-admin" element={<EspaciosDisponiblesAdministrador />} />
+        <Route path="/perfil" element={<PerfilUsuario/>} />
+>>>>>>> parent of 58bceb3 (Falta corregir detalles, pero ya esta casi listo)
 
 
 
