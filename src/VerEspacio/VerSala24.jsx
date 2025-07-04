@@ -79,14 +79,9 @@ function VerSala24() {
         <div className="backText">Inicio</div>
       </div>
 
-      <div className="footer">
-        <div className="footerText">
-          <span>Copyright © 2025 - Spotmet | Síguenos: </span>
-          <span className="bold-text">Instagram</span>
-          <span> | </span>
-          <span className="bold-text">Facebook</span>
-        </div>
-      </div>
+     
+     
+    
     </div>
   );
 }
