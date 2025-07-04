@@ -47,6 +47,7 @@ const IniciarSesion = () => {
             const user = userCredential.user;
             navigate("/")
             console.log(user);
+            localStorage.setItem("user", user.email);
         })
         .catch((error) => {
             alert("ERROR: Cuenta invalida")
@@ -72,6 +73,7 @@ const IniciarSesion = () => {
       alert('Signed in successfully with Google');
       navigate("/")
       console.log(data.user);
+      localStorage.setItem("user", data.user.email);
     } catch (error) {
       console.error('Error signing in with Google', error);
     }
