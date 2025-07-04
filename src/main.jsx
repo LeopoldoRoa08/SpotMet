@@ -29,6 +29,11 @@ import LaboratoriosEditar from "./EditarEspacio/LaboratoriosEditar";
 import Sala24Editar from "./EditarEspacio/Sala24Editar";
 import ContactPage from "./Contactos/ContactPage";
 import EspaciosDisponiblesAdministrador from "./EspacioAdministrador/EspacioDisponible";
+import Dashboard from "./TablerodelADMIN/DashBoard";
+import ReportesAdministrador from "./ReportesAdministrador/ReportesAdministrador";
+import PerfilUsuario from "./PerfilUsuario/PerfilUsuario";
+import CrearEspacio from "./CrearEspacio/CrearEspacio";
+
 
 
 
@@ -68,7 +73,11 @@ ReactDOM.createRoot(root).render(
         <Route path="/editar-24" element={<Sala24Editar/>} />
         <Route path="/contactos" element={<ContactPage />} />
         <Route path="/espacioAdmin" element={<EspaciosDisponiblesAdministrador />} />
-
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/reportes" element={<ReportesAdministrador />} />
+        <Route path="/perfil" element={<PerfilUsuario />} />
+        <Route path="/crear-espacio" element={<CrearEspacio />} />
+        
 
 
       </Routes>

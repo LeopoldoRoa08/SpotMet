@@ -45,7 +45,7 @@
   margin: 40px 0;
   font-size: 36px;
   text-align: center;
-  color: #020617;
+  color: #030027;
 }
 
 /* Contact Form Section */
@@ -53,7 +53,7 @@
   position: relative;
   padding: 64px 128px;
   margin: 0 auto;
-  background-color: #020617;
+  background-color: #030027;
   border-radius: 75px;
   width: 1089px;
 }
@@ -265,12 +265,16 @@
   border: none;
   cursor: pointer;
   padding: 0;
+  position: relative;
+  top: 270px;
 }
 
 .back-text {
   font-size: 16px;
   font-weight: bold;
   color: black;
+  position: relative;
+  top: 270px;
 }
 
 /* Social Media */
