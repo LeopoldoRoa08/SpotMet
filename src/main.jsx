@@ -14,6 +14,8 @@ import Reservalab from "./Reserva/ReservaLabs";
 import ReservaX from "./Reserva/ReservaMundoX";
 import ReservaSala24horas from "./Reserva/ReservaSala24";
 import Reservasalones from "./Reserva/ReservaSalones";
+import Admin from "./PerfilDeAdmin/PerfilDeAdmin";
+import PerfilDeAdmin from "./PerfilDeAdmin/PerfilDeAdmin";
 
 
 
@@ -37,6 +39,8 @@ ReactDOM.createRoot(root).render(
         <Route path="/salon" element={< Reservasalones/>} />
         <Route path="/reseñas" element={<Reseñas/>} />
         <Route path="/ver-espacios" element={<VerEspaciosGeneral/>} />
+        <Route path="/admin" element={<PerfilDeAdmin/>} />
+
       </Routes>
     </main>
     <Footer />

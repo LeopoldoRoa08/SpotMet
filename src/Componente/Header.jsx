@@ -10,7 +10,7 @@ function Header() {
     <div className="header-section">
       <div className="header-content">
         <div></div>
-        {/* Logo que redirige a Registro */}
+        {/* Logo que redirige a Inicio */}
         <img
           src="https://cdn.builder.io/api/v1/image/assets/0ee00be008dd423aadc13fb6ab914f24/5ad1804f5fd6181303a513808017ff63ef5aa460?placeholderIfAbsent=true"
           className="logo-main"
