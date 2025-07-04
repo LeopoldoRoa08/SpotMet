@@ -21,7 +21,6 @@ import VerCanchas from "./VerEspacio/VerCanchas";
 import VerCentroMundoX from "./VerEspacio/VerCentroMundoX";
 import VerLaboratorios from "./VerEspacio/VerLaboratorios";
 import VerSala24 from "./VerEspacio/VerSala24";
-import EspacioCrear from "./CrearEspacio/EspaciosDisponiblesCrear";
 import EditarAuditorio from "./EditarEspacio/Auditorio"
 import EditarAulas from "./EditarEspacio/Aulas"
 import EditarCanchas from "./EditarEspacio/CanchasEditar";
@@ -30,7 +29,7 @@ import LaboratoriosEditar from "./EditarEspacio/LaboratoriosEditar";
 import Sala24Editar from "./EditarEspacio/Sala24Editar";
 import ContactPage from "./Contactos/ContactPage";
 import EspaciosDisponiblesAdministrador from "./EspacioAdministrador/EspacioDisponible";
-import PerfilUsuario from "./PerfilUsuario/PerfilUsuario";
+
 
 
 
@@ -61,7 +60,6 @@ ReactDOM.createRoot(root).render(
         <Route path="/ver-laboratorio" element={<VerLaboratorios/>} />
         <Route path="/ver-sala24" element={<VerSala24/>} />
         <Route path="/ver-espacios" element={<VerEspaciosGeneral/>} />
-        <Route path="/espacio-crear" element={<EspacioCrear/>} />
         <Route path="/editar-auditorio" element={<EditarAuditorio/>} />
         <Route path="/editar-aulas" element={<EditarAulas/>} />
         <Route path="/editar-canchas" element={<EditarCanchas/>} />
@@ -69,8 +67,7 @@ ReactDOM.createRoot(root).render(
         <Route path="/editar-laboratorio" element={<LaboratoriosEditar/>} />
         <Route path="/editar-24" element={<Sala24Editar/>} />
         <Route path="/contactos" element={<ContactPage />} />
-        <Route path="/espacio-admin" element={<EspaciosDisponiblesAdministrador />} />
-        <Route path="/perfil" element={<PerfilUsuario/>} />
+        <Route path="/espacioAdmin" element={<EspaciosDisponiblesAdministrador />} />
 
 
 

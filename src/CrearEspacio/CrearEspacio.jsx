@@ -1,7 +1,8 @@
 "use client";
 import React, { useState } from 'react';
-import { useNavigate } from "react-router-dom";
-import styles from './EspaciosDisponiblesCrear.module.css';
+
+import ReactDOM from 'react-dom/client';
+import styles from './CrearEspacio.css';
 
 function EspaciosDisponiblesCrear() {
   return (
