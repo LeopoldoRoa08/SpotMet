@@ -7,7 +7,7 @@ import RegistrarUsuario from "./RegistrarUsuario/RegistrarUsuario";
 import Header from "./Componente/Header";
 import Footer from "./Componente/Footer";
 import Reseñas from "./Reseña/Reseña";
-import VerEspaciosGeneral from "./VerEspacioMenu/VerEspacio";
+import VerEspaciosGeneral from "./VerEspacioMenu/VerEspaciosGeneral";
 import Reservaauditorios from './Reserva/ReservaAuditorio';
 import ReservarCanchas from "./Reserva/ReservaCanchas";
 import Reservalab from "./Reserva/ReservaLabs";
