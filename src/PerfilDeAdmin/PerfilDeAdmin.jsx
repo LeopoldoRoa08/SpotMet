@@ -121,22 +121,6 @@ const MainContent = () => {
   );
 };
 
-const Footer = () => {
-  return (
-    <div className="flex relative flex-col px-16 py-24 mt-10 w-full text-xl text-center text-white min-h-[209px] max-md:px-5 max-md:max-w-full">
-      <img
-        src="https://cdn.builder.io/api/v1/image/assets/TEMP/2b708494abc0c92a344e20f877db113f79b8c86d?placeholderIfAbsent=true&apiKey=a6087c1025124b4ea3e5b1a71e3cc15f"
-        className="object-cover absolute inset-0 size-full"
-        alt="Footer background"
-      />
-      <div className="relative z-10">
-        Copyright © 2025 - Spotmet | Síguenos:{" "}
-        <span className="font-bold">Instagram</span> |{" "}
-        <span className="font-bold">Facebook</span>
-      </div>
-    </div>
-  );
-};
 
 const PerfilDeAdmin = () => {
   return (
