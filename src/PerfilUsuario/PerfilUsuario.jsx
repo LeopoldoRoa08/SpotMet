@@ -1,5 +1,6 @@
+"use client";
 import React, { useState } from "react";
-import "./PerfilUsuario.css";
+import styles from "./PerfilUsuario.css";
 
 const PerfilDeUsuario = ({ onSave, onBackToDashboard, initialData = {} }) => {
   const [formData, setFormData] = useState({
@@ -131,7 +132,7 @@ const PerfilDeUsuario = ({ onSave, onBackToDashboard, initialData = {} }) => {
   );
 
   return (
-    <div className= "container">
+    <div className={styles.container}>
       {/* Header Section */}
       <div className={styles.header}>
         <div className={styles.headerBackground} />
