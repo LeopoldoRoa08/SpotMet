@@ -33,7 +33,7 @@ import Dashboard from "./Tablerodeladmin/DashBoard";
 import ReportesAdministrador from "./ReportesAdministrador/ReportesAdministrador";
 import PerfilUsuario from "./PerfilUsuario/PerfilUsuario";
 import EditarPerfilDeUsuario from "./Editarperfil/EditarPerfilDeUsuario";
-import CrearEspacio from "./CrearEspacio/EspaciosDisponiblesCrear";
+import CrearEspacio from "./CrearEspacio/CrearEspacio";
 
 
 const root = document.getElementById("root");
