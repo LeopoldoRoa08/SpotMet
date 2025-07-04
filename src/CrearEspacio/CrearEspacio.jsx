@@ -1,19 +1,17 @@
 "use client";
 import React, { useState } from 'react';
-
-import ReactDOM from 'react-dom/client';
-import styles from './CrearEspacio.css';
+import  './CrearEspacio.css';
 
 function EspaciosDisponiblesCrear() {
   return (
-    <div className={styles.container}>
-      <div className={styles.header}>
+    <div className={"container"}>
+      <div className={"header"}>
         <img
           src="https://cdn.builder.io/api/v1/image/assets/TEMP/7bf96a450be474661dca0a642c458df2b0633b50?width=354"
           alt=""
-          className={styles.logoImage}
+          className={"logoImage"}
         />
-        <div className={styles.headerIcons}>
+        <div className={"headerIcons"}>
           <div>
             <div
               dangerouslySetInnerHTML={{
@@ -31,63 +29,63 @@ function EspaciosDisponiblesCrear() {
             />
           </div>
         </div>
-        <div className={styles.headerTitle}>
+        <div className={"headerTitle"}>
           Crear nuevo espacio
         </div>
       </div>
 
-      <div className={styles.mainContent}>
-        <div className={styles.sectionTitle}>
+      <div className={"mainContent"}>
+        <div className={"sectionTitle"}>
           Completa datos
         </div>
 
-        <div className={styles.imageUploadSection}>
-          <div className={styles.imageUploadContent}>
+        <div className={"imageUploadSection"}>
+          <div className={"imageUploadContent"}>
             <img
               src="https://cdn.builder.io/api/v1/image/assets/TEMP/93e78e288345c0e2b59dcba451896622584a33de?width=424"
               alt=""
-              className={styles.uploadIcon}
+              className={"uploadIcon"}
             />
-            <div className={styles.uploadText}>
+            <div className={"uploadText"}>
               Añadir imagenes
             </div>
           </div>
         </div>
 
-        <div className={styles.formSection}>
-          <div className={styles.inputField}>
-            <div className={styles.inputText}>
+        <div className={"formSection"}>
+          <div className={"inputField"}>
+            <div className={"inputText"}>
               Nombre del Espacio
             </div>
           </div>
 
-          <div className={styles.inputRow}>
-            <div className={styles.inputFieldSmall}>
-              <div className={styles.inputText}>
+          <div className={"inputRow"}>
+            <div className={"inputFieldSmall"}>
+              <div className={"inputText"}>
                 Capacidad Máxima de personas
               </div>
             </div>
-            <div className={styles.inputFieldSmall}>
-              <div className={styles.inputText}>
+            <div className={"inputFieldSmall"}>
+              <div className={"inputText"}>
                 Precio de alquiler
               </div>
             </div>
-            <div className={styles.inputFieldSmall}>
-              <div className={styles.inputText}>
-                Tipo de Espacio
+            <div className={"inputFieldSmall"}>
+              <div className={"inputText"}>
+                Tipo de espacio
               </div>
             </div>
           </div>
 
-          <div className={styles.textareaField}>
-            <div className={styles.inputText}>
+          <div className={"textareaField"}>
+            <div className={"inputText"}>
               Ingresa la Descripción del Espacio
             </div>
           </div>
 
-          <div className={styles.buttonContainer}>
-            <div className={styles.createButton}>
-              <div className={styles.buttonText}>
+          <div className={"buttonContainer"}>
+            <div className={"createButton"}>
+              <div className={"buttonText"}>
                 Crear nuevo espacio
               </div>
               <div>
@@ -102,7 +100,7 @@ function EspaciosDisponiblesCrear() {
           </div>
         </div>
 
-        <div className={styles.backLink}>
+        <div className={"backLink"}>
           <div>
             <div
               dangerouslySetInnerHTML={{
@@ -111,17 +109,17 @@ function EspaciosDisponiblesCrear() {
               }}
             />
           </div>
-          <div className={styles.backText}>
+          <div className={"backText"}>
             Dashboard
           </div>
         </div>
       </div>
 
-      <div className={styles.footer}>
-        <div className={styles.footerText}>
+      <div className={"footer"}>
+        <div className={"footerText"}>
           Copyright © 2025 - Spotmet | Síguenos:
-          <div className={styles.footerBold}>Instagram</div>|
-          <div className={styles.footerBold}>Facebook</div>
+          <div className={"footerBold"}>Instagram</div>|
+          <div className={"footerBold"}>Facebook</div>
         </div>
       </div>
     </div>
