@@ -33,6 +33,7 @@ import Dashboard from "./Tablerodeladmin/DashBoard";
 import ReportesAdministrador from "./ReportesAdministrador/ReportesAdministrador";
 import PerfilUsuario from "./PerfilUsuario/PerfilUsuario";
 import CrearEspacio from "./CrearEspacio/EspaciosDisponiblesCrear";
+import EditarPerfilDeUsuario from "./Editarperfil/EditarPerfilDeUsuario";
 
 const root = document.getElementById("root");
 //Cambiamos algo de prueba
@@ -71,6 +72,8 @@ ReactDOM.createRoot(root).render(
         <Route path="/reportes" element={<ReportesAdministrador />} />
         <Route path="/perfil" element={<PerfilUsuario />} />
         <Route path="/crear-espacio" element={<CrearEspacio />} />
+        <Route path="/editar-perfil" element={<EditarPerfilDeUsuario />} />
+        
         
 
 
