@@ -103,11 +103,7 @@ const EditarPerfilDeUsuario = () => {
             <div className="text-wrapper-10">Añadir Foto de Perfil</div>
 
             {/* Footer Section */}
-            <img
-              className="rectangle"
-              alt="Rectangle"
-              src="https://c.animaapp.com/6Q6bSWum/img/rectangle-67.svg"
-            />
+            
             <p className="copyright">
               <span className="span">
                 Copyright © 2025 - Spotmet | Síguenos:{" "}
