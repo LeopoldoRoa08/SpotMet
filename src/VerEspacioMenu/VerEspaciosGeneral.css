@@ -395,7 +395,7 @@
   line-height: normal;
   position: absolute;
   top: 170px;
-  width: 600px;
+  width: 700px;
 }
 
 .ver-espacios-general .overlap-6 {
@@ -664,4 +664,73 @@
   position: absolute;
   top: 2712px;
   width: 24px;
+}
+
+.hovered-card {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+.type-basic-wrapper input::placeholder {
+  color: var(--monochrome-35);
+  opacity: 0.7;
+}
+
+.type-basic-wrapper input {
+  font-family: var(--body-18px-medium-font-family);
+  font-size: var(--body-18px-medium-font-size);
+  font-style: var(--body-18px-medium-font-style);
+  font-weight: var(--body-18px-medium-font-weight);
+  letter-spacing: var(--body-18px-medium-letter-spacing);
+}
+
+.overlap-9, .overlap-10 {
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.overlap-9:hover, .overlap-10:hover {
+  background-color: #d5d5d5 !important;
+}
+
+/* Agrega al final del archivo CSS */
+
+/* Ajustes para las tarjetas */
+.group {
+  margin-bottom: 40px;
+}
+
+/* Mejor distribución del grid */
+.ver-espacios-general .div {
+  min-height: 100vh;
+  padding-bottom: 150px;
+}
+
+/* Ajustes para las imágenes */
+.sala, .lidera, .whatsapp-image {
+  height: 250px !important;
+  object-fit: cover !important;
+  width: 90% !important;
+  margin: 0 auto !important;
+  display: block !important;
+  border-radius: 10px !important;
+}
+
+/* Footer dinámico */
+.overlap-6 {
+  position: relative !important;
+  margin-top: 100px;
+}
+
+/* Filtros activos */
+.overlap-9.active {
+  background-color: #2A59FE !important;
+  color: white !important;
+}
+
+/* Ajuste de texto en tarjetas */
+.p {
+  height: auto !important;
+  white-space: normal !important;
+  padding: 0 10px !important;
 }
