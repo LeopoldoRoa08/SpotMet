@@ -52,11 +52,7 @@ export const Dashboard = () => {
 
             <div className="text-wrapper-5">Laboratorio</div>
 
-            <img
-              className="lidera"
-              alt="Lidera"
-              src="https://c.animaapp.com/ABslCAp5/img/lidera-6-2-2@2x.png"
-            />
+            
 
             <div className="div-wrapper">
               <div className="text-wrapper-6">$</div>

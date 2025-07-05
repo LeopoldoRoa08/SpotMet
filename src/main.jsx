@@ -33,8 +33,8 @@ import ReportesAdministrador from "./ReportesAdministrador/ReportesAdministrador
 import PerfilUsuario from "./PerfilUsuario/PerfilUsuario";
 import CrearEspacio from "./CrearEspacio/CrearEspacio";
 import ReservaAuditorio from "./Reserva/ReservaAuditorio";
-import EditarPerfilUsuario from "./Editarperfil/EditarPerfilDeUsuario"
 import EditarPerfilDeUsuario from "./Editarperfil/EditarPerfilDeUsuario";
+import PerfilDeAdmin from "./Archivo/PerfilDeAdmin";
 
 
 const root = document.getElementById("root");
@@ -76,6 +76,7 @@ ReactDOM.createRoot(root).render(
         <Route path="/crear-espacio" element={<CrearEspacio />} />
         <Route path="/editar-perfil" element={<EditarPerfilDeUsuario />} />
         <Route path="/reservaauditorio" element={<ReservaAuditorio />} />
+        <Route path="/perfil-admin" element={<PerfilDeAdmin />} />
 
 
 

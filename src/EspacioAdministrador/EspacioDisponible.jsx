@@ -113,19 +113,10 @@ function EspaciosDisponible() {
         </div>
       </div>
 
-      <div className="footer">
-        <img
-          src="https://cdn.builder.io/api/v1/image/assets/b3c1de37907348cdbf57798a458478a7/2b708494abc0c92a344e20f877db113f79b8c86d?placeholderIfAbsent=true"
-          className="footerBackground"
-          alt="Footer background"
-        />
-        <div className="footerContent">
-          Copyright © 2025 - Spotmet | Síguenos:{" "}
-          <span className="footerBold">Instagram</span> |{" "}
-          <span className="footerBold">Facebook</span>
-        </div>
+      
+       
       </div>
-    </div>
+  
   );
 }
 
