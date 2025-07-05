@@ -4,27 +4,16 @@ import "./ReportesAdministrador.css";
 function ReportesAdministrador() {
   return (
     <div className="reportes-container">
-      <div className="header-section">
+      
         <div className="header-content">
           <div className="logo-container">
-            <img
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/b5494b8735cf4c9f833af0a7b92a3e0a0864f202?placeholderIfAbsent=true&apiKey=e4b6b4895e5740b8bc142de494713b62"
-              className="logo-bg"
-            />
-            <img
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/19207533a2b7aa690b00293b62d2cb3a44e9ad71?placeholderIfAbsent=true&apiKey=e4b6b4895e5740b8bc142de494713b62"
-              className="logo-img"
-            />
-          </div>
+           
+           
+        
           <div className="nav-icons">
-            <img
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/c08a846c7cd3044d6d9167c28a3ccc660d7c48e6?placeholderIfAbsent=true&apiKey=e4b6b4895e5740b8bc142de494713b62"
-              className="nav-icon-1"
-            />
-            <img
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/5d88aab2b1b666849b92aba3f0d8946b35a76cb1?placeholderIfAbsent=true&apiKey=e4b6b4895e5740b8bc142de494713b62"
-              className="nav-icon-2"
-            />
+            
+              
+            
           </div>
         </div>
       </div>
@@ -135,18 +124,13 @@ function ReportesAdministrador() {
           <div className="dashboard-text">Dashboard</div>
         </div>
       </div>
-      <div className="footer-section">
-        <img
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/2b708494abc0c92a344e20f877db113f79b8c86d?placeholderIfAbsent=true&apiKey=e4b6b4895e5740b8bc142de494713b62"
-          className="footer-bg"
-        />
-        <div className="footer-content">
-          Copyright © 2025 - Spotmet | Síguenos:{" "}
-          <span className="footer-bold">Instagram</span> |{" "}
-          <span className="footer-bold">Facebook</span>
+      
+        
+         
+         
         </div>
-      </div>
-    </div>
+      
+    
   );
 }
 

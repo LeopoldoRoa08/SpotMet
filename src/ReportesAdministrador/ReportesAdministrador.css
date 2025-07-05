@@ -1,9 +1,10 @@
-
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 .reportes-container {
   display: flex;
   overflow: hidden;
   flex-direction: column;
   background-color: #f5f5f5;
+  font-family: Poppins, -apple-system, Roboto, Helvetica, sans-serif;
 }
 
 .header-section {
@@ -375,6 +376,8 @@
 
 .reservation-count {
   color: #737373;
+  
+
 }
 
 .reservation-count-single {
