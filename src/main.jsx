@@ -8,7 +8,6 @@ import Header from "./Componente/Header";
 import Footer from "./Componente/Footer";
 import Reseñas from "./Reseña/Reseña";
 import VerEspaciosGeneral from "./VerEspacioMenu/VerEspaciosGeneral";
-import Reservaauditorios from './Reserva/ReservaAuditorio';
 import ReservarCanchas from "./Reserva/ReservaCanchas";
 import Reservalab from "./Reserva/ReservaLabs";
 import ReservaX from "./Reserva/ReservaMundoX";
@@ -34,6 +33,7 @@ import ReportesAdministrador from "./ReportesAdministrador/ReportesAdministrador
 import PerfilUsuario from "./PerfilUsuario/PerfilUsuario";
 import EditarPerfilDeUsuario from "./Editarperfil/EditarPerfilDeUsuario";
 import CrearEspacio from "./CrearEspacio/CrearEspacio";
+import ReservaAuditorio from "./Reserva/ReservaAuditorio";
 
 
 const root = document.getElementById("root");
@@ -46,7 +46,6 @@ ReactDOM.createRoot(root).render(
         <Route path="/" element={<App />} />
         <Route path="/login" element={<IniciarSesion />} />
         <Route path="/register" element={<RegistrarUsuario />} />
-        <Route path="/auditorios" element={<Reservaauditorios/>} />
         <Route path="/reseña" element={<Reseñas/>} />
         <Route path="/canchas" element={<ReservarCanchas/>} />
         <Route path="/laboratorios" element={<Reservalab/>} />
@@ -74,8 +73,9 @@ ReactDOM.createRoot(root).render(
         <Route path="/perfil" element={<PerfilUsuario />} />
         <Route path="/crear-espacio" element={<CrearEspacio />} />
         <Route path="/editar-perfil" element={<EditarPerfilDeUsuario />} />
-        
-        
+        <Route path="/reservaauditorio" element={<ReservaAuditorio />} />
+
+
 
 
       </Routes>

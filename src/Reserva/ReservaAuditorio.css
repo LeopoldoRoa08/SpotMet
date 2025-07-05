@@ -1,596 +1,285 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
-:root {
-  --shape-corner-full: 1000px;
-}
-
 .reserva {
   background-color: #f2f2f2;
   display: flex;
-  flex-direction: row;
   justify-content: center;
   width: 100%;
+  font-family: "Roboto", Helvetica, sans-serif;
 }
 
-.reserva .div {
-  background-color: #f2f2f2;
-  height: 1309px;
-  overflow: hidden;
+.container {
   position: relative;
-  width: 1500px;
+  width: 100%;
+  max-width: 1500px;
+  overflow: hidden;
 }
 
-.reserva .overlap {
-  height: 914px;
-  left: -1px;
-  position: absolute;
-  top: 0;
-  width: 1501px;
+/* Header Styles */
+.header {
+  background-color: #f5f5f5;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+  height: 166px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 45px;
 }
 
-.reserva .text-wrapper {
-  color: #030027;
-  font-family: "Hammersmith One", Helvetica;
-  font-size: 20px;
-  font-weight: 400;
-  left: 1324px;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  top: 182px;
-}
-
-.reserva .overlap-group {
-  height: 736px;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 1501px;
-}
-
-.reserva .group {
-  background-color: #f4f4f4;
-  height: 144px;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 1500px;
-}
-
-.reserva .frame {
-  height: 47px;
-  left: 1354px;
-  position: absolute;
-  top: 48px;
-  width: 47px;
-}
-
-.reserva .image {
+.logo {
   height: 142px;
-  left: 45px;
-  object-fit: cover;
-  position: absolute;
-  top: 0;
   width: 142px;
+  object-fit: cover;
 }
 
-.reserva .menu {
-  height: 53px !important;
-  left: 1411px !important;
-  position: absolute !important;
-  top: 45px !important;
-  width: 46px !important;
+.header-icons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
-.reserva .rectangle {
-  background-color: #ffffff;
-  border-radius: 28.5px;
+.cart-icon, .menu-icon {
+  width: 47px;
   height: 47px;
-  left: 480px;
-  position: absolute;
-  top: 689px;
-  width: 316px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.reserva .img {
-  height: 25px;
-  left: 751px;
-  position: absolute;
-  top: 700px;
-  width: 25px;
+/* Main Content */
+.main-content {
+  position: relative;
+  padding: 60px 120px;
 }
 
-.reserva .rectangle-2 {
-  background-color: #ffffff;
-  border-radius: 28.5px;
-  height: 47px;
-  left: 120px;
-  position: absolute;
-  top: 580px;
-  width: 676px;
-}
-
-.reserva .text-wrapper-2 {
-  color: #d1d1d1;
-  font-family: "Roboto", Helvetica;
-  font-size: 20px;
-  font-weight: 400;
-  left: 140px;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  top: 593px;
-  white-space: nowrap;
-  width: 256px;
-}
-
-.reserva .text-wrapper-3 {
-  color: #030027;
-  font-family: "Roboto", Helvetica;
-  font-size: 20px;
-  font-weight: 600;
-  left: 493px;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  top: 666px;
-  white-space: nowrap;
-  width: 70px;
-}
-
-.reserva .p {
-  color: #d1d1d1;
-  font-family: "Roboto", Helvetica;
-  font-size: 20px;
-  font-weight: 400;
-  left: 500px;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  top: 701px;
-  white-space: nowrap;
-  width: 210px;
-}
-
-.reserva .background {
-  height: 1359px;
-  left: 550px;
+/* Background Pattern */
+.background-pattern {
   position: absolute;
   top: -324px;
+  left: 550px;
   transform: rotate(-90deg);
   width: 262px;
+  height: 1359px;
+  z-index: -1;
 }
 
-.reserva .overlap-group-2 {
+.gradient-plate {
+  background: linear-gradient(180deg, rgba(238, 93, 8, 1) 0%, rgba(240, 243, 255, 0) 100%);
   height: 1359px;
-  position: relative;
-}
-
-.reserva .plate {
-  background: linear-gradient(
-    180deg,
-    rgba(238, 93, 8, 1) 0%,
-    rgba(240, 243, 255, 0) 100%
-  );
-  height: 1359px;
-  left: 14px;
-  position: absolute;
-  top: 0;
   width: 233px;
+  position: absolute;
+  left: 14px;
 }
 
-.reserva .shared-dot-pattern {
-  height: 262px !important;
-  left: -52px !important;
-  position: absolute !important;
-  top: 137px !important;
-  transform: rotate(90deg) !important;
-  width: 365px !important;
+/* Lab Info Section */
+.lab-info {
+  display: flex;
+  margin-bottom: 60px;
 }
 
-.reserva .laboratorio {
+.lab-image {
+  width: 340px;
+  height: 262px;
+  object-fit: cover;
+  margin-right: 137px;
+}
+
+.lab-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.lab-type {
+  color: #5e5e5e;
+  font-size: 11px;
+  margin-bottom: 5px;
+}
+
+.lab-name {
   color: #030027;
-  font-family: "Roboto", Helvetica;
   font-size: 24px;
   font-weight: 600;
-  left: 573px;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  top: 300px;
+  margin-bottom: 20px;
 }
 
-.reserva .text-wrapper-4 {
-  color: #5e5e5e;
-  font-family: "Roboto", Helvetica;
-  font-size: 11px;
-  font-weight: 400;
-  left: 574px;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  top: 283px;
-  white-space: nowrap;
-}
-
-.reserva .text-wrapper-5 {
+.center-name {
   color: #030027;
-  font-family: "Roboto", Helvetica;
   font-size: 52px;
   font-weight: 900;
-  left: 573px;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  top: 365px;
-  white-space: nowrap;
 }
 
-.reserva .rectangle-3 {
-  background-color: #f5f5f5;
-  box-shadow: 0px 4px 10px #00000026;
-  height: 166px;
-  left: 1px;
-  position: absolute;
-  top: 0;
-  width: 1500px;
+/* Form Styles */
+.reservation-form {
+  margin-bottom: 60px;
 }
 
-.reserva .image-2 {
-  height: 172px;
-  left: 134px;
-  object-fit: cover;
-  position: absolute;
-  top: 0;
-  width: 177px;
+.form-group {
+  margin-bottom: 30px;
 }
 
-.reserva .menu-2 {
-  height: 53px !important;
-  left: 1340px !important;
-  position: absolute !important;
-  top: 56px !important;
-  width: 46px !important;
-}
-
-.reserva .vector-wrapper {
-  height: 47px;
-  left: 1286px;
-  position: absolute;
-  top: 59px;
-  width: 47px;
-}
-
-.reserva .vector {
-  height: 31px;
-  left: 8px;
-  position: absolute;
-  top: 8px;
-  width: 31px;
-}
-
-.reserva .text-wrapper-6 {
+.form-label {
   color: #030027;
-  font-family: "Roboto", Helvetica;
   font-size: 20px;
   font-weight: 600;
-  left: 133px;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  top: 553px;
-  white-space: nowrap;
-  width: 180px;
+  display: block;
+  margin-bottom: 10px;
 }
 
-.reserva .overlap-2 {
+.input-field {
   background-color: #ffffff;
   border-radius: 28.5px;
   height: 47px;
-  left: 120px;
-  position: absolute;
-  top: 689px;
-  width: 316px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
 }
 
-.reserva .frame-2 {
-  height: 25px;
-  left: 273px;
-  position: absolute;
-  top: 11px;
-  width: 23px;
-}
-
-.reserva .text-wrapper-7 {
+.input-field input {
+  border: none;
+  background: transparent;
+  width: 100%;
+  font-size: 20px;
   color: #d1d1d1;
-  font-family: "Roboto", Helvetica;
-  font-size: 20px;
-  font-weight: 400;
-  left: 20px;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  top: 12px;
-  white-space: nowrap;
-  width: 119px;
+  outline: none;
 }
 
-.reserva .text-wrapper-8 {
-  color: #030027;
-  font-family: "Roboto", Helvetica;
-  font-size: 20px;
-  font-weight: 600;
-  left: 133px;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  top: 666px;
-  white-space: nowrap;
-  width: 71px;
+.input-field input::placeholder {
+  color: #d1d1d1;
 }
 
-.reserva .overlap-3 {
+.input-text {
+  color: #d1d1d1;
+  font-size: 20px;
+}
+
+.form-row {
+  display: flex;
+  gap: 44px;
+}
+
+.half-width {
+  flex: 1;
+}
+
+.date-field, .time-field {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Checkout Summary */
+.checkout-summary {
   background-color: #ffffff;
   border-radius: 59px;
-  height: 389px;
-  left: 924px;
-  position: absolute;
-  top: 525px;
+  padding: 40px;
   width: 506px;
+  position: absolute;
+  right: 120px;
+  top: 525px;
 }
 
-.reserva .overlap-4 {
-  height: 158px;
-  left: 54px;
-  position: absolute;
-  top: 214px;
-  width: 398px;
+.checkout-title {
+  color: #000000;
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 40px;
 }
 
-.reserva .overlap-5 {
-  height: 158px;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 398px;
+.checkout-details {
+  margin-bottom: 30px;
 }
 
-.reserva .image-3 {
-  height: 158px;
-  left: 71px;
-  object-fit: cover;
-  position: absolute;
-  top: 0;
+.checkout-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.checkout-label {
+  color: #736f6f;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.checkout-value {
+  color: #736f6f;
+  font-size: 20px;
+}
+
+.checkout-divider {
+  height: 1px;
+  background-color: #e0e0e0;
+  margin: 20px 0;
+}
+
+.total .checkout-label,
+.total .checkout-value {
+  color: #000000;
+  font-weight: 700;
+}
+
+.payment-methods {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.payment-methods img {
   width: 282px;
-}
-
-.reserva .line {
-  height: 1px;
-  left: 0;
+  height: 158px;
   object-fit: cover;
-  position: absolute;
-  top: 16px;
-  width: 398px;
 }
 
-.reserva .line-2 {
-  height: 1px;
-  left: 4px;
-  object-fit: cover;
-  position: absolute;
-  top: 141px;
-  width: 394px;
-}
-
-.reserva .ellipse-wrapper {
-  background-color: #009cda;
-  border-radius: 10px;
-  height: 20px;
-  left: 33px;
-  position: absolute;
-  top: 70px;
-  width: 20px;
-}
-
-.reserva .ellipse {
-  background-color: #ffffff;
-  border-radius: 7px;
-  height: 14px;
-  left: 3px;
-  position: relative;
-  top: 3px;
-  width: 14px;
-}
-
-.reserva .text-wrapper-9 {
-  color: #000000;
-  font-family: "Roboto", Helvetica;
-  font-size: 20px;
-  font-weight: 500;
-  left: 66px;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  top: 40px;
-  white-space: nowrap;
-}
-
-.reserva .text-wrapper-10 {
-  color: #736f6f;
-  font-family: "Roboto", Helvetica;
-  font-size: 20px;
-  font-weight: 500;
-  left: 66px;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  top: 83px;
-  white-space: nowrap;
-  width: 95px;
-}
-
-.reserva .text-wrapper-11 {
-  color: #736f6f;
-  font-family: "Roboto", Helvetica;
-  font-size: 20px;
-  font-weight: 500;
-  left: 66px;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  top: 122px;
-  width: 95px;
-}
-
-.reserva .text-wrapper-12 {
-  color: #000000;
-  font-family: "Roboto", Helvetica;
-  font-size: 20px;
-  font-weight: 700;
-  left: 69px;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  top: 178px;
-  white-space: nowrap;
-}
-
-.reserva .text-wrapper-13 {
-  color: #736f6f;
-  font-family: "Roboto", Helvetica;
-  font-size: 20px;
-  font-weight: 400;
-  left: 357px;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  top: 84px;
-  white-space: nowrap;
-}
-
-.reserva .text-wrapper-14 {
-  color: #736f6f;
-  font-family: "Roboto", Helvetica;
-  font-size: 20px;
-  font-weight: 400;
-  left: 379px;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  top: 124px;
-  white-space: nowrap;
-}
-
-.reserva .text-wrapper-15 {
-  color: #000000;
-  font-family: "Roboto", Helvetica;
-  font-size: 20px;
-  font-weight: 700;
-  left: 355px;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  top: 175px;
-  white-space: nowrap;
-}
-
-.reserva .laboratorio-realidad {
-  height: 262px;
-  left: 96px;
-  object-fit: cover;
-  position: absolute;
-  top: 226px;
-  width: 340px;
-}
-
-.reserva .copyright-wrapper {
-  background-image: url(https://c.animaapp.com/au2TV8DS/img/rectangle-67.svg);
-  background-size: 100% 100%;
-  height: 209px;
-  left: 0;
-  position: absolute;
-  top: 1100px;
-  width: 1500px;
-}
-
-.reserva .copyright {
-  color: #ffffff;
-  font-family: "Inter", Helvetica;
-  font-size: 20px;
-  font-weight: 400;
-  left: 377px;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  text-align: center;
-  top: 97px;
-  white-space: nowrap;
-  width: 752px;
-}
-
-.reserva .span {
-  color: #ffffff;
-  font-family: "Inter", Helvetica;
-  font-size: 20px;
-  font-weight: 400;
-  letter-spacing: 0;
-}
-
-.reserva .text-wrapper-16 {
-  font-weight: 700;
-}
-
-.reserva .overlap-6 {
-  border-radius: 1000px;
-  height: 44px;
-  left: 1037px;
-  position: absolute;
-  top: 924px;
-  width: 268px;
-}
-
-.reserva .rectangle-4 {
+/* Pay Button */
+.pay-button {
   background-color: #030027;
-  border-radius: var(--shape-corner-full);
-  height: 44px;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 268px;
-}
-
-.reserva .text-wrapper-17 {
   color: #ffffff;
-  font-family: "Roboto", Helvetica;
+  border: none;
+  border-radius: 1000px;
+  width: 268px;
+  height: 44px;
   font-size: 24px;
   font-weight: 700;
-  left: 101px;
-  letter-spacing: 0;
-  line-height: normal;
+  cursor: pointer;
   position: absolute;
-  top: 7px;
-  white-space: nowrap;
-  width: 66px;
+  right: 240px;
+  top: 924px;
 }
 
-.reserva .text-wrapper-18 {
+/* Footer */
+.footer {
+  background-image: url(https://c.animaapp.com/cb2Ktmac/img/rectangle-67.svg);
+  background-size: 100% 100%;
+  height: 209px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  margin-top: 200px;
+}
+
+.home-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: absolute;
+  left: 119px;
+  top: 1008px;
+}
+
+.home-link span {
   color: #000000;
   font-family: "Inter", Helvetica;
   font-size: 16px;
   font-weight: 700;
-  height: 42px;
-  left: 149px;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  top: 1008px;
-  width: 48px;
 }
 
-.reserva .frame-3 {
-  height: 24px;
-  left: 119px;
-  position: absolute;
-  top: 1018px;
-  width: 24px;
+.copyright {
+  color: #ffffff;
+  font-family: "Inter", Helvetica;
+  font-size: 20px;
+  text-align: center;
+}
+
+.copyright strong {
+  font-weight: 700;
 }
