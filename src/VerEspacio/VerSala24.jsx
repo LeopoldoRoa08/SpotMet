@@ -58,7 +58,7 @@ function VerSala24() {
         </div>
       </div>
 
-      <div className="reserveButton">
+      <div className="reserveButton" onClick={() => navigate("/24horas")}>
         <div className="reserveButtonInner">¡Reserva Ya!</div>
       </div>
 

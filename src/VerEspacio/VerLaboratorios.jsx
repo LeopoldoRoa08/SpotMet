@@ -60,7 +60,7 @@ function VerLaboratorios() {
         </div>
       </div>
 
-      <div className="reserveButton">
+      <div className="reserveButton" onClick={() => navigate("/laboratorios")}>
         <div className="reserveButtonInner">¡Reserva Ya!</div>
       </div>
 

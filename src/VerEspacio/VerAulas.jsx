@@ -51,7 +51,7 @@ function VerAulas() {
         </div>
       </div>
 
-      <div className="reserveButton">
+      <div className="reserveButton" onClick={() => navigate("/salon")}>
         <div className="reserveButtonInner">¡Reserva Ya!</div>
       </div>
 

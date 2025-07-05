@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./VerEspaciosGeneral.css";
 
 // Componente Arrow6
@@ -123,7 +124,36 @@ const EspacioCard = ({
   onHover,
   onClick,
   isHovered,
+  tipo
 }) => {
+  const navigate = useNavigate();
+
+  const handleCardClick = () => {
+    // Redirigir a la página correspondiente según el tipo de espacio
+    switch(tipo) {
+      case 'sala':
+        navigate('/ver-sala24');
+        break;
+      case 'auditorio':
+        navigate('/ver-auditorio');
+        break;
+      case 'salon':
+        navigate('/ver-aulas');
+        break;
+      case 'laboratorio':
+        navigate('/ver-laboratorio');
+        break;
+      case 'cancha':
+        navigate('/ver-canchas');
+        break;
+      case 'centro':
+        navigate('/ver-centrox');
+        break;
+      default:
+        break;
+    }
+  };
+
   return (
     <div
       className={`group ${isHovered ? "hovered-card" : ""}`}
@@ -141,7 +171,7 @@ const EspacioCard = ({
       <div className="overlap-group">
         <div className="rectangle" />
         <div className="rectangle-2" />
-        <div className="card-go-to-info">
+        <div className="card-go-to-info" onClick={handleCardClick}>
           <div className="text-wrapper-3">Más información</div>
           <Arrow6 className="arrow" />
         </div>
@@ -345,11 +375,10 @@ export const VerEspaciosGeneral = () => {
               }
               onClick={() => handleCardClick(espacio)}
               isHovered={hoveredCard === espacio.id}
+              tipo={espacio.tipo}
             />
           ))}
         </div>
-
-        
 
         <div className="text-wrapper-15">Inicio</div>
         <img

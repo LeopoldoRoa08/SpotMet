@@ -56,7 +56,7 @@ function VerCanchas() {
         </div>
       </div>
 
-      <div className="reserveButton">
+      <div className="reserveButton" onClick={() => navigate("/canchas")}>
         <div className="reserveButtonInner">¡Reserva Ya!</div>
       </div>
 
