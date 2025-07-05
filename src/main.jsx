@@ -32,7 +32,7 @@ import EspaciosDisponiblesAdministrador from "./EspacioAdministrador/EspacioDisp
 import Dashboard from "./Tablerodeladmin/DashBoard";
 import ReportesAdministrador from "./ReportesAdministrador/ReportesAdministrador";
 import PerfilUsuario from "./PerfilUsuario/PerfilUsuario";
-import EditarPerfilDeUsuarioContainer from "./Editarperfil/EditarPerfilDeUsuarioContainer";
+import EditarPerfilDeUsuario from "./Editarperfil/EditarPerfilDeUsuario";
 import CrearEspacio from "./CrearEspacio/CrearEspacio";
 
 
@@ -73,7 +73,7 @@ ReactDOM.createRoot(root).render(
         <Route path="/reportes" element={<ReportesAdministrador />} />
         <Route path="/perfil" element={<PerfilUsuario />} />
         <Route path="/crear-espacio" element={<CrearEspacio />} />
-        <Route path="/editar-perfil" element={<EditarPerfilDeUsuarioContainer />} />
+        <Route path="/editar-perfil" element={<EditarPerfilDeUsuario />} />
         
         
 
