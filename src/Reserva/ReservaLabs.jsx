@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+// ReservaLaboratorio.jsx
+import React, { useState, useEffect } from 'react'; 
 import { useNavigate } from 'react-router-dom';
-import './ReservaLabs.css';
-import lab from "./Laboratorio-copia-1024x682.png" 
+import './ReservaAuditorio.css'; 
+import lab from "./Laboratorio-copia-1024x682.png";
 
-function ReservaLabs() {
+function ReservaLaboratorio() {
   const navigate = useNavigate();
   
-  // Estado para los datos del formulario
   const [formData, setFormData] = useState({
     eventName: '',
     date: '',
@@ -14,11 +14,27 @@ function ReservaLabs() {
     endTime: '14:00'
   });
 
-  // Estado para errores de validación
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // Manejar cambios en los inputs
+  useEffect(() => {
+    const dateContainers = document.querySelectorAll('.form-input-with-icon');
+    dateContainers.forEach(container => {
+      container.addEventListener('click', (e) => {
+        if (e.target.className.includes('input-icon')) {
+          const dateInput = container.querySelector('.date-input');
+          if (dateInput) dateInput.showPicker();
+        }
+      });
+    });
+
+    return () => {
+      dateContainers.forEach(container => {
+        container.removeEventListener('click', () => {});
+      });
+    };
+  }, []);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({
@@ -26,7 +42,6 @@ function ReservaLabs() {
       [name]: value
     }));
     
-    // Limpiar error si el usuario está escribiendo
     if (errors[name]) {
       setErrors(prev => ({
         ...prev,
@@ -35,7 +50,6 @@ function ReservaLabs() {
     }
   };
 
-  // Validar el formulario
   const validateForm = () => {
     const newErrors = {};
     
@@ -65,7 +79,6 @@ function ReservaLabs() {
     return Object.keys(newErrors).length === 0;
   };
 
-  // Manejar el envío del formulario
   const handleSubmit = async (e) => {
     e.preventDefault();
     
@@ -74,10 +87,7 @@ function ReservaLabs() {
     setIsSubmitting(true);
     
     try {
-      // Simular llamada a API
       await new Promise(resolve => setTimeout(resolve, 1500));
-      
-      // Mostrar confirmación y redirigir
       alert('¡Reserva realizada con éxito!');
       navigate('/confirmacion');
     } catch (error) {
@@ -88,14 +98,12 @@ function ReservaLabs() {
     }
   };
 
-  // Formatear fecha para mostrar
   const formatDate = (dateString) => {
-    if (!dateString) return 'Seleccione fecha';
+    if (!dateString) return 'dd/mm/aaaa';
     const date = new Date(dateString);
     return date.toLocaleDateString('es-ES');
   };
 
-  // Formatear hora para mostrar
   const formatTime = (timeString) => {
     if (!timeString) return 'Seleccione hora';
     const [hours, minutes] = timeString.split(':');
@@ -105,13 +113,9 @@ function ReservaLabs() {
 
   return (
     <div className="reserva-container">
+      <div className="reservas-title">Reservas</div>
 
-      {/* Título */}
-      <div className="reservas-title" style={{ alignSelf: 'center', marginRight: 0 }} >Reservas</div>
-
-      {/* Contenido principal */}
       <div className="main-content">
-        {/* Sección de información del espacio */}
         <div className="space-info-section">
           <div className="space-info-grid">
             <div className="space-image-column">
@@ -124,7 +128,7 @@ function ReservaLabs() {
                 <img
                   src= {lab}
                   className="space-main-image"
-                  alt="Laboratorio de Química"
+                  alt="Laboratorio Experimental del Metaverso"
                 />
               </div>
             </div>
@@ -132,19 +136,17 @@ function ReservaLabs() {
               <div className="space-details">
                 <div className="space-type">Tipo de espacio: Laboratorio</div>
                 <div className="space-name">
-                  Laboratorio de Quimica
+                  Laboratorio
                   <br />
                 </div>
-                <div className="center-name">Laboratorio de Química</div>
+                <div className="center-name">Laboratorio de Quimica</div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Sección de reserva */}
         <div className="booking-section">
           <form onSubmit={handleSubmit} className="booking-grid">
-            {/* Columna del formulario */}
             <div className="form-column">
               <div className="booking-form">
                 <div className="form-group">
@@ -231,29 +233,38 @@ function ReservaLabs() {
               </div>
             </div>
 
-            {/* Columna de checkout */}
             <div className="checkout-column">
               <div className="checkout-container">
                 <div className="checkout-card">
                   <div className="checkout-content">
+                    <h3 className="checkout-title">Checkout</h3>
+                    
                     <div className="checkout-row">
-                      <div className="checkout-labels">
-                        <div className="checkout-title">Checkout</div>
-                        <div className="checkout-item">Subtotal</div>
-                        <div className="checkout-item">Impuestos</div>
-                        <div className="checkout-total-label">Total</div>
-                      </div>
-                      <div className="checkout-values">
-                        <div className="checkout-value">$120.00</div>
-                        <div className="checkout-value">$5.00</div>
-                        <div className="checkout-total-value">$125.00</div>
+                      <div className="checkout-items-row">
+                        <div className="checkout-item">
+                          <label>Subtotal</label>
+                          <span>$120.00</span>
+                        </div>
+                        
+                        <div className="checkout-item">
+                          <label>Impuestos</label>
+                          <span>$5.00</span>
+                        </div>
+                        
+                        <div className="checkout-item checkout-total">
+                          <label>Total</label>
+                          <span>$125.00</span>
+                        </div>
                       </div>
                     </div>
-                    <img
-                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/15e6cf2524259e92b18ba9a88c89e5e5d9e12908?placeholderIfAbsent=true&apiKey=b3c1de37907348cdbf57798a458478a7"
-                      className="payment-methods"
-                      alt="Métodos de pago"
-                    />
+                    
+                    <div className="payment-methods-container">
+                      <img
+                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/15e6cf2524259e92b18ba9a88c89e5e5d9e12908?placeholderIfAbsent=true&apiKey=b3c1de37907348cdbf57798a458478a7"
+                        className="payment-methods"
+                        alt="PayPal"
+                      />
+                    </div>
                   </div>
                 </div>
                 <button
@@ -268,7 +279,6 @@ function ReservaLabs() {
           </form>
         </div>
 
-        {/* Breadcrumb */}
         <div className="breadcrumb" onClick={() => navigate('/')}>
           <img
             src="https://cdn.builder.io/api/v1/image/assets/TEMP/c42ec600022b3fae885d2bbdd8394046eae346c4?placeholderIfAbsent=true&apiKey=b3c1de37907348cdbf57798a458478a7"
@@ -282,4 +292,4 @@ function ReservaLabs() {
   );
 }
 
-export default ReservaLabs;
+export default ReservaLaboratorio;
