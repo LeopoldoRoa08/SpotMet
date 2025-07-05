@@ -11,31 +11,10 @@ export const  ReservaAuditorio = () => {
 
           <div className="overlap-group">
             <div className="group">
-              <img
-                className="frame"
-                alt="Frame"
-                src="https://c.animaapp.com/cb2Ktmac/img/frame.svg"
-              />
+              
+           
 
-              <img
-                className="image"
-                alt="Image"
-                src="https://c.animaapp.com/cb2Ktmac/img/image-1@2x.png"
-              />
-
-              <svg
-                className="menu"
-                fill="none"
-                height="24"
-                viewBox="0 0 24 24"
-                width="24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M3 18V16H21V18H3ZM3 13V11H21V13H3ZM3 8V6H21V8H3Z"
-                  fill="#EE5D08"
-                />
-              </svg>
+           
             </div>
 
             <div className="rectangle" />
@@ -113,11 +92,7 @@ export const  ReservaAuditorio = () => {
 
             <div className="rectangle-3" />
 
-            <img
-              className="image-2"
-              alt="Image"
-              src="https://c.animaapp.com/cb2Ktmac/img/image-7@2x.png"
-            />
+          
 
             <svg
               className="menu-2"
@@ -127,17 +102,10 @@ export const  ReservaAuditorio = () => {
               width="24"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <path
-                d="M3 18V16H21V18H3ZM3 13V11H21V13H3ZM3 8V6H21V8H3Z"
-                fill="#EE5D08"
-              />
+           
             </svg>
             <div className="vector-wrapper">
-              <img
-                className="vector"
-                alt="Vector"
-                src="https://c.animaapp.com/cb2Ktmac/img/vector.svg"
-              />
+             
             </div>
           </div>
 
@@ -204,19 +172,7 @@ export const  ReservaAuditorio = () => {
           />
         </div>
 
-        <div className="copyright-wrapper">
-          <p className="copyright">
-            <span className="span">
-              Copyright © 2025 - Spotmet | Síguenos:{" "}
-            </span>
-
-            <span className="text-wrapper-16">Instagram</span>
-
-            <span className="span"> | </span>
-
-            <span className="text-wrapper-16">Facebook</span>
-          </p>
-        </div>
+      
 
         <div className="overlap-6">
           <div className="rectangle-4" />
