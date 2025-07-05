@@ -31,9 +31,10 @@ import EspaciosDisponiblesAdministrador from "./EspacioAdministrador/EspacioDisp
 import Dashboard from "./TablerodelADMIN/DashBoard";
 import ReportesAdministrador from "./ReportesAdministrador/ReportesAdministrador";
 import PerfilUsuario from "./PerfilUsuario/PerfilUsuario";
-import EditarPerfilDeUsuario from "./Editarperfil/EditarPerfilDeUsuario";
 import CrearEspacio from "./CrearEspacio/CrearEspacio";
 import ReservaAuditorio from "./Reserva/ReservaAuditorio";
+import EditarPerfilUsuario from "./Editarperfil/EditarPerfilDeUsuario"
+import EditarPerfilDeUsuario from "./Editarperfil/EditarPerfilDeUsuario";
 
 
 const root = document.getElementById("root");

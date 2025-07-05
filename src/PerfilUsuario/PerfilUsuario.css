@@ -33,7 +33,7 @@
 .userIcon {
   position: absolute;
   right: 187px;
-  top: 49px;
+  top: 30px;
   width: 65px;
   height: 68px;
 }
@@ -88,7 +88,7 @@
 
 .input {
   box-sizing: border-box;
-  padding: 0 20px;
+  padding: 0 12px;
   width: 100%;
   font-size: 1.25rem;
   background-color: white;
@@ -105,7 +105,7 @@
 
 .passwordToggle {
   position: absolute;
-  right: 18px;
+  right: 12px;
   top: 50%;
   transform: translateY(-50%);
   cursor: pointer;

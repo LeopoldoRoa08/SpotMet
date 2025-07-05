@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./PerfilUsuario.css"; 
+import "./PerfilUsuario.css";
 
 const PerfilDeUsuario = ({ onSave, onBackToDashboard, initialData = {} }) => {
   const [formData, setFormData] = useState({
@@ -91,7 +91,7 @@ const PerfilDeUsuario = ({ onSave, onBackToDashboard, initialData = {} }) => {
       viewBox="0 0 27 20"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={styles.passwordToggle}
+      className="passwordToggle"
       onClick={onClick}
     >
       {isVisible ? (
@@ -109,37 +109,35 @@ const PerfilDeUsuario = ({ onSave, onBackToDashboard, initialData = {} }) => {
   );
 
   const FormField = ({ label, type, placeholder, value, onChange, error, showToggle, onToggle, isVisible }) => (
-    <div className={styles.formField}>
-      <div className={styles.fieldLabel}>
+    <div className="formField">
+      <div className="fieldLabel">
         {label}
       </div>
-      <div className={styles.inputWrapper}>
+      <div className="inputWrapper">
         <input
           type={showToggle ? (isVisible ? "text" : "password") : type}
           placeholder={placeholder}
           value={value}
           onChange={(e) => onChange(e.target.value)}
-          className={`${styles.input} ${error ? styles.inputError : ""}`}
+          className={`input ${error ? "inputError" : ""}`}
         />
         {showToggle && (
           <EyeIcon isVisible={isVisible} onClick={onToggle} />
         )}
       </div>
-      {error && <div className={styles.errorMessage}>{error}</div>}
+      {error && <div className="errorMessage">{error}</div>}
     </div>
   );
 
   return (
-    <div className={styles.container}>
-      
-
+    <div className="container">
       {/* Main Content */}
-      <div className={styles.mainContent}>
-        <h1 className={styles.title}>Editar Perfil</h1>
+      <div className="mainContent">
+        <h1 className="title">Editar Perfil</h1>
 
-        <form className={styles.formContainer} onSubmit={(e) => e.preventDefault()}>
+        <form className="formContainer" onSubmit={(e) => e.preventDefault()}>
           {/* First Row */}
-          <div className={styles.formRow}>
+          <div className="formRow">
             <FormField
               label="Nombre:"
               type="text"
@@ -161,7 +159,7 @@ const PerfilDeUsuario = ({ onSave, onBackToDashboard, initialData = {} }) => {
           </div>
 
           {/* Second Row */}
-          <div className={styles.formRow}>
+          <div className="formRow">
             <FormField
               label="Apellido:"
               type="text"
@@ -183,7 +181,7 @@ const PerfilDeUsuario = ({ onSave, onBackToDashboard, initialData = {} }) => {
           </div>
 
           {/* Third Row */}
-          <div className={styles.formRow}>
+          <div className="formRow">
             <FormField
               label="Carrera:"
               type="text"
@@ -204,71 +202,69 @@ const PerfilDeUsuario = ({ onSave, onBackToDashboard, initialData = {} }) => {
         </form>
 
         {/* Save Button */}
-        <div className={styles.saveButtonContainer}>
+        <div className="saveButtonContainer">
           <button
-            className={styles.saveButton}
+            className="saveButton"
             onClick={handleSave}
             type="button"
           >
-            <span className={styles.saveButtonText}>Guardar</span>
+            <span className="saveButtonText">Guardar</span>
           </button>
         </div>
 
         {/* Back Button */}
-        <div className={styles.backButton} onClick={handleBackToDashboard}>
+        <div className="backButton" onClick={handleBackToDashboard}>
           <svg
             width="24"
             height="24"
             viewBox="0 0 24 24"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            className={styles.backArrow}
+            className="backArrow"
           >
             <path
               d="M7.825 11L20 11V13L7.825 13L13.425 18.6L12 20L4 12L12 4L13.425 5.4L7.825 11Z"
               fill="#EA3323"
             />
           </svg>
-          <span className={styles.backText}>Dashboard</span>
+          <span className="backText">Dashboard</span>
         </div>
       </div>
 
       {/* Side Panel */}
-      <div className={styles.sidePanel}>
-        <div className={styles.sidePanelPlate} />
-        <div className={styles.dotPattern}>
-          <div className={styles.dotGrid}>
-            <div className={styles.dotColumn} />
-            <div className={styles.dotColumn}>
+      <div className="sidePanel">
+        <div className="sidePanelPlate" />
+        <div className="dotPattern">
+          <div className="dotGrid">
+            <div className="dotColumn" />
+            <div className="dotColumn">
               <img
                 src="https://cdn.builder.io/api/v1/image/assets/TEMP/f2e005deee054c04d0983f882eb92e7d6ab85d3b?width=808"
                 alt="Pattern"
-                className={styles.patternImage}
+                className="patternImage"
               />
             </div>
-            <div className={styles.dotColumn} />
+            <div className="dotColumn" />
           </div>
         </div>
 
-        <div className={styles.profileSection}>
+        <div className="profileSection">
           <svg
             width="213"
             height="213"
             viewBox="0 0 213 213"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            className={styles.profileCircleBg}
+            className="profileCircleBg"
           >
             <circle cx="106.5" cy="106.5" r="106.5" fill="white" />
           </svg>
-          <div className={styles.profileImageCircle} />
-          <p className={styles.profileImageLabel}>
+          <div className="profileImageCircle" />
+          <p className="profileImageLabel">
             Añadir Foto de Perfil
           </p>
         </div>
       </div>
-
-      
     </div>
   );
 };

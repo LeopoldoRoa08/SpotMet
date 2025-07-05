@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Hammersmith+One:400|Roboto:400,700,600|Inter:400,700");
+
 .container {
   display: flex;
   overflow: hidden;
@@ -60,6 +62,7 @@
   font-size: 20px;
   line-height: 1.2;
   color: #0f172a;
+  font-family: Poppins, -apple-system, Roboto, Helvetica, sans-serif;
 }
 
 .mainContent {
@@ -89,6 +92,7 @@
 .createButtonText {
   flex-grow: 1;
   margin: auto 0;
+  font-family: Poppins, -apple-system, Roboto, Helvetica, sans-serif;
 }
 
 .createButtonIcon {
@@ -155,7 +159,7 @@
   flex-direction: column;
   padding: 80px 32px 24px;
   width: 100%;
-  border-radius: 24px;
+  border-radius: 32px;
   background-color: rgba(0, 0, 0, 0.8);
 }
 
@@ -165,6 +169,7 @@
   line-height: 1.2;
   font-weight: 600;
   color: #ea580c;
+  font-family: Poppins, -apple-system, Roboto, Helvetica, sans-serif;
 }
 
 .spaceTitle {
@@ -173,11 +178,13 @@
   font-size: 24px;
   line-height: 1.2;
   font-weight: 900;
+  font-family: Poppins, -apple-system, Roboto, Helvetica, sans-serif;
 }
 
 .spaceCapacity {
   align-self: flex-start;
   margin-top: 10px;
+  font-family: Poppins, -apple-system, Roboto, Helvetica, sans-serif;
 }
 
 .editSection {
@@ -190,6 +197,7 @@
 
 .editText {
   margin: auto 0;
+  font-family: Poppins, -apple-system, Roboto, Helvetica, sans-serif;
 }
 
 .editIcon {
@@ -221,6 +229,7 @@
 
 .dashboardText {
   margin: auto 0;
+  font-family: Poppins, -apple-system, Roboto, Helvetica, sans-serif;
 }
 
 .footer {
@@ -321,4 +330,66 @@
   .footerContent {
     max-width: 100%;
   }
+
+  .spaceCard {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  aspect-ratio: 1.47;
+}
+
+.spaceCard img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.spaceCard:hover img {
+  transform: scale(1.05);
+}
+
+.spaceCardContent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 24px 32px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  border-radius: 0 0 24px 24px;
+}
+
+.spaceCard:hover .spaceCardContent {
+  transform: translateY(0);
+}
+
+.spaceCardCategory {
+  font-size: 12px;
+  font-weight: 600;
+  color: #ea580c;
+  margin-bottom: 6px;
+}
+
+.spaceCardTitle {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.spaceCardCapacity {
+  font-size: 14px;
+}
+
+/* Ajustes para el espacio destacado existente */
+.featuredSpace .featuredSpaceContent {
+  transition: all 0.3s ease;
+}
+
+.featuredSpace:hover .featuredSpaceContent {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
 }

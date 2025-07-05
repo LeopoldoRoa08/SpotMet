@@ -1,444 +1,475 @@
-/* EditSpacePage.module.css */
-
-.container {
-  position: relative;
-  width: 100%;
-  min-height: 100vh;
+/* Main Container */
+.main-container {
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
   background-color: #f5f5f5;
 }
 
+/* Header Styles */
 .header {
   display: flex;
-  position: relative;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  padding: 0 8rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
   width: 100%;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
   background-color: #f5f5f5;
-  height: 166px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
 }
 
-.logo {
-  position: absolute;
-  aspect-ratio: 1/1;
-  height: 177px;
-  left: 133px;
-  top: -5px;
+.header-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1266px;
+}
+
+.logo-container {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 0.875rem;
+  padding-right: 0.875rem;
+  aspect-ratio: 1.066;
   width: 177px;
 }
 
-.navigationIcons {
+.logo-background {
+  object-fit: cover;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.logo-image {
+  object-fit: contain;
+  z-index: 10;
+  width: 100%;
+  aspect-ratio: 1.03;
+}
+
+.nav-icons {
   display: flex;
-  position: absolute;
   gap: 1.25rem;
-  align-items: center;
-  right: 133px;
-  top: 49px;
+  margin: auto 0;
 }
 
-.userIcon {
+.nav-icon-1 {
+  object-fit: contain;
+  flex-shrink: 0;
+  aspect-ratio: 0.96;
   width: 65px;
-  height: 68px;
 }
 
-.menuIcon {
+.nav-icon-2 {
+  object-fit: contain;
+  flex-shrink: 0;
+  margin: auto 0;
+  aspect-ratio: 0.87;
   width: 46px;
-  height: 53px;
 }
 
-.editTitle {
-  position: absolute;
-  height: 25px;
-  right: 81px;
-  top: 200px;
-  width: 132px;
+/* Page Title */
+.page-title {
+  align-self: flex-end;
+  margin-top: 1.5rem;
+  margin-right: 5rem;
   font-size: 1.25rem;
   text-align: right;
-  color: #0f172a;
+  color: #020617;
 }
 
-.photosSection {
-  position: absolute;
-  left: 90px;
-  top: 243px;
-  width: 1331px;
+/* Photo Section */
+.photo-section {
+  display: flex;
+  flex-direction: column;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  margin-top: 1.75rem;
+  width: 100%;
 }
 
-.photosSectionTitle {
-  margin-bottom: 2.5rem;
+.photo-section-title {
+  align-self: flex-start;
+  margin-left: 0.75rem;
   font-size: 1rem;
   font-weight: 600;
   color: #737373;
 }
 
-.photosGrid {
+.photo-gallery {
   display: flex;
-  gap: 1.5rem;
-  align-items: flex-start;
+  gap: 1.25rem;
 }
 
-.photoItem {
+.photo-column {
+  width: 33.333333%;
+  margin-left: 0;
+}
+
+.photo-column:not(:first-child) {
+  margin-left: 1.25rem;
+}
+
+.photo-1 {
+  object-fit: contain;
+  flex-grow: 1;
+  margin-top: 1.5rem;
+  width: 100%;
   border-radius: 1.5rem;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
-  height: 291px;
-  width: 431px;
+  aspect-ratio: 1.48;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
 }
 
-.photoItemMedium {
-  aspect-ratio: 431/316;
-  height: 316px;
-  width: 431px;
+.photo-2 {
+  object-fit: contain;
+  flex-grow: 1;
+  width: 100%;
+  border-radius: 1.5rem;
+  aspect-ratio: 1.36;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
 }
 
-.photoEditContainer {
+.change-photo-container {
+  display: flex;
   position: relative;
-  height: 291px;
-  width: 431px;
-}
-
-.editIcon {
-  width: 47px;
-  height: 46px;
-  position: absolute;
-  left: 192px;
-  top: 105px;
-}
-
-.changeText {
-  position: absolute;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+  margin-top: 1.5rem;
   font-size: 1.875rem;
   font-weight: 700;
-  height: 38px;
-  left: 155px;
-  color: #0f172a;
-  top: 146px;
-  width: 122px;
+  white-space: nowrap;
+  border-radius: 1.5rem;
+  background-blend-mode: normal;
+  min-height: 291px;
+  color: #020617;
 }
 
-.formSection {
-  box-sizing: border-box;
+.change-photo-background {
+  object-fit: cover;
   position: absolute;
-  padding: 3.5rem 6rem;
-  background-color: white;
-  height: 785px;
-  left: 122px;
-  border-radius: 30px;
-  top: 629px;
-  width: 1257px;
+  inset: 0;
+  width: 100%;
+  height: 100%;
 }
 
-.inputField {
+.change-photo-text {
   position: relative;
-  padding: 0.625rem 1.25rem;
+}
+
+/* Form Container */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+  margin-top: 3.5rem;
+  width: 100%;
+  background-color: white;
+  max-width: 1257px;
+  border-radius: 1.875rem;
+}
+
+.form-field-full {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-right: 5rem;
+  padding-left: 1rem;
   border-radius: 0.75rem;
   background-color: #f5f5f5;
-  height: 59px;
 }
 
-.inputFieldFull {
-  width: 1089px;
-  margin-bottom: 2.25rem;
-}
-
-.inputFieldThird {
-  width: 322px;
-}
-
-.inputFieldsRow {
+.three-column-fields {
   display: flex;
+  flex-wrap: wrap;
   gap: 2.5rem;
-  margin-bottom: 2.25rem;
+  margin-top: 2.25rem;
 }
 
-.inputLabel {
-  margin-bottom: 0.25rem;
+.form-field {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: flex-start;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-right: 4rem;
+  padding-left: 1.25rem;
+  border-radius: 0.75rem;
+  background-color: #f5f5f5;
+}
+
+.field-label {
   font-size: 0.75rem;
   color: #737373;
 }
 
-.inputValue {
+.field-value-large {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: black;
+}
+
+.field-value-bold {
   font-size: 1.25rem;
   font-weight: 600;
   color: black;
 }
 
-.descriptionField {
-  height: 331px;
-  margin-bottom: 3.5rem;
+.field-value-medium {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: black;
 }
 
-.descriptionText {
-  padding-top: 0.875rem;
+.description-field {
+  display: flex;
+  flex-direction: column;
+  padding-top: 0.75rem;
+  padding-right: 2.75rem;
+  padding-bottom: 13rem;
+  padding-left: 1rem;
+  margin-top: 2.25rem;
+  border-radius: 0.75rem;
+  background-color: #f5f5f5;
+}
+
+.description-text {
+  margin-top: 0.625rem;
+  margin-bottom: -2.5rem;
   font-size: 1.25rem;
   color: #525252;
 }
 
-.actionButtons {
+/* Buttons */
+.save-button {
   display: flex;
-  gap: 3rem;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.saveButton {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #ea580c;
-  border-radius: 1rem;
-  cursor: pointer;
-  height: 46px;
-  width: 227px;
-}
-
-.saveButtonText {
+  align-self: center;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  padding-top: 0.875rem;
+  padding-bottom: 0.875rem;
+  margin-top: 4rem;
+  max-width: 100%;
   font-size: 1.125rem;
   font-weight: 700;
   color: white;
-}
-
-.deleteButton {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 0.5rem;
+  white-space: nowrap;
+  background-color: #ea580c;
+  border-radius: 1rem;
+  width: 227px;
   cursor: pointer;
-  background-color: #0f172a;
-  height: 33px;
-  width: 135px;
 }
 
-.deleteButtonText {
+.delete-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  margin-top: 1rem;
+  max-width: 100%;
   font-size: 1rem;
   font-weight: 600;
   color: white;
-}
-
-.backNavigation {
-  display: flex;
-  position: absolute;
-  gap: 0.375rem;
-  align-items: center;
+  white-space: nowrap;
+  border-radius: 0.5rem;
+  background-color: #020617;
+  width: 135px;
   cursor: pointer;
-  left: 90px;
-  top: 1491px;
 }
 
-.backArrow {
-  width: 24px;
-  height: 24px;
-}
-
-.backText {
+/* Dashboard Link */
+.dashboard-link {
+  display: flex;
+  gap: 0.375rem;
+  align-self: flex-start;
+  margin-top: 5rem;
+  margin-left: 0.75rem;
   font-size: 1rem;
   font-weight: 700;
   color: black;
+  white-space: nowrap;
 }
 
+.dashboard-icon {
+  object-fit: contain;
+  flex-shrink: 0;
+  width: 1.5rem;
+  aspect-ratio: 1;
+}
+
+.dashboard-text {
+  margin: auto 0;
+}
+
+/* Footer */
 .footer {
   display: flex;
-  position: absolute;
+  position: relative;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  margin-top: 5rem;
   width: 100%;
-  background-color: #0f172a;
-  height: 209px;
-  top: 1591px;
-}
-
-.footerText {
   font-size: 1.25rem;
   text-align: center;
   color: white;
+  min-height: 209px;
 }
 
-.footerBold {
-  font-weight: 700;
+.footer-background {
+  object-fit: cover;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.footer-text {
+  position: relative;
 }
 
 /* Responsive Styles */
 @media (max-width: 768px) {
   .header {
-    padding: 0 3rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
   }
 
-  .logo {
-    height: 120px;
-    left: 50px;
-    width: 120px;
+  .header-content {
+    max-width: 100%;
   }
 
-  .navigationIcons {
-    right: 50px;
+  .logo-image {
+    margin-right: -0.875rem;
   }
 
-  .editTitle {
-    right: 50px;
-    top: 180px;
+  .page-title {
+    margin-right: 0.625rem;
   }
 
-  .photosSection {
-    left: 50px;
-    width: calc(100% - 100px);
+  .photo-section {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    max-width: 100%;
   }
 
-  .photosGrid {
+  .photo-section-title {
+    margin-left: 0.625rem;
+  }
+
+  .photo-gallery {
     flex-direction: column;
-    align-items: center;
+    gap: 0;
   }
 
-  .photoItem,
-  .photoItemMedium,
-  .photoEditContainer {
-    width: 100%;
-    max-width: 400px;
-  }
-
-  .photoItem {
-    height: 250px;
-  }
-
-  .photoItemMedium {
-    height: 270px;
-  }
-
-  .formSection {
-    padding: 2.5rem 2rem;
-    left: 50px;
-    top: 900px;
-    width: calc(100% - 100px);
-  }
-
-  .inputFieldsRow {
-    flex-direction: column;
-    gap: 1.25rem;
-  }
-
-  .inputFieldThird {
+  .photo-column {
+    margin-left: 0;
     width: 100%;
   }
 
-  .backNavigation {
-    left: 50px;
-    top: 1800px;
+  .photo-1 {
+    margin-top: 2.5rem;
+    max-width: 100%;
+  }
+
+  .photo-2 {
+    margin-top: 1.5rem;
+    max-width: 100%;
+  }
+
+  .change-photo-container {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    margin-top: 2.5rem;
+    max-width: 100%;
+  }
+
+  .form-container {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    margin-top: 2.5rem;
+    max-width: 100%;
+  }
+
+  .form-field-full {
+    padding-right: 1.25rem;
+    max-width: 100%;
+  }
+
+  .three-column-fields {
+    max-width: 100%;
+  }
+
+  .form-field {
+    padding-right: 1.25rem;
+  }
+
+  .description-field {
+    padding-right: 1.25rem;
+    padding-bottom: 6rem;
+    max-width: 100%;
+  }
+
+  .description-text {
+    margin-bottom: 0.5rem;
+    max-width: 100%;
+  }
+
+  .save-button {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    margin-top: 2.5rem;
+  }
+
+  .delete-button {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .dashboard-link {
+    margin-top: 2.5rem;
+    margin-left: 0.625rem;
   }
 
   .footer {
-    top: 1900px;
-  }
-}
-
-@media (max-width: 640px) {
-  .header {
-    padding: 0 1.25rem;
-    height: 120px;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    margin-top: 2.5rem;
+    max-width: 100%;
   }
 
-  .logo {
-    top: 1.25rem;
-    left: 1.25rem;
-    width: 5rem;
-    height: 5rem;
+  .footer-text {
+    max-width: 100%;
   }
-
-  .navigationIcons {
-    right: 1.25rem;
-    top: 30px;
-  }
-
-  .editTitle {
-    right: 1.25rem;
-    top: 140px;
-    font-size: 1rem;
-  }
-
-  .photosSection {
-    left: 1.25rem;
-    top: 180px;
-    width: calc(100% - 40px);
-  }
-
-  .photosSectionTitle {
-    font-size: 0.875rem;
-  }
-
-  .changeText {
-    font-size: 1.5rem;
-    left: 120px;
-  }
-
-  .formSection {
-    left: 1.25rem;
-    padding: 2rem 1.25rem;
-    height: auto;
-    top: 700px;
-    width: calc(100% - 40px);
-  }
-
-  .inputLabel {
-    font-size: 0.75rem;
-  }
-
-  .inputValue {
-    font-size: 1rem;
-  }
-
-  .descriptionText {
-    font-size: 1rem;
-  }
-
-  .actionButtons {
-    flex-direction: column;
-    gap: 1.25rem;
-  }
-
-  .saveButton {
-    width: 100%;
-    max-width: 227px;
-  }
-
-  .deleteButton {
-    width: 100%;
-    max-width: 135px;
-  }
-
-  .backNavigation {
-    left: 1.25rem;
-    top: 1400px;
-  }
-
-  .footer {
-    height: 150px;
-    top: 1500px;
-  }
-
-  .footerText {
-    padding: 0 1.25rem;
-    font-size: 0.875rem;
-  }
-}
-
-/* Hover Effects */
-.saveButton:hover {
-  background-color: #dc2626;
-  transition: background-color 0.2s ease;
-}
-
-.deleteButton:hover {
-  background-color: #374151;
-  transition: background-color 0.2s ease;
-}
-
-.backNavigation:hover {
-  opacity: 0.8;
-  transition: opacity 0.2s ease;
-}
-
-/* Focus States for Accessibility */
-.saveButton:focus,
-.deleteButton:focus,
-.backNavigation:focus {
-  outline: 2px solid #3b82f6;
-  outline-offset: 2px;
 }
