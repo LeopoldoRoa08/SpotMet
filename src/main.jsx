@@ -49,6 +49,7 @@ ReactDOM.createRoot(root).render(
         <Route path="/reseña" element={<Reseñas/>} />
         <Route path="/canchas" element={<ReservarCanchas/>} />
         <Route path="/laboratorios" element={<Reservalab/>} />
+        <Route path="/auditorio" element={<ReservaAuditorio/>} />
         <Route path="/mundox" element={<ReservaX/>} />
         <Route path="/pago" element={<Pagocheck/>} />
         <Route path="/24horas" element={<ReservaSala24horas/>} />
