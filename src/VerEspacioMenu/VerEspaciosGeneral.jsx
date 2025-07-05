@@ -1,8 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import "./VerEspaciosGeneral.css";
 
-
-// Integrated Arrow6 component
+// Componente Arrow6
 const Arrow6 = ({ className }) => {
   return (
     <svg
@@ -25,7 +24,7 @@ const Arrow6 = ({ className }) => {
   );
 };
 
-// Integrated Search component
+// Componente Search
 const Search = ({ opacity = "0.5", className }) => {
   return (
     <svg
@@ -43,7 +42,6 @@ const Search = ({ opacity = "0.5", className }) => {
         fill="black"
         fillRule="evenodd"
       />
-
       <path
         className="path"
         clipRule="evenodd"
@@ -52,7 +50,6 @@ const Search = ({ opacity = "0.5", className }) => {
         fillOpacity="0.3"
         fillRule="evenodd"
       />
-
       <path
         className="path"
         clipRule="evenodd"
@@ -65,7 +62,7 @@ const Search = ({ opacity = "0.5", className }) => {
   );
 };
 
-// Integrated Menu2 component
+// Componente Menu2
 const Menu2 = ({ color = "#EE5D08", className }) => {
   return (
     <svg
@@ -85,305 +82,373 @@ const Menu2 = ({ color = "#EE5D08", className }) => {
   );
 };
 
-// Integrated TypeBasicWrapper component
-const TypeBasicWrapper = ({ type, className, text = "Search" }) => {
+// Componente TypeBasicWrapper
+const TypeBasicWrapper = ({ type, className, text = "Search", onSearch }) => {
+  const [searchText, setSearchText] = useState("");
+
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      onSearch(searchText);
+    }
+  };
+
   return (
     <div className={`type-basic-wrapper ${className}`}>
       <div className="frame">
         <Search className="search-1" opacity="0.5" />
-        <div className="text-wrapper">{text}</div>
+        <input
+          type="text"
+          className="text-wrapper"
+          value={searchText}
+          onChange={(e) => setSearchText(e.target.value)}
+          onKeyPress={handleKeyPress}
+          placeholder={text}
+          style={{
+            background: "transparent",
+            border: "none",
+            outline: "none",
+            width: "100%",
+          }}
+        />
       </div>
     </div>
   );
 };
 
-// Main component
+// Componente EspacioCard
+const EspacioCard = ({
+  titulo,
+  descripcion,
+  imagen,
+  onHover,
+  onClick,
+  isHovered,
+}) => {
+  return (
+    <div
+      className={`group ${isHovered ? "hovered-card" : ""}`}
+      onMouseEnter={() => onHover(true)}
+      onMouseLeave={() => onHover(false)}
+      onClick={onClick}
+      style={{
+        cursor: "pointer",
+        transform: isHovered ? "translateY(-10px)" : "translateY(0)",
+        transition: "transform 0.3s ease",
+        position: "relative",
+        marginBottom: "40px",
+      }}
+    >
+      <div className="overlap-group">
+        <div className="rectangle" />
+        <div className="rectangle-2" />
+        <div className="card-go-to-info">
+          <div className="text-wrapper-3">Más información</div>
+          <Arrow6 className="arrow" />
+        </div>
+        <p className="p">{descripcion}</p>
+        <div className="text-wrapper-4">{titulo}</div>
+        <img 
+          className="sala" 
+          alt={titulo} 
+          src={imagen} 
+          style={{ 
+            height: "250px",
+            objectFit: "cover",
+            width: "90%",
+            margin: "0 auto",
+            display: "block",
+            borderRadius: "10px"
+          }} 
+        />
+      </div>
+    </div>
+  );
+};
+
+// Componente principal
 export const VerEspaciosGeneral = () => {
+  const [hoveredCard, setHoveredCard] = useState(null);
+  const [filter, setFilter] = useState("all");
+  const [searchTerm, setSearchTerm] = useState("");
+  const [showModal, setShowModal] = useState(false);
+  const [selectedSpace, setSelectedSpace] = useState(null);
+
+  const espacios = [
+    {
+      id: 1,
+      titulo: "Sala 24 horas",
+      descripcion:
+        "Permanece abierta las 24 horas del día, y ofrece a los estudiantes la posibilidad de su uso para las actividades académicas, y realizar trabajos en grupo con mayor informalidad.",
+      imagen: "https://c.animaapp.com/vqVWvgRh/img/sala-24-3-1@2x.png",
+      tipo: "sala",
+      ubicacion: "Edificio Principal",
+    },
+    {
+      id: 2,
+      titulo: "Auditorios",
+      descripcion:
+        "Área que tiene lugar múltiples actividades destinadas al fomento y disfrute de la cultura, la ciencia, la recreación y el esparcimiento.",
+      imagen: "https://c.animaapp.com/vqVWvgRh/img/lidera-6-2-1@2x.png",
+      tipo: "auditorio",
+      ubicacion: "Edificio Central",
+    },
+    {
+      id: 3,
+      titulo: "Salones",
+      descripcion:
+        "Espacios acondicionados con mobiliario básico, superficie de proyección/escritura e iluminación adecuada, diseñado para instrucción grupal, reuniones o talleres.",
+      imagen:
+        "https://c.animaapp.com/vqVWvgRh/img/whatsapp-image-2025-05-13-at-21-58-46-1bfeff77-1-1@2x.png",
+      tipo: "salon",
+      ubicacion: "Edificio Norte",
+    },
+    {
+      id: 4,
+      titulo: "Laboratorios",
+      descripcion:
+        "Para la investigación y resultados en sus programas de pregrado y posgrado. Estos laboratorios pueden incluir áreas como biología, plantas, líneas entre otras programas ofrecidos por la universidad.",
+      imagen: "https://i.ibb.co/b54pkbTB/Lab.jpg",
+      tipo: "laboratorio",
+      ubicacion: "Edificio Científico",
+    },
+    {
+      id: 5,
+      titulo: "Centro Mundo X",
+      descripcion:
+        "Espacio único dedicado al desarrollo de gemelos digitales y experiencias inmersivas en el metaverso. Esta iniciativa posiciona a la UNIMET como líder en la transformación digital aplicada a la educación y la industria. ",
+      imagen: "https://i.ibb.co/QjcSsLVM/image.png",
+      tipo: "centro",
+      ubicacion: "Edificio Innovación",
+    },
+    {
+      id: 6,
+      titulo: "Canchas",
+      descripcion:
+        "Canchas de fútbol y rugby como parte del proyecto del acondicionamiento de la Ciudad Deportiva UNIMET. En este espacio además de ser acogedor, posibilita tener un ambiente de confort y aire libre.",
+      imagen: "https://i.ibb.co/YBP5hHrn/cancha.jpg",
+      tipo: "cancha",
+      ubicacion: "Zona Deportiva",
+    },
+  ];
+
+  const handleSearch = (term) => {
+    setSearchTerm(term.toLowerCase());
+  };
+
+  const handleCardClick = (espacio) => {
+    setSelectedSpace(espacio);
+    setShowModal(true);
+  };
+
+  const filteredEspacios = espacios.filter((espacio) => {
+    const matchesFilter = filter === "all" || espacio.tipo === filter;
+    const matchesSearch =
+      searchTerm === "" ||
+      espacio.titulo.toLowerCase().includes(searchTerm) ||
+      espacio.descripcion.toLowerCase().includes(searchTerm);
+    return matchesFilter && matchesSearch;
+  });
+
+  const renderFilters = () => {
+    const filters = [
+      { label: "Todos", value: "all" },
+      { label: "Salas", value: "sala" },
+      { label: "Auditorios", value: "auditorio" },
+      { label: "Salones", value: "salon" },
+      { label: "Laboratorios", value: "laboratorio" },
+      { label: "Canchas", value: "cancha" },
+      { label: "Centros", value: "centro" }
+    ];
+
+    return (
+      <div style={{ 
+        display: "flex", 
+        flexWrap: "wrap",
+        gap: "10px",
+        position: "absolute",
+        top: "750px",
+        left: "250px",
+        width: "1000px",
+        justifyContent: "center"
+      }}>
+        {filters.map((f) => (
+          <div 
+            key={f.value}
+            className="overlap-9"
+            onClick={() => setFilter(f.value)}
+            style={{
+              backgroundColor: filter === f.value ? "#2A59FE" : "#e7e7e7",
+              color: filter === f.value ? "white" : "#736f6f",
+              width: "auto",
+              padding: "0 20px",
+              minWidth: "120px",
+              textAlign: "center"
+            }}
+          >
+            <div className="text-wrapper-13">{f.label}</div>
+          </div>
+        ))}
+      </div>
+    );
+  };
+
   return (
     <div className="ver-espacios-general" data-model-id="276:37">
-      <div className="div">
-        <div className="text-wrapper-2">Ver espacios</div>
-
-        <div className="overlap">
-          <div className="group">
-            <div className="overlap-group">
-              <div className="rectangle" />
-
-              <div className="rectangle-2" />
-
-              <div className="card-go-to-info">
-                <div className="text-wrapper-3">Más información</div>
-
-                <Arrow6 className="arrow" />
-              </div>
-
-              <p className="p">
-                Permanece abierta las 24 horas del día, y ofrece a los
-                estudiantes la posibilidad de su uso para las actividades
-                académicas, y realizar trabajos en grupo con mayor informalidad.
-              </p>
-
-              <div className="text-wrapper-4">Sala 24 horas</div>
-
-              <img
-                className="sala"
-                alt="Sala"
-                src="https://c.animaapp.com/vqVWvgRh/img/sala-24-3-1@2x.png"
-              />
-            </div>
-          </div>
-
-          <div className="group">
-            <div className="overlap-group">
-              <div className="rectangle" />
-
-              <div className="rectangle-2" />
-
-              <div className="card-go-to-info">
-                <div className="text-wrapper-3">Más información</div>
-
-                <Arrow6 className="arrow" />
-              </div>
-
-              <p className="p">
-                Permanece abierta las 24 horas del día, y ofrece a los
-                estudiantes la posibilidad de su uso para las actividades
-                académicas, y realizar trabajos en grupo con mayor informalidad.
-              </p>
-
-              <div className="text-wrapper-4">Sala 24 horas</div>
-
-              <img
-                className="sala"
-                alt="Sala"
-                src="https://c.animaapp.com/vqVWvgRh/img/sala-24-3-1@2x.png"
-              />
-            </div>
-          </div>
-
-          <img
-            className="img"
-            alt="Group"
-            src="https://c.animaapp.com/vqVWvgRh/img/group-14.png"
-          />
-        </div>
-
-        <img
-          className="group-2"
-          alt="Group"
-          src="https://c.animaapp.com/vqVWvgRh/img/group-12.png"
-        />
-
-        <div className="overlap-2">
-          <div className="overlap-wrapper">
-            <div className="overlap-3">
-              <div className="rectangle" />
-
-              <div className="rectangle-2" />
-
-              <div className="card-go-to-info">
-                <div className="text-wrapper-3">Más información</div>
-
-                <Arrow6 className="arrow" />
-              </div>
-
-              <div className="text-wrapper-5">Auditorios</div>
-
-              <p className="text-wrapper-6">
-                Área que tiene lugar múltiples actividades destinadas al fomento
-                y disfrute de la cultura, la ciencia, la recreación y el
-                esparcimiento.
-              </p>
-
-              <img
-                className="lidera"
-                alt="Lidera"
-                src="https://c.animaapp.com/vqVWvgRh/img/lidera-6-2-1@2x.png"
-              />
-            </div>
-          </div>
-
-          <div className="overlap-wrapper">
-            <div className="overlap-3">
-              <div className="rectangle" />
-
-              <div className="rectangle-2" />
-
-              <div className="card-go-to-info">
-                <div className="text-wrapper-3">Más información</div>
-
-                <Arrow6 className="arrow" />
-              </div>
-
-              <div className="text-wrapper-5">Auditorios</div>
-
-              <p className="text-wrapper-6">
-                Área que tiene lugar múltiples actividades destinadas al fomento
-                y disfrute de la cultura, la ciencia, la recreación y el
-                esparcimiento.
-              </p>
-
-              <img
-                className="lidera"
-                alt="Lidera"
-                src="https://c.animaapp.com/vqVWvgRh/img/lidera-6-2-1@2x.png"
-              />
-            </div>
-          </div>
-
-          <img
-            className="group-3"
-            alt="Group"
-            src="https://c.animaapp.com/vqVWvgRh/img/group-15.png"
-          />
-        </div>
-
-        <img
-          className="group-4"
-          alt="Group"
-          src="https://c.animaapp.com/vqVWvgRh/img/group-13.png"
-        />
-
-        <div className="overlap-4">
-          <div className="overlap-wrapper">
-            <div className="overlap-3">
-              <div className="rectangle" />
-
-              <div className="rectangle-2" />
-
-              <div className="card-go-to-info">
-                <div className="text-wrapper-3">Más información</div>
-
-                <Arrow6 className="arrow" />
-              </div>
-
-              <div className="text-wrapper-7">Salones</div>
-
-              <img
-                className="whatsapp-image"
-                alt="Whatsapp image"
-                src="https://c.animaapp.com/vqVWvgRh/img/whatsapp-image-2025-05-13-at-21-58-46-1bfeff77-1-1@2x.png"
-              />
-
-              <p className="text-wrapper-8">
-                Espacios acondicionados con mobiliario básico, superficie de
-                proyección/escritura e iluminación adecuada, diseñado para
-                instrucción grupal, reuniones o talleres.
-              </p>
-            </div>
-          </div>
-
-          <div className="overlap-wrapper">
-            <div className="overlap-3">
-              <div className="rectangle" />
-
-              <div className="rectangle-2" />
-
-              <div className="card-go-to-info">
-                <div className="text-wrapper-3">Más información</div>
-
-                <Arrow6 className="arrow" />
-              </div>
-
-              <div className="text-wrapper-7">Salones</div>
-
-              <img
-                className="whatsapp-image"
-                alt="Whatsapp image"
-                src="https://c.animaapp.com/vqVWvgRh/img/whatsapp-image-2025-05-13-at-21-58-46-1bfeff77-1-1@2x.png"
-              />
-
-              <p className="text-wrapper-8">
-                Espacios acondicionados con mobiliario básico, superficie de
-                proyección/escritura e iluminación adecuada, diseñado para
-                instrucción grupal, reuniones o talleres.
-              </p>
-            </div>
-          </div>
-
-          <img
-            className="group-3"
-            alt="Group"
-            src="https://c.animaapp.com/vqVWvgRh/img/group-16.png"
-          />
-        </div>
-
-        <img
-          className="group-5"
-          alt="Group"
-          src="https://c.animaapp.com/vqVWvgRh/img/group-9.png"
-        />
-
+      <div className="div" style={{ 
+        height: "auto", 
+        paddingBottom: "150px",
+        minHeight: "3000px" // Asegura suficiente espacio para todos los elementos
+      }}>
         <div className="overlap-5">
-          <div className="text-wrapper-9">Nuestros espacios</div>
-
-          <div className="rectangle-3" />
-
+          <div className="text-wrapper-10">Nuestros espacios</div>
           <img
             className="image"
             alt="Image"
             src="https://c.animaapp.com/vqVWvgRh/img/image-2.png"
           />
-
-          <div className="text-wrapper-9">Nuestros espacios</div>
-
-          <div className="rectangle-3" />
-
-          <img
-            className="image"
-            alt="Image"
-            src="https://c.animaapp.com/vqVWvgRh/img/image-2.png"
-          />
-
-          <div className="text-wrapper-10">Nuestros 
-            espacios</div>
         </div>
 
+        <div className="text-wrapper-2">Ver espacios</div>
 
         <div className="overlap-group-wrapper">
           <div className="overlap-7">
             <TypeBasicWrapper
-              className="search-instance"
-              text="Buscar espacio..."
-              type="basic"
-            />
-            <TypeBasicWrapper
-              className="search-instance"
-              text="Buscar espacio..."
-              type="basic"
-            />
-            <TypeBasicWrapper
               className="design-component-instance-node"
               text="Buscar espacio..."
               type="basic"
+              onSearch={handleSearch}
             />
           </div>
         </div>
 
+        {renderFilters()}
+
+        <div style={{ 
+          position: "relative",
+          top: "850px",
+          left: "175px",
+          display: "grid",
+          gridTemplateColumns: "repeat(2, 1fr)",
+          gap: "40px",
+          width: "1150px",
+          marginBottom: "200px",
+          paddingBottom: "200px" // Espacio adicional para evitar corte
+        }}>
+          {filteredEspacios.map((espacio) => (
+            <EspacioCard
+              key={espacio.id}
+              titulo={espacio.titulo}
+              descripcion={espacio.descripcion}
+              imagen={espacio.imagen}
+              onHover={(isHovered) =>
+                setHoveredCard(isHovered ? espacio.id : null)
+              }
+              onClick={() => handleCardClick(espacio)}
+              isHovered={hoveredCard === espacio.id}
+            />
+          ))}
+        </div>
+
         
 
-        <div className="overlap-9">
-          <div className="text-wrapper-12">&gt;</div>
-
-          <div className="text-wrapper-13">Tipo de Espacio</div>
-        </div>
-
-        <div className="overlap-10">
-          <div className="text-wrapper-14">&gt;</div>
-
-          <div className="text-wrapper-13">Ubicación</div>
-        </div>
-
         <div className="text-wrapper-15">Inicio</div>
-
         <img
           className="frame-4"
           alt="Frame"
           src="https://c.animaapp.com/vqVWvgRh/img/frame-2.svg"
         />
       </div>
+
+      {showModal && (
+        <div
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundColor: "rgba(0,0,0,0.5)",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            zIndex: 1000,
+          }}
+          onClick={() => setShowModal(false)}
+        >
+          <div
+            style={{
+              backgroundColor: "white",
+              padding: "30px",
+              borderRadius: "20px",
+              maxWidth: "600px",
+              width: "80%",
+              position: "relative",
+            }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <h2
+              style={{
+                color: "#EE5D08",
+                textAlign: "center",
+                marginBottom: "20px",
+              }}
+            >
+              {selectedSpace.titulo}
+            </h2>
+            <img
+              src={selectedSpace.imagen}
+              alt={selectedSpace.titulo}
+              style={{
+                width: "100%",
+                height: "250px",
+                objectFit: "cover",
+                borderRadius: "10px",
+                marginBottom: "20px",
+              }}
+            />
+            <p style={{ marginBottom: "15px" }}>{selectedSpace.descripcion}</p>
+            <p>
+              <strong>Ubicación:</strong> {selectedSpace.ubicacion}
+            </p>
+            <button
+              style={{
+                backgroundColor: "#EE5D08",
+                color: "white",
+                border: "none",
+                padding: "10px 20px",
+                borderRadius: "5px",
+                cursor: "pointer",
+                marginTop: "20px",
+                display: "block",
+                width: "100%",
+                fontSize: "16px",
+              }}
+              onClick={() => {
+                alert(`Reservando ${selectedSpace.titulo}`);
+                setShowModal(false);
+              }}
+            >
+              Reservar este espacio
+            </button>
+            <button
+              style={{
+                position: "absolute",
+                top: "10px",
+                right: "10px",
+                background: "none",
+                border: "none",
+                fontSize: "20px",
+                cursor: "pointer",
+              }}
+              onClick={() => setShowModal(false)}
+            >
+              ×
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
-
 };
+
 export default VerEspaciosGeneral;
