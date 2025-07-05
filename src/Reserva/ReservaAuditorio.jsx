@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './ReservaAuditorio.css';
-import auditorio from './Lidera-6(1).png'; 
+import auditorio from './Lidera-6 (1).png'; 
 
 function ReservaAuditorio() {
   const navigate = useNavigate();
