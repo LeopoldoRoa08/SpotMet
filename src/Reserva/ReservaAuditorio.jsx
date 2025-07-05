@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import "./ReservaAuditorio.css";
 
 const ReservaAuditorio = ({ color = "#EE5D08", className }) => {
