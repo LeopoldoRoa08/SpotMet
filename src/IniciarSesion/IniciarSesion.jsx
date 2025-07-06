@@ -1,10 +1,10 @@
+
 import React, { useState } from 'react';
 import './IniciarSesion.css';
 import { useNavigate, Link } from 'react-router-dom';
-import {  signInWithEmailAndPassword   } from 'firebase/auth';
-import { auth, googleProvider } from '../firebase';  // Adjust the path to your Firebase config file
-import { signInWithPopup } from 'firebase/auth';
-
+import { signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
+import { auth, googleProvider, db } from '../firebase';
+import { doc, getDoc, setDoc } from 'firebase/firestore';
 
 const IniciarSesion = () => {
   const navigate = useNavigate();
@@ -27,10 +27,8 @@ const IniciarSesion = () => {
 
   const validateForm = () => {
     const newErrors = {};
-    
     if (!/^\S+@\S+\.\S+$/.test(formData.email)) newErrors.email = "Email inválido";
     if (formData.password.length < 6) newErrors.password = "Mínimo 6 caracteres";
-
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -38,46 +36,56 @@ const IniciarSesion = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
     if (validateForm()) {
-
-        signInWithEmailAndPassword(auth, formData.email, formData.password)
+      signInWithEmailAndPassword(auth, formData.email, formData.password)
         .then((userCredential) => {
-            // Signed in
-            const user = userCredential.user;
-            navigate("/")
-            console.log(user);
-            localStorage.setItem("user", user.email);
+          const user = userCredential.user;
+          navigate("/");
+          console.log(user);
+          localStorage.setItem("user", user.email);
+          localStorage.setItem("uid", user.uid);
         })
         .catch((error) => {
-            alert("ERROR: Cuenta invalida")
-            setIsSubmitting(false);
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            console.log(errorCode, errorMessage)
+          alert("ERROR: Cuenta invalida");
+          setIsSubmitting(false);
+          console.log(error.code, error.message);
         });
-      
     } else {
       setIsSubmitting(false);
     }
   };
 
-
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
 
-  async function handleGoogleLogin(){
+  async function handleGoogleLogin() {
     try {
       const data = await signInWithPopup(auth, googleProvider);
-      alert('Signed in successfully with Google');
-      navigate("/")
-      console.log(data.user);
-      localStorage.setItem("user", data.user.email);
+      const user = data.user;
+
+      localStorage.setItem("user", user.email);
+      localStorage.setItem("uid", user.uid);
+
+      const userDocRef = doc(db, "usuarios", user.uid);
+      const docSnap = await getDoc(userDocRef);
+
+      if (!docSnap.exists()) {
+        await setDoc(userDocRef, {
+          nombre: user.displayName || "",
+          apellido: "",
+          carrera: "",
+          telefono: "",
+          fotoPerfil: user.photoURL || ""
+        });
+      }
+
+      alert("Inicio de sesión exitoso con Google");
+      navigate("/");
     } catch (error) {
-      console.error('Error signing in with Google', error);
+      console.error("Error al iniciar sesión con Google", error);
+      alert("Error al iniciar sesión con Google");
     }
-    return
   }
 
   return (
@@ -88,7 +96,7 @@ const IniciarSesion = () => {
             <div className="left-column">
               <form onSubmit={handleSubmit} className="login-form">
                 <div className="login-title">Iniciar sesión</div>
-                
+
                 <div className="email-label">Email</div>
                 <input
                   name="email"
@@ -109,10 +117,7 @@ const IniciarSesion = () => {
                     value={formData.password}
                     onChange={handleChange}
                   />
-                  <span 
-                    className="password-toggle" 
-                    onClick={togglePasswordVisibility}
-                  >
+                  <span className="password-toggle" onClick={togglePasswordVisibility}>
                     {showPassword ? "👁️" : "👁️‍🗨️"}
                   </span>
                 </div>
@@ -130,19 +135,11 @@ const IniciarSesion = () => {
                     <div>Recuérdame</div>
                   </div>
 
-                  <button 
-                    type="submit" 
-                    className="login"
-                    disabled={isSubmitting}
-                  >
+                  <button type="submit" className="login" disabled={isSubmitting}>
                     {isSubmitting ? 'Iniciando sesión...' : 'Iniciar Sesión'}
                   </button>
 
-                  <button 
-                    type="button" 
-                    className="google-login"
-                    onClick={()=>handleGoogleLogin()}
-                  >
+                  <button type="button" className="google-login" onClick={handleGoogleLogin}>
                     <img
                       src="https://cdn.builder.io/api/v1/image/assets/0ee00be008dd423aadc13fb6ab914f24/a02f5535bcc86dd6ea0bd466eeb088b2a6616536?placeholderIfAbsent=true"
                       className="google-icon"
@@ -152,14 +149,11 @@ const IniciarSesion = () => {
                   </button>
 
                   <div className="register-link">
-                    <Link to="/register" className="register-button">
-                      Regístrate
-                    </Link>
+                    <Link to="/register" className="register-button">Regístrate</Link>
                   </div>
                 </div>
               </form>
             </div>
-
             <div className="right-column">
               <div className="images-container">
                 <div className="image-columns">

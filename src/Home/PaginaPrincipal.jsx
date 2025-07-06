@@ -5,10 +5,9 @@ import { useNavigate } from "react-router-dom";
 
 function PaginaPrincipal() {
   const navigate = useNavigate();
-  
+
   return (
     <div className="pagina-principal">
-
       <div className="hero-section-home">
         <img
           src="https://cdn.builder.io/api/v1/image/assets/0ee00be008dd423aadc13fb6ab914f24/5e88f684d9912220bfe00b6306d4ab1567ad610f?placeholderIfAbsent=true"
@@ -82,16 +81,16 @@ function PaginaPrincipal() {
             Explore los espacios
           </div>
           <div className="home-explore-button-section">
-            <div className="home-explore-button"
-            onClick={() => navigate('/ver-espacios')}
-            style={{ cursor: "pointer" }}
+            <div
+              className="home-explore-button"
+              onClick={() => navigate("/ver-espacios")}
             >
               Ver Espacios
             </div>
+            
           </div>
         </div>
       </div>
-
     </div>
   );
 }
