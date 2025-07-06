@@ -1,76 +1,67 @@
-
-import React, { useState, useEffect } from "react";
-import "./PerfilUsuario.css";
-import { doc, getDoc } from "firebase/firestore";
+import React, { useEffect, useState } from "react";
 import { db } from "../firebase";
+import { doc, getDoc } from "firebase/firestore";
+import { useNavigate } from "react-router-dom";
+import "./PerfilUsuario.css";
 
-const PerfilDeUsuario = () => {
-  const [formData, setFormData] = useState({
-    nombre: "",
-    apellido: "",
-    carrera: "",
-    telefono: "",
-    fotoPerfil: ""
-  });
+const PerfilUsuario = () => {
+  const [usuario, setUsuario] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
-    const fetchData = async () => {
-      const uid = localStorage.getItem("uid");
-      if (!uid) return;
-      const docRef = doc(db, "usuarios", uid);
-      const snap = await getDoc(docRef);
-      if (snap.exists()) {
-        setFormData(snap.data());
-      }
-    };
-    fetchData();
+    const uid = localStorage.getItem("uid");
+    if (uid) {
+      const fetchData = async () => {
+        const docRef = doc(db, "usuarios", uid);
+        const snap = await getDoc(docRef);
+        if (snap.exists()) {
+          setUsuario(snap.data());
+        }
+      };
+      fetchData();
+    }
   }, []);
 
+  const irAEditarPerfil = () => {
+    navigate("/editar-perfil");
+  };
+
   return (
-    <div className="container">
-      <div className="mainContent">
-        <h1 className="title">Perfil del Usuario</h1>
+    <div className="perfil-container">
+      <div className="perfil-header">
+        <h2>Mi perfil</h2>
+      </div>
 
-        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-          <div>
-            <div className="formContainer">
-              <div className="formRow">
-                <div className="formField">
-                  <div className="fieldLabel">Nombre:</div>
-                  <div className="input">{formData.nombre}</div>
-                </div>
-                <div className="formField">
-                  <div className="fieldLabel">Apellido:</div>
-                  <div className="input">{formData.apellido}</div>
-                </div>
-              </div>
+      <div className="perfil-card-left mejor-espaciado">
+        <div className="perfil-foto-wrapper">
+          {usuario?.fotoPerfil ? (
+            <img
+              src={usuario.fotoPerfil}
+              alt="Foto de perfil"
+              className="perfil-foto"
+            />
+          ) : (
+            <div className="perfil-foto placeholder">Sin foto</div>
+          )}
+        </div>
 
-              <div className="formRow">
-                <div className="formField">
-                  <div className="fieldLabel">Carrera:</div>
-                  <div className="input">{formData.carrera}</div>
-                </div>
-                <div className="formField">
-                  <div className="fieldLabel">Teléfono:</div>
-                  <div className="input">{formData.telefono}</div>
-                </div>
-              </div>
-            </div>
-          </div>
+        <p className="editar-foto">Editar Foto de Perfil</p>
 
-          <div className="profileSection">
-            {formData.fotoPerfil && (
-              <img
-                src={formData.fotoPerfil}
-                alt="Foto de perfil"
-                className="profileImage"
-              />
-            )}
-          </div>
+        <div className="info-box grande">
+          <p><strong>Nombre:</strong> {usuario?.nombre || ""}</p>
+          <p><strong>Apellido:</strong> {usuario?.apellido || ""}</p>
+          <p><strong>Correo:</strong> {usuario?.correo || ""}</p>
+        </div>
+
+        <button className="btn-editar" onClick={irAEditarPerfil}>
+          Editar perfil ✏️
+        </button>
+        <div className="back-link" onClick={() => navigate("/")}>
+          ← Inicio
         </div>
       </div>
     </div>
   );
 };
 
-export default PerfilDeUsuario;
+export default PerfilUsuario;
