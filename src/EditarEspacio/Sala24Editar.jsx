@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import "./Sala24Editar.css"
+import sala24 from './Sala24.png';
 
 export const Sala24Editar = ({ className = "" }) => {
   return (
@@ -9,7 +10,7 @@ export const Sala24Editar = ({ className = "" }) => {
       {/* Header */}
       <header className="flex justify-between items-center p-5 shadow-sm bg-neutral-100">
         <img
-          src="/logo.png"
+          src= {sala24}
           alt="Logo"
           className="h-24 w-24"
         />
@@ -27,9 +28,7 @@ export const Sala24Editar = ({ className = "" }) => {
         <section className="mb-12">
           <h3 className="text-neutral-500 font-semibold mb-4">Fotos del espacio</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <PhotoItem src="photo1.jpg" />
-            <PhotoItem src="photo2.jpg" />
-            <PhotoItem src="photo3.jpg" isEditable />
+            <PhotoItem src= {sala24} isEditable />
           </div>
         </section>
 
@@ -100,7 +99,7 @@ function PhotoItem({ src, isEditable = false }) {
       <img
         src={src}
         alt="Espacio"
-        className="rounded-3xl shadow-sm w-full h-auto"
+        className="rounded-3xl shadow-sm w-64 h-64 object-cover" // Aquí está el cambio clave
       />
       {isEditable && (
         <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-30 rounded-3xl">
