@@ -288,3 +288,107 @@
     max-width: 100%;
   }
 }
+
+/* Foto de perfil - Nuevas reglas para background-image */
+.profile-image-container {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 30px;
+  border-radius: 50%;
+  overflow: hidden; 
+  border: 3px solid #ea580c;
+  cursor: pointer;
+  box-sizing: border-box;
+
+  /* Propiedades clave para centrar el background-image */
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+}
+
+/* Las reglas .profile-image y .profile-image[src="..."] han sido eliminadas */
+/* porque la imagen ahora se maneja como background-image en .profile-image-container */
+
+.image-edit-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  text-align: center;
+  padding: 8px 0;
+  font-size: 14px;
+}
+
+/* Mejoras en los inputs */
+.editable-field, .editable-field-bold {
+  width: 100%;
+  padding: 10px 15px;
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 1rem;
+  background: white;
+  transition: all 0.3s;
+  box-sizing: border-box;
+}
+
+.editable-field-bold {
+  font-weight: 600;
+}
+
+.editable-field:focus, .editable-field-bold:focus {
+  border-color: #ea580c;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.2);
+}
+
+/* Mejoras en los botones */
+.save-button, .cancel-button {
+  padding: 12px 30px;
+  font-size: 1rem;
+  border-radius: 10px;
+  transition: all 0.3s;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.save-button {
+  background: #10B981;
+  color: white;
+}
+
+.save-button:hover {
+  background: #059669;
+  transform: translateY(-2px);
+}
+
+.cancel-button {
+  background: #EF4444;
+  color: white;
+}
+
+.cancel-button:hover {
+  background: #DC2626;
+  transform: translateY(-2px);
+}
+
+.edit-button {
+  padding: 12px 30px;
+  background: #ea580c;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin: 30px auto 0;
+  display: block;
+}
+
+.edit-button:hover {
+  background: #c2410c;
+  transform: translateY(-2px);
+}
