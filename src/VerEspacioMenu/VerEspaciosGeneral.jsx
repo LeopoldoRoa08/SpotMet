@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./VerEspaciosGeneral.css";
 
-// Componente Arrow6
+// Componente Arrow6 (se mantiene igual)
 const Arrow6 = ({ className }) => {
   return (
     <svg
@@ -25,45 +25,7 @@ const Arrow6 = ({ className }) => {
   );
 };
 
-// Componente Search
-const Search = ({ opacity = "0.5", className }) => {
-  return (
-    <svg
-      className={`search ${className}`}
-      fill="none"
-      height="24"
-      viewBox="0 0 24 24"
-      width="24"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        className="path"
-        clipRule="evenodd"
-        d="M15 10C15 12.7614 12.7614 15 10 15C7.23858 15 5 12.7614 5 10C5 7.23858 7.23858 5 10 5C12.7614 5 15 7.23858 15 10ZM13.594 16.0082C12.5434 16.6379 11.314 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10C17 11.8276 16.2996 13.4916 15.1526 14.7383L19.2071 18.7929C19.5976 19.1834 19.5976 19.8166 19.2071 20.2071C18.8166 20.5976 18.1834 20.5976 17.7929 20.2071L13.594 16.0082Z"
-        fill="black"
-        fillRule="evenodd"
-      />
-      <path
-        className="path"
-        clipRule="evenodd"
-        d="M15 10C15 12.7614 12.7614 15 10 15C7.23858 15 5 12.7614 5 10C5 7.23858 7.23858 5 10 5C12.7614 5 15 7.23858 15 10ZM13.594 16.0082C12.5434 16.6379 11.314 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10C17 11.8276 16.2996 13.4916 15.1526 14.7383L19.2071 18.7929C19.5976 19.1834 19.5976 19.8166 19.2071 20.2071C18.8166 20.5976 18.1834 20.5976 17.7929 20.2071L13.594 16.0082Z"
-        fill="#2A59FE"
-        fillOpacity="0.3"
-        fillRule="evenodd"
-      />
-      <path
-        className="path"
-        clipRule="evenodd"
-        d="M15 10C15 12.7614 12.7614 15 10 15C7.23858 15 5 12.7614 5 10C5 7.23858 7.23858 5 10 5C12.7614 5 15 7.23858 15 10ZM13.594 16.0082C12.5434 16.6379 11.314 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10C17 11.8276 16.2996 13.4916 15.1526 14.7383L19.2071 18.7929C19.5976 19.1834 19.5976 19.8166 19.2071 20.2071C18.8166 20.5976 18.1834 20.5976 17.7929 20.2071L13.594 16.0082Z"
-        fill="white"
-        fillOpacity={opacity}
-        fillRule="evenodd"
-      />
-    </svg>
-  );
-};
-
-// Componente Menu2
+// Componente Menu2 (se mantiene igual)
 const Menu2 = ({ color = "#EE5D08", className }) => {
   return (
     <svg
@@ -83,40 +45,7 @@ const Menu2 = ({ color = "#EE5D08", className }) => {
   );
 };
 
-// Componente TypeBasicWrapper
-const TypeBasicWrapper = ({ type, className, text = "Search", onSearch }) => {
-  const [searchText, setSearchText] = useState("");
-
-  const handleKeyPress = (e) => {
-    if (e.key === "Enter") {
-      onSearch(searchText);
-    }
-  };
-
-  return (
-    <div className={`type-basic-wrapper ${className}`}>
-      <div className="frame">
-        <Search className="search-1" opacity="0.5" />
-        <input
-          type="text"
-          className="text-wrapper"
-          value={searchText}
-          onChange={(e) => setSearchText(e.target.value)}
-          onKeyPress={handleKeyPress}
-          placeholder={text}
-          style={{
-            background: "transparent",
-            border: "none",
-            outline: "none",
-            width: "100%",
-          }}
-        />
-      </div>
-    </div>
-  );
-};
-
-// Componente EspacioCard
+// Componente EspacioCard (se mantiene igual)
 const EspacioCard = ({
   titulo,
   descripcion,
@@ -129,7 +58,6 @@ const EspacioCard = ({
   const navigate = useNavigate();
 
   const handleCardClick = () => {
-    // Redirigir a la página correspondiente según el tipo de espacio
     switch(tipo) {
       case 'sala':
         navigate('/ver-sala24');
@@ -177,29 +105,28 @@ const EspacioCard = ({
         </div>
         <p className="p">{descripcion}</p>
         <div className="text-wrapper-4">{titulo}</div>
-        <img 
-          className="sala" 
-          alt={titulo} 
-          src={imagen} 
-          style={{ 
+        <img
+          className="sala"
+          alt={titulo}
+          src={imagen}
+          style={{
             height: "250px",
             objectFit: "cover",
             width: "90%",
             margin: "0 auto",
             display: "block",
             borderRadius: "10px"
-          }} 
+          }}
         />
       </div>
     </div>
   );
 };
 
-// Componente principal
+// Componente principal (modificado para reemplazar el buscador por botones de filtro)
 export const VerEspaciosGeneral = () => {
   const [hoveredCard, setHoveredCard] = useState(null);
   const [filter, setFilter] = useState("all");
-  const [searchTerm, setSearchTerm] = useState("");
   const [showModal, setShowModal] = useState(false);
   const [selectedSpace, setSelectedSpace] = useState(null);
 
@@ -254,16 +181,12 @@ export const VerEspaciosGeneral = () => {
       id: 6,
       titulo: "Canchas",
       descripcion:
-        "Canchas de fútbol y rugby como parte del proyecto del acondicionamiento de la Ciudad Deportiva UNIMET. En este espacio además de ser acogedor, posibilita tener un ambiente de confort y aire libre.",
+        "Canchas de fútbol y rugby como parte del proyecto del acondicionamiento de la Ciudad Deportiva UNIMET. En este espacio además de ser acogedor, posibilita tener un ambiente de confort y aire libre.",
       imagen: "https://i.ibb.co/YBP5hHrn/cancha.jpg",
       tipo: "cancha",
       ubicacion: "Zona Deportiva",
     },
   ];
-
-  const handleSearch = (term) => {
-    setSearchTerm(term.toLowerCase());
-  };
 
   const handleCardClick = (espacio) => {
     setSelectedSpace(espacio);
@@ -271,52 +194,30 @@ export const VerEspaciosGeneral = () => {
   };
 
   const filteredEspacios = espacios.filter((espacio) => {
-    const matchesFilter = filter === "all" || espacio.tipo === filter;
-    const matchesSearch =
-      searchTerm === "" ||
-      espacio.titulo.toLowerCase().includes(searchTerm) ||
-      espacio.descripcion.toLowerCase().includes(searchTerm);
-    return matchesFilter && matchesSearch;
+    return filter === "all" || espacio.tipo === filter;
   });
 
-  const renderFilters = () => {
+  const renderFilterButtons = () => {
     const filters = [
       { label: "Todos", value: "all" },
-      { label: "Salas", value: "sala" },
-      { label: "Auditorios", value: "auditorio" },
-      { label: "Salones", value: "salon" },
+      { label: "Aulas", value: "salon" },
       { label: "Laboratorios", value: "laboratorio" },
+      { label: "Salas", value: "sala" },
       { label: "Canchas", value: "cancha" },
-      { label: "Centros", value: "centro" }
+      { label: "Gaming", value: "centro" },
+      { label: "Auditorios", value: "auditorio" }
     ];
 
     return (
-      <div style={{ 
-        display: "flex", 
-        flexWrap: "wrap",
-        gap: "10px",
-        position: "absolute",
-        top: "750px",
-        left: "250px",
-        width: "1000px",
-        justifyContent: "center"
-      }}>
+      <div className="filter-buttons-container">
         {filters.map((f) => (
-          <div 
+          <button
             key={f.value}
-            className="overlap-9"
+            className={`filter-button ${filter === f.value ? "active" : ""}`}
             onClick={() => setFilter(f.value)}
-            style={{
-              backgroundColor: filter === f.value ? "#2A59FE" : "#e7e7e7",
-              color: filter === f.value ? "white" : "#736f6f",
-              width: "auto",
-              padding: "0 20px",
-              minWidth: "120px",
-              textAlign: "center"
-            }}
           >
-            <div className="text-wrapper-13">{f.label}</div>
-          </div>
+            {f.label}
+          </button>
         ))}
       </div>
     );
@@ -324,10 +225,10 @@ export const VerEspaciosGeneral = () => {
 
   return (
     <div className="ver-espacios-general" data-model-id="276:37">
-      <div className="div" style={{ 
-        height: "auto", 
+      <div className="div" style={{
+        height: "auto",
         paddingBottom: "150px",
-        minHeight: "3000px" // Asegura suficiente espacio para todos los elementos
+        minHeight: "3000px"
       }}>
         <div className="overlap-5">
           <div className="text-wrapper-10">Nuestros espacios</div>
@@ -340,20 +241,12 @@ export const VerEspaciosGeneral = () => {
 
         <div className="text-wrapper-2">Ver espacios</div>
 
-        <div className="overlap-group-wrapper">
-          <div className="overlap-7">
-            <TypeBasicWrapper
-              className="design-component-instance-node"
-              text="Buscar espacio..."
-              type="basic"
-              onSearch={handleSearch}
-            />
-          </div>
+        {/* Reemplazo del buscador por los botones de filtro */}
+        <div className="filter-section">
+          {renderFilterButtons()}
         </div>
 
-        {renderFilters()}
-
-        <div style={{ 
+        <div style={{
           position: "relative",
           top: "850px",
           left: "175px",
@@ -362,7 +255,7 @@ export const VerEspaciosGeneral = () => {
           gap: "40px",
           width: "1150px",
           marginBottom: "200px",
-          paddingBottom: "200px" // Espacio adicional para evitar corte
+          paddingBottom: "200px"
         }}>
           {filteredEspacios.map((espacio) => (
             <EspacioCard
