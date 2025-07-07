@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 
 function Header() {
   const navigate = useNavigate();
-  const sidebar = document.getElementById("sidebar");
+  const sidebar = document.getElementById("sidebara");
 
   let location = useLocation();
   const [userEmail, setUserEmail] = useState("")
@@ -25,9 +25,9 @@ function Header() {
   return (
     <div className="header-section">
       <div className="header-content">
-        <div className="sidebar" id="sidebar">
+        <div className="sidebara" id="sidebara">
           <nav>
-            <div className="sidebar-cerrar">
+            <div className="sidebara-cerrar">
             <img 
             onClick={() => toggleSidebar()}
             src = "https://cdn.builder.io/api/v1/image/assets/0ee00be008dd423aadc13fb6ab914f24/d87282eddaec632a6dc20f49a03ba37a632b0142?placeholderIfAbsent=true" alt="boton para cerrar" className="boton-cerrar"></img>

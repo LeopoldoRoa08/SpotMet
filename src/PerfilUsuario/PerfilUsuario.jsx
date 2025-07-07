@@ -10,12 +10,14 @@ const PerfilUsuario = () => {
 
   useEffect(() => {
     const uid = localStorage.getItem("uid");
+    console.log("UID del usuario:", uid);
     if (uid) {
       const fetchData = async () => {
         const docRef = doc(db, "usuarios", uid);
         const snap = await getDoc(docRef);
         if (snap.exists()) {
           setUsuario(snap.data());
+          console.log("Datos del usuario:", snap.data());
         }
       };
       fetchData();

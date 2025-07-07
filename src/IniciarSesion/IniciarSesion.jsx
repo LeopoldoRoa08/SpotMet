@@ -33,23 +33,35 @@ const IniciarSesion = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e) => {
+  async function handleSubmit  (e) {
     e.preventDefault();
     setIsSubmitting(true);
     if (validateForm()) {
-      signInWithEmailAndPassword(auth, formData.email, formData.password)
-        .then((userCredential) => {
+      
+        try {
+          const userCredential = await signInWithEmailAndPassword(auth, formData.email, formData.password)
           const user = userCredential.user;
           navigate("/");
           console.log(user);
           localStorage.setItem("user", user.email);
           localStorage.setItem("uid", user.uid);
-        })
-        .catch((error) => {
+          const userDocRef = doc(db, "usuarios", user.uid);
+          const docSnap = await getDoc(userDocRef);
+
+          if (!docSnap.exists()) {
+          await setDoc(userDocRef, {
+          nombre: user.displayName || "",
+          apellido: "",
+          carrera: "",
+          telefono: "",
+          fotoPerfil: user.photoURL || ""
+        });
+      }
+        }catch(error) {
           alert("ERROR: Cuenta invalida");
           setIsSubmitting(false);
           console.log(error.code, error.message);
-        });
+        };
     } else {
       setIsSubmitting(false);
     }

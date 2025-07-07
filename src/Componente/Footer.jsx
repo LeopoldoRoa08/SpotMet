@@ -9,11 +9,11 @@ function Footer() {
   const navigate = useNavigate();
 
   return (
-      <div className="footer-section">
-        <div className="footer-text">
+      <div className="footera-section">
+        <div className="footera-text">
           Copyright © 2025 - Spotmet | Síguenos:{" "}
-          <span className="footer-bold">Instagram</span> |{" "}
-          <span className="footer-bold">Facebook</span>
+          <span className="footera-bold">Instagram</span> |{" "}
+          <span className="footera-bold">Facebook</span>
         </div>
       </div>
   
