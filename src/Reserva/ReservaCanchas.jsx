@@ -268,7 +268,7 @@ function ReservaCanchas() {
                       <div className="checkout-items-row">
                         <div className="checkout-item">
                           <label>Subtotal</label>
-                          <span>$120.00</span>
+                          <span>$55.00</span>
                         </div>
 
                         <div className="checkout-item">
@@ -278,7 +278,7 @@ function ReservaCanchas() {
 
                         <div className="checkout-item checkout-total">
                           <label>Total</label>
-                          <span>$125.00</span>
+                          <span>$60.00</span>
                         </div>
                       </div>
                     </div>

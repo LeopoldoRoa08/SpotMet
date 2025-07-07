@@ -268,17 +268,17 @@ function ReservaAuditorio() {
                       <div className="checkout-items-row">
                         <div className="checkout-item">
                           <label>Subtotal</label>
-                          <span>$120.00</span>
+                          <span>$140.00</span>
                         </div>
 
                         <div className="checkout-item">
                           <label>Impuestos</label>
-                          <span>$5.00</span>
+                          <span>$10.00</span>
                         </div>
 
                         <div className="checkout-item checkout-total">
                           <label>Total</label>
-                          <span>$125.00</span>
+                          <span>$150.00</span>
                         </div>
                       </div>
                     </div>

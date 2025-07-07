@@ -269,7 +269,7 @@ function ReservaSalon() {
                       <div className="checkout-items-row">
                         <div className="checkout-item">
                           <label>Subtotal</label>
-                          <span>$120.00</span>
+                          <span>$65.00</span>
                         </div>
 
                         <div className="checkout-item">
@@ -279,7 +279,7 @@ function ReservaSalon() {
 
                         <div className="checkout-item checkout-total">
                           <label>Total</label>
-                          <span>$125.00</span>
+                          <span>$70.00</span>
                         </div>
                       </div>
                     </div>
