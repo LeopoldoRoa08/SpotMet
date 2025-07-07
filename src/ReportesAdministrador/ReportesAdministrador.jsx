@@ -1,136 +1,118 @@
-import React from "react";
-import "./ReportesAdministrador.css";
+
+import React, { useEffect, useState } from 'react';
+import './ReportesAdministrador.css';
+import { db } from '../firebase';
+import { collection, getDocs } from 'firebase/firestore';
 
 function ReportesAdministrador() {
+  const [reservas, setReservas] = useState([]);
+  const [filtros, setFiltros] = useState({
+    Finalizado: false,
+    Pendiente: false,
+    Cancelado: false,
+  });
+  const [fechaDesde, setFechaDesde] = useState('');
+  const [fechaHasta, setFechaHasta] = useState('');
+
+  useEffect(() => {
+    const obtenerDatos = async () => {
+      const snapshot = await getDocs(collection(db, 'reservas'));
+      const data = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+      
+      const reservasAdaptadas = data.map((r) => ({
+        id: r.id,
+        espacio: r.spaceName || '',
+        fecha: r.date || '',
+        hora: (r.startTime && r.endTime) ? `${r.startTime} - ${r.endTime}` : '',
+        usuario: r.eventName || '',
+        estado: '', // no disponible
+      }));
+      setReservas(reservasAdaptadas);
+    
+    };
+    obtenerDatos();
+  }, []);
+
+  const toggleFiltro = (estado) => {
+    setFiltros(prev => ({ ...prev, [estado]: !prev[estado] }));
+  };
+
+  const cumpleFiltros = (reserva) => {
+    const estadosActivos = Object.entries(filtros)
+      .filter(([estado, activo]) => activo)
+      .map(([estado]) => estado);
+    const fechaReserva = new Date(reserva.fecha);
+    const desde = fechaDesde ? new Date(fechaDesde) : null;
+    const hasta = fechaHasta ? new Date(fechaHasta) : null;
+
+    return (
+      (estadosActivos.length === 0 || estadosActivos.includes(reserva.estado)) &&
+      (!desde || fechaReserva >= desde) &&
+      (!hasta || fechaReserva <= hasta)
+    );
+  };
+
+  const reservasFiltradas = reservas.filter(cumpleFiltros);
+
   return (
     <div className="reportes-container">
       
-        <div className="header-content">
-          <div className="logo-container">
-           
-           
-        
-          <div className="nav-icons">
-            
-              
-            
-          </div>
-        </div>
-      </div>
-      <div className="page-title">
-        Reportes
-      </div>
-      <div className="main-content">
-        <div className="content-wrapper">
-          <div className="layout-container">
-            <div className="sidebar-column">
-              <div className="sidebar-content">
-                <div className="estados-title">
-                  Estados
-                </div>
-                <div className="filters-card">
-                  <div className="filters-header">
-                    <span className="filters-text">Filtros </span>
-                    <span className="filters-arrow">v</span>
-                  </div>
-                  <div className="filter-option">
-                    <div className="checkbox" />
-                    <div className="filter-label">Finalizado</div>
-                  </div>
-                  <div className="filter-option">
-                    <div className="checkbox" />
-                    <div className="filter-label">Pendiente</div>
-                  </div>
-                  <div className="filter-option">
-                    <div className="checkbox" />
-                    <div className="filter-label">Cancelado</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="main-column">
-              <div className="table-section">
-                <div className="table-header">
-                  <div className="header-espacio">Espacio</div>
-                  <div className="header-right">
-                    <div className="header-reservas">N° de reservas</div>
-                    <div className="header-estados">Estados</div>
-                  </div>
-                </div>
-                <div className="table-content">
-                  <div className="table-row">
-                    <div className="row-content">
-                      <div className="space-name">Sala 24 horas</div>
-                      <div className="row-right">
-                        <div className="reservation-count">12</div>
-                        <div className="status-finalizado">Finalizado</div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="row-divider" />
-                  <div className="table-row">
-                    <div className="row-content">
-                      <div className="space-name">Centro Mundo X</div>
-                      <div className="row-right">
-                        <div className="reservation-count">22</div>
-                        <div className="status-finalizado">Finalizado</div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="row-divider" />
-                  <div className="table-row">
-                    <div className="row-content">
-                      <div className="space-name">Aula - 302</div>
-                      <div className="row-right">
-                        <div className="reservation-count">7</div>
-                        <div className="status-cancelado">Cancelado</div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="row-divider" />
-                  <div className="table-row">
-                    <div className="row-content">
-                      <div className="space-name">SL - 003 Lab. de Redes</div>
-                      <div className="reservation-count-single">2</div>
-                      <div className="status-pendiente">Pendiente</div>
-                    </div>
-                  </div>
-                  <div className="row-divider" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="date-range-title">Rango de fechas</div>
-        <div className="date-input">
-          <img
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/0d6e2403be85759e0c77c29cd9d0f0c86772f4a1?placeholderIfAbsent=true&apiKey=e4b6b4895e5740b8bc142de494713b62"
-            className="calendar-icon"
-          />
-          <div className="date-text">Desde v</div>
-        </div>
-        <div className="date-input">
-          <img
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/0d6e2403be85759e0c77c29cd9d0f0c86772f4a1?placeholderIfAbsent=true&apiKey=e4b6b4895e5740b8bc142de494713b62"
-            className="calendar-icon"
-          />
-          <div className="date-text">Hasta v </div>
-        </div>
-        <div className="dashboard-link">
-          <img
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/c42ec600022b3fae885d2bbdd8394046eae346c4?placeholderIfAbsent=true&apiKey=e4b6b4895e5740b8bc142de494713b62"
-            className="dashboard-icon"
-          />
-          <div className="dashboard-text">Dashboard</div>
-        </div>
-      </div>
-      
-        
-         
-         
-        </div>
-      
+    <div className="page-header">
+      <h2>📊 Reportes</h2>
+      <button className="btn-dashboard" onClick={() => window.location.href='/dashboard'}>Ir al Dashboard</button>
+    </div>
     
+
+      <div className="main-content">
+        <div className="filtros-seccion">
+          <h4>Estados</h4>
+          {['Finalizado', 'Pendiente', 'Cancelado'].map((estado) => (
+            <label key={estado}>
+              <input
+                type="checkbox"
+                checked={filtros[estado]}
+                onChange={() => toggleFiltro(estado)}
+              />
+              {estado}
+            </label>
+          ))}
+          <h4>Rango de fechas</h4>
+          <label>Desde:</label>
+          <input type="date" value={fechaDesde} onChange={(e) => setFechaDesde(e.target.value)} />
+          <label>Hasta:</label>
+          <input type="date" value={fechaHasta} onChange={(e) => setFechaHasta(e.target.value)} />
+        </div>
+
+        <div className="resultados-seccion">
+          {reservasFiltradas.length === 0 ? (
+            <div className="mensaje-sin-reservas">📭 No hay reservas actualmente</div>
+          ) : (
+            <table className="tabla-reservas">
+              <thead>
+                <tr>
+                  <th>Espacio</th>
+                  <th>Fecha</th>
+                  <th>Hora</th>
+                  <th>Usuario</th>
+                  <th>Estado</th>
+                </tr>
+              </thead>
+              <tbody>
+                {reservasFiltradas.map((reserva) => (
+                  <tr key={reserva.id}>
+                    <td>{reserva.espacio}</td>
+                    <td>{reserva.fecha}</td>
+                    <td>{reserva.hora}</td>
+                    <td>{reserva.usuario}</td>
+                    <td>{reserva.estado}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          )}
+        </div>
+      </div>
+    </div>
   );
 }
 
