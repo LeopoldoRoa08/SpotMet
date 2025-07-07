@@ -33,340 +33,362 @@
   gap: 1.25rem;
 }
 
-/* Estilos para el calendario funcional */
+/* Estilos para el contenedor de inputs con icono (fecha y horario) */
 .form-input-with-icon {
-  position: relative;
+  position: relative; /* Esencial para el posicionamiento absoluto del input */
   display: flex;
+  align-items: center;
   gap: 1.25rem;
   justify-content: space-between;
   padding: 0.75rem 1.25rem;
   margin-top: 0.5rem;
-  background-color: white;
-  border-radius: 29px;
-  color: #d4d4d8;
-  align-items: center;
+  border-radius: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  font-size: 1rem;
+  color: #333;
+  cursor: pointer; /* Indica que es clicable */
+  overflow: hidden; /* Asegura que los hijos no sobresalgan */
 }
 
-.date-input {
+.form-input-with-icon.error {
+  border-color: #ef4444;
+}
+
+/* Estilos del input type="date" para ocultarlo pero mantenerlo funcional */
+.form-input-with-icon .date-input {
   position: absolute;
-  opacity: 0;
+  opacity: 0; /* Lo hace completamente invisible */
   width: 100%;
   height: 100%;
-  left: 0;
   top: 0;
+  left: 0;
+  cursor: pointer; /* Mantiene el cursor de puntero */
+  z-index: 3; /* Asegura que esté por encima de los elementos visuales */
+  /* Eliminar bordes y fondos por defecto para evitar problemas visuales */
+  border: none;
+  background: transparent;
+}
+
+/* Asegurar que el texto y el icono NO capturen los eventos de clic */
+.form-input-with-icon span {
+  flex-grow: 1; /* Hace que el texto ocupe el espacio disponible */
+  pointer-events: none; /* Crucial: permite que los clics "atraviesen" este elemento */
+  z-index: 1; /* Mantenerlo visible debajo del input transparente */
+  color: #333; /* Asegurar color del texto */
+  font-size: 1rem; /* Asegurar tamaño de fuente del texto */
+}
+
+.form-input-with-icon .input-icon {
+  pointer-events: none; /* Crucial: permite que los clics "atraviesen" este elemento */
+  z-index: 1; /* Mantenerlo visible debajo del input transparente */
+}
+
+
+/* Otros estilos generales del formulario (sin cambios significativos) */
+.form-column {
+  flex: 1;
+  margin-left: 20px;
+}
+
+.booking-form {
+  background-color: #ffffff;
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  display: block;
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.75rem 1.25rem;
+  border-radius: 20px;
+  border: 1px solid #e0e0e0;
+  background-color: #f9f9f9;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) inset;
+  font-size: 1rem;
+  color: #333;
+  box-sizing: border-box;
+}
+
+.form-input::placeholder {
+  color: #999;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #6a67d0;
+  box-shadow: 0 0 0 3px rgba(106, 103, 208, 0.3);
+}
+
+.form-row {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-group-half {
+  flex: 1;
+}
+
+.time-select {
+  padding: 0.75rem 1.25rem;
+  border-radius: 20px;
+  border: 1px solid #e0e0e0;
+  background-color: #f9f9f9;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) inset;
+  font-size: 1rem;
+  color: #333;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292%22%20height%3D%22292%22%3E%3Cpath%20fill%3D%22%23666%22%20d%3D%22M283.4%2C114.7L154.7%2C243.4c-2.3%2C2.3-5.3%2C3.4-8.3%2C3.4s-6-1.1-8.3-3.4L8.6%2C114.7c-4.5-4.5-4.5-11.7%2C0-16.2c4.5-4.5%2C11.7-4.5%2C16.2%2C0l129.9%2C129.8L267.2%2C98.5c4.5-4.5%2C11.7-4.5%2C16.2%2C0C287.9%2C103%2C287.9%2C110.2%2C283.4%2C114.7z%22%2F%3E%3C%2Fsvg%3E');
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 0.6rem auto;
+}
+
+.input-icon-time {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
   cursor: pointer;
 }
 
-.input-icon {
-  object-fit: contain;
-  flex-shrink: 0;
-  aspect-ratio: 0.92;
-  width: 23px;
-  pointer-events: none;
-  position: absolute;
-  right: 15px;
+.checkout-column {
+  flex: 0 0 350px;
+  margin-left: 1.25rem;
 }
 
-/* Mantén todos los demás estilos exactamente iguales */
-.reservas-title {
-  align-self: flex-end;
-  margin-top: 1rem;
-  margin-right: 6rem;
+.checkout-container {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.checkout-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 15px;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+}
+
+.checkout-content {
+  padding: 0.5rem 0;
+}
+
+.checkout-title {
   font-size: 1.25rem;
-  color: #0f172a;
-  font-family: Poppins, -apple-system, Roboto, Helvetica, sans-serif;
+  color: #333;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.checkout-row {
+  margin-bottom: 1rem;
+}
+
+.checkout-items-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.checkout-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.checkout-item label {
+  font-weight: normal;
+}
+
+.checkout-item span {
+  font-weight: bold;
+  color: #333;
+}
+
+.checkout-total {
+  font-size: 1.1rem;
+  color: #000;
+  font-weight: bold;
+  border-top: 1px dashed #e0e0e0;
+  padding-top: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.payment-methods-container {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.payment-methods {
+  width: 100px;
+  height: auto;
+  object-fit: contain;
+}
+
+.pay-button {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 20px;
+  background-color: #6a67d0;
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.pay-button:hover {
+  background-color: #5a57bf;
+}
+
+.pay-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
 }
 
 .space-info-section {
-  max-width: 100%;
-  width: 867px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
 }
 
 .space-info-grid {
+  width: 100%;
+  max-width: 1310px;
   display: flex;
   gap: 1.25rem;
 }
 
 .space-image-column {
-  width: 50%;
+  flex: 1;
+  margin-left: 20px;
 }
 
 .space-image-container {
-  display: flex;
-  overflow: hidden;
   position: relative;
-  flex-direction: column;
-  flex-grow: 1;
-  justify-content: center;
-  padding: 0.625rem;
-  padding-top: 1px;
-  padding-bottom: 1px;
-  aspect-ratio: 1.393;
+  width: 100%;
+  padding-top: 60%;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
 .space-background-image {
-  object-fit: cover;
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  font-family: Poppins, -apple-system, Roboto, Helvetica, sans-serif; ;
+  object-fit: cover;
+  filter: brightness(0.6);
 }
 
 .space-main-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 80%;
+  max-height: 80%;
   object-fit: contain;
-  z-index: 10;
-  width: 100%;
-  border-radius: 1.5rem;
-  background-blend-mode: normal;
-  aspect-ratio: 1.3;
+  z-index: 1;
 }
 
 .space-details-column {
-  margin-left: 1.25rem;
-  width: 50%;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: 20px;
 }
 
 .space-details {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  align-self: stretch;
-  margin: auto 0;
-  color: #0f172a;
+  background-color: #ffffff;
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  max-width: 450px;
 }
 
 .space-type {
-  font-size: 0.75rem;
-  color: #52525b;
-  font-family: Poppins, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 1.1rem;
+  color: #6a67d0;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
 }
 
 .space-name {
-  margin-top: 0.25rem;
-  font-size: 1.5rem;
-  font-weight: 600;
-  font-family: Poppins, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  line-height: 1.2;
 }
 
 .center-name {
-  align-self: stretch;
-  margin-top: 0.625rem;
-  font-size: 3rem;
-  font-weight: 900;
-  transform: rotate(4.671684489127985e-19rad);
-  font-family: Poppins, -apple-system, Roboto, Helvetica, sans-serif;
-}
-
-.form-column {
-  width: 57%;
-}
-
-.booking-form {
-  display: flex;
-  flex-direction: column;
-  margin-top: 1.75rem;
-  width: 100%;
-  font-size: 1.25rem;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-}
-
-.form-label {
-  align-self: flex-start;
-  margin-left: 0.875rem;
-  font-weight: 600;
-  color: #0f172a;
-  font-family: Poppins, -apple-system, Roboto, Helvetica, sans-serif;
-}
-
-.form-input {
-  padding: 0.875rem 1.25rem;
-  margin-top: 0.75rem;
-  background-color: white;
-  border-radius: 29px;
-  color: #d4d4d8;
-  font-family: Poppins, -apple-system, Roboto, Helvetica, sans-serif;
-  border: none;
-  outline: none;
-}
-
-.form-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2.5rem;
-  margin-top: 2.5rem;
-}
-
-.form-group-half {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  flex-grow: 1;
-  flex-shrink: 0;
-  white-space: nowrap;
-  flex-basis: 0;
-  width: fit-content;
-}
-
-.input-icon-time {
-  object-fit: contain;
-  flex-shrink: 0;
-  aspect-ratio: 1;
-  width: 25px;
-}
-
-.checkout-column {
-  margin-left: 1.25rem;
-  width: 43%;
-}
-
-.checkout-container {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  white-space: nowrap;
-}
-
-.checkout-card {
-  display: flex;
-  flex-direction: column;
-  padding: 2.5rem 4rem 1rem;
-  width: 100%;
-  font-size: 1.25rem;
-  background-color: white;
-  border-radius: 60px;
-  align-items: center;
-  justify-content: center;
-}
-
-.checkout-content {
-  width: 100%;
-  font-family: Poppins, -apple-system, Roboto, Helvetica, sans-serif;
-}
-
-.checkout-row {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin-top: 1.5rem;
-}
-
-.checkout-items-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-  width: 100%;
-}
-
-.checkout-item {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  color: #737373;
-  font-family: Poppins, -apple-system, Roboto, Helvetica, sans-serif;
-}
-
-.checkout-item label {
-  font-size: 0.875rem;
-  color: #737373;
-}
-
-.checkout-item span {
-  font-weight: 500;
-  font-size: 1rem;
-  color: #0f172a;
-}
-
-.checkout-total {
-  border-top: 1px solid #eee;
-  padding-top: 1rem;
-  margin-top: 1rem;
-}
-
-.checkout-total label {
-  font-weight: 700;
-  font-size: 1rem;
-}
-
-.checkout-total span {
-  font-weight: 700;
   font-size: 1.2rem;
+  color: #555;
 }
 
-.checkout-title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 1.5rem;
-  grid-column: span 2;
-  font-family: Poppins, -apple-system, Roboto, Helvetica, sans-serif;
-}
-
-.payment-methods-container {
-  margin-top: 2rem;
-  text-align: center;
-}
-
-.payment-methods {
-  max-width: 200px;
-  margin-top: 0.5rem;
-}
-
-.payment-methods-container img {
-  max-width: 200px;
-  margin-top: 0.5rem;
-}
-
-.pay-button {
-  align-self: center;
-  padding: 0.5rem 4rem 0.875rem;
-  margin-top: 0.625rem;
-  max-width: 100%;
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: white;
-  background-color: #0f172a;
-  border-radius: 1000px;
-  width: 268px;
-  text-align: center;
-  cursor: pointer;
-  font-family: Poppins, -apple-system, Roboto, Helvetica, sans-serif;
-  border: none;
-}
-
+/* **** ESTILOS ACTUALIZADOS PARA EL BREADCRUMB (FLECHA DE INICIO) **** */
 .breadcrumb {
   display: flex;
-  gap: 0.375rem;
-  margin-top: 3rem;
-  margin-left: 2.25rem;
-  font-size: 1rem;
-  font-weight: 700;
-  color: black;
-  white-space: nowrap;
+  align-items: center;
+  gap: 0.75rem; /* Espacio aumentado entre icono y texto */
+  margin-top: 3rem; /* Más margen superior */
+  margin-bottom: 2rem; /* Añadir margen inferior para separación */
   cursor: pointer;
+  color: #6a67d0;
+  font-weight: bold;
+  padding: 0.5rem 1rem; /* Añadir padding para hacer el área clickeable más grande */
+  border-radius: 10px; /* Bordes ligeramente redondeados */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Transiciones suaves para hover */
 }
 
-.breadcrumb-icon {
-  object-fit: contain;
-  flex-shrink: 0;
-  width: 1.5rem;
-  aspect-ratio: 1;
+.breadcrumb:hover {
+  background-color: rgba(106, 103, 208, 0.1); /* Fondo ligero al pasar el ratón */
+  transform: translateY(-2px); /* Ligero levantamiento al pasar el ratón */
+}
+
+.breadcrumb .input-icon {
+  width: 28px; /* Icono más grande */
+  height: 28px; /* Icono más grande */
+  object-fit: contain; /* Asegura que la imagen no se distorsione */
 }
 
 .breadcrumb-text {
-  margin: auto 0;
-}
-
-.error {
-  border: 1px solid #ff4444 !important;
+  font-size: 1.15rem; /* Texto más grande */
+  white-space: nowrap; /* Evita que el texto se divida en varias líneas */
 }
 
 .error-message {
-  color: #ff4444;
+  color: #ef4444;
   font-size: 0.875rem;
   margin-top: 0.25rem;
   margin-left: 0.875rem;
@@ -417,48 +439,11 @@
   }
 
   .booking-form {
-    margin-top: 2.5rem;
+    margin-top: 2rem;
   }
 
-  .checkout-container {
-    margin-top: 2.5rem;
-  }
-
-  .checkout-card {
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
-  }
-
-  .checkout-items-row {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
-  }
-  
-  .checkout-item {
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
-  }
-  
-  .checkout-total {
-    border-top: 1px solid #eee;
-    padding-top: 0.5rem;
-    margin-top: 0.5rem;
-    width: 100%;
-  }
-
-  .pay-button {
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
-  }
-
-  .breadcrumb {
-    margin-top: 2.5rem;
-    margin-left: 0.625rem;
-  }
-
-  .booking-section {
-    max-width: 100%;
+  .checkout-column {
+    margin-top: 2rem;
+    margin-left: 0;
   }
 }
