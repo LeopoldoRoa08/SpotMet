@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'; // Añade useEffect
+import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './ReservaAuditorio.css'; // Usa el mismo CSS
 import cancha from './Canchas.png';

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './ReservaMundoX.css';
 import mundox from './Centro-Mundo-X.jpg'; // Asegúrate de que la ruta sea correcta

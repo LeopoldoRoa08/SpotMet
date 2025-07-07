@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react'; // Añadir useEffect
+// ReservaSalones.jsx
+import React, { useState, useRef } from 'react'; // <--- Add useRef here
 import { useNavigate } from 'react-router-dom';
 import './ReservaAuditorio.css'; // Usar el mismo CSS
 import A2 from './Salon.png';
@@ -94,8 +95,8 @@ function ReservaSalon() {
         date: formData.date,
         startTime: formData.startTime,
         endTime: formData.endTime,
-        spaceType: "Salón",
-        spaceName: "Sala de Eventos",
+        spaceType: "Salon",
+        spaceName: "Salon",
         timestamp: serverTimestamp()
       };
 
@@ -153,11 +154,11 @@ function ReservaSalon() {
             </div>
             <div className="space-details-column">
               <div className="space-details">
-                <div className="space-type">Tipo de espacio: Salón</div>
+                <div className="space-type">Tipo de espacio: Salon</div>
                 <div className="space-name">
-                  Salón de Eventos
+                  Salon
                 </div>
-                <div className="center-name">Salón Principal</div>
+                <div className="center-name">Salon</div>
               </div>
             </div>
           </div>

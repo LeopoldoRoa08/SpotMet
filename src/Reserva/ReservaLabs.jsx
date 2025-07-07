@@ -1,5 +1,5 @@
 // ReservaLaboratorio.jsx
-import React, { useState, useEffect } from 'react'; 
+import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './ReservaLabs.css'; 
 import lab from "./Laboratorio-copia-1024x682.png";
