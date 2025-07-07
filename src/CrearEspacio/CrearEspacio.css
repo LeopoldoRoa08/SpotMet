@@ -1,234 +1,81 @@
-/* Estilos base */
-.espacios-container {
-  background-color: #f5f5f5;
+.crear-espacio-container {
+  background-color: #f6f6f6;
+  padding: 2rem;
   min-height: 100vh;
-  padding: 0;
-  width: 100%;
-}
-
-/* Header */
-.espacios-header {
-  padding: 2rem;
-  background-color: white;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  text-align: center;
-}
-
-.espacios-page-title {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #333;
-  margin: 0;
-  font-family: Poppins, -apple-system, Roboto, Helvetica, sans-serif;
-}
-
-/* Contenido principal */
-.espacios-main-content {
-  max-width: 1000px;
-  margin: 2rem auto;
-  background: white;
-  border-radius: 8px;
-  padding: 2rem;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-/* Sección de imágenes */
-.espacios-image-section {
-  margin-bottom: 2rem;
-}
-
-.espacios-image-upload-section {
-  border: 2px dashed #ddd;
-  border-radius: 24px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 40px;
-  cursor: pointer;
-  background-color: #f9f9f9;
-  transition: all 0.3s ease;
 }
 
-.espacios-image-upload-section:hover {
-  border-color: #aaa;
-  background-color: #f0f0f0;
-}
-
-.espacios-image-upload-content {
+h2 {
   text-align: center;
-}
-
-.espacios-upload-text {
-  margin-top: 15px;
-  font-size: 1rem;
-  color: #666;
-  font-family: Poppins, sans-serif;
-}
-
-/* Sección de formulario */
-.espacios-form-container {
-  margin-top: 2rem;
-}
-
-.espacios-section-title {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #333;
+  color: #0b083b;
   margin-bottom: 1.5rem;
-  font-family: Poppins, sans-serif;
 }
 
-.espacios-form-section {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.espacios-input-field,
-.espacios-textarea-field {
+.crear-espacio-form {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
   width: 100%;
+  max-width: 700px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.espacios-input,
-.espacios-textarea,
-.espacios-select {
+.imagen-upload {
+  border: 2px dashed #007bff;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  background-color: #fafafa;
+}
+
+.imagen-upload label {
+  font-weight: bold;
+  color: #444;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.input-group input,
+.input-group textarea {
   width: 100%;
-  padding: 12px 15px;
-  border: 1px solid #ddd;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
   border-radius: 8px;
-  font-size: 1rem;
-  font-family: Poppins, sans-serif;
-  color: #333;
-  box-sizing: border-box; /* Asegura que padding y border estén incluidos en el width */
+  border: 1px solid #ccc;
+  font-size: 0.95rem;
 }
 
-.espacios-input::placeholder,
-.espacios-textarea::placeholder {
-  color: #999;
-}
-
-.espacios-textarea {
+.input-group textarea {
   min-height: 120px;
   resize: vertical;
 }
 
-.espacios-input:focus,
-.espacios-textarea:focus,
-.espacios-select:focus {
-  outline: none;
-  border-color: #2A59FE;
-  box-shadow: 0 0 0 3px rgba(42, 89, 254, 0.2);
-}
-
-.espacios-input-row {
-  display: flex;
-  gap: 1.5rem;
-  flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
-}
-
-.espacios-input-column {
-  flex: 1; /* Distribuye el espacio equitativamente */
-  min-width: 200px; /* Ancho mínimo para cada columna */
-}
-
-/* Acciones (botones) */
-.espacios-actions-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 2rem;
-}
-
-/* Botón de enviar */
-.espacios-submit-button {
-  background-color: #2A59FE;
-  color: white;
-  border: none;
-  border-radius: 12px;
-  padding: 12px 24px;
-  font-size: 1rem;
-  font-weight: 500;
-  font-family: Poppins, sans-serif;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.espacios-submit-button:hover {
-  background-color: #1a4ae0;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-.espacios-submit-button:disabled {
-  background-color: #a0c0ff;
-  cursor: not-allowed;
-  transform: none;
-  box-shadow: none;
-}
-
-/* Botón Dashboard - Versión Premium */
-.espacios-dashboard-button {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background: #FFFFFF;
-  border: 1px solid #E5E7EB;
-  border-radius: 12px;
-  padding: 12px 24px;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 500;
-  font-size: 15px;
-  color: #374151;
-  cursor: pointer;
-  overflow: hidden;
-  transition: all 0.3s ease;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-}
-
-.espacios-dashboard-icon {
-  display: flex;
-  color: #EA580C;
-  transition: all 0.3s ease;
-}
-
-.espacios-dashboard-text {
-  position: relative;
-  z-index: 2;
-  transition: color 0.3s ease;
-}
-
-.espacios-dashboard-hover {
-  position: absolute;
-  top: 0;
-  left: 0;
+.crear-btn {
   width: 100%;
-  height: 100%;
-  background: linear-gradient(to right, #FEF2F2, #FFEDD5);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: 1;
+  background-color: #ff7e2d;
+  color: white;
+  padding: 0.9rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
 }
 
-/* Efectos hover */
-.espacios-dashboard-button:hover {
-  border-color: #F3F4F6;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+.crear-btn:hover {
+  background-color: #e0661a;
 }
 
-.espacios-dashboard-button:hover .espacios-dashboard-hover {
-  opacity: 1;
+.plus-icon {
+  margin-left: 6px;
 }
 
-.espacios-dashboard-button:hover .espacios-dashboard-text {
-  color: #EA580C;
-}
-
-.espacios-dashboard-button:hover svg path {
-  fill: #EA580C; /* Cambia el color del icono SVG al hacer hover */
+.back-link {
+  margin-top: 1.5rem;
+  color: #ff7e2d;
+  cursor: pointer;
+  text-align: left;
+  font-size: 0.9rem;
 }
