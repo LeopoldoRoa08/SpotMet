@@ -267,13 +267,13 @@ export const Dashboard = () => {
         <div className="overlap-14">
           <div className="rectangle-2" />
 
-          <div className="text-wrapper-21">Ver espacios</div>
+          <a href="/espacioAdmin"><div className="text-wrapper-21">Ver espacios</div></a>
         </div>
 
         <div className="overlap-15">
           <div className="rectangle-3" />
 
-          <div className="text-wrapper-21">Reportes</div>
+          <a href="/reportes"><div className="text-wrapper-21">Reportes</div></a>
         </div>
       </div>
     </div>

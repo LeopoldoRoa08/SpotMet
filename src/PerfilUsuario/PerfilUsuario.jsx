@@ -7,6 +7,7 @@ import "./PerfilUsuario.css";
 const PerfilUsuario = () => {
   const [usuario, setUsuario] = useState(null);
   const navigate = useNavigate();
+  const correo = localStorage.getItem("user")
 
   useEffect(() => {
     const uid = localStorage.getItem("uid");
@@ -17,7 +18,6 @@ const PerfilUsuario = () => {
         const snap = await getDoc(docRef);
         if (snap.exists()) {
           setUsuario(snap.data());
-          console.log("Datos del usuario:", snap.data());
         }
       };
       fetchData();
@@ -52,7 +52,7 @@ const PerfilUsuario = () => {
         <div className="info-box grande">
           <p><strong>Nombre:</strong> {usuario?.nombre || ""}</p>
           <p><strong>Apellido:</strong> {usuario?.apellido || ""}</p>
-          <p><strong>Correo:</strong> {usuario?.correo || ""}</p>
+          <p><strong>Correo:</strong> {correo || ""}</p>
         </div>
 
         <button className="btn-editar" onClick={irAEditarPerfil}>

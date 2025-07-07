@@ -4,6 +4,7 @@ import './EspacioDisponible.css';
 import { useNavigate, Link } from 'react-router-dom';
 
 function EspaciosDisponible() {
+  const navigate = useNavigate()
   return (
     <div className="container">
      
@@ -14,7 +15,7 @@ function EspaciosDisponible() {
 
       <div className="mainContent">
         <div className="createButton">
-          <div className="createButtonText">
+          <div className="createButtonText" onClick={()=> navigate("/crear-espacio")} style={{cursor: "pointer"}}>
             Crear nuevo espacio
           </div>
           <img
@@ -26,14 +27,14 @@ function EspaciosDisponible() {
 
         <div className="spacesGrid">
           <div className="gridRow">
-            <div className="gridColumn">
+            <div className="gridColumn" onClick={()=> navigate("/editar-auditorio")} style={{cursor: "pointer"}}>
               <img
                 src="https://cdn.builder.io/api/v1/image/assets/b3c1de37907348cdbf57798a458478a7/a0ee292eb61d4d48256ea3b93a9493621634bc4d?placeholderIfAbsent=true"
                 className="spaceImage"
                 alt="Space"
               />
             </div>
-            <div className="gridColumn">
+            <div className="gridColumn" onClick={()=> navigate("/editar-centrox")} style={{cursor: "pointer"}}>
               <div className="featuredSpace">
                 <img
                   src="https://cdn.builder.io/api/v1/image/assets/b3c1de37907348cdbf57798a458478a7/a2b2b063d75ff3056a4a156e465fc992cba57394?placeholderIfAbsent=true"
@@ -65,7 +66,7 @@ function EspaciosDisponible() {
                 </div>
               </div>
             </div>
-            <div className="gridColumn">
+            <div className="gridColumn" onClick={()=> navigate("/editar-24")} style={{cursor: "pointer"}}>
               <img
                 src="https://cdn.builder.io/api/v1/image/assets/b3c1de37907348cdbf57798a458478a7/aca931eae2e570d553c4ca14a29fe91c695e1152?placeholderIfAbsent=true"
                 className="spaceImage"
@@ -77,21 +78,21 @@ function EspaciosDisponible() {
 
         <div className="spacesGridSecond">
           <div className="gridRow">
-            <div className="gridColumn">
+            <div className="gridColumn" onClick={()=> navigate("/editar-aulas")} style={{cursor: "pointer"}}>
               <img
                 src="https://cdn.builder.io/api/v1/image/assets/b3c1de37907348cdbf57798a458478a7/5ce25b4e7e63909c40d17006a77efd5bd98be154?placeholderIfAbsent=true"
                 className="spaceImage"
                 alt="Space"
               />
             </div>
-            <div className="gridColumn">
+            <div className="gridColumn" onClick={()=> navigate("/editar-canchas")} style={{cursor: "pointer"}}>
               <img
                 src="https://cdn.builder.io/api/v1/image/assets/b3c1de37907348cdbf57798a458478a7/e937f147e32e658f3f3ac19f58ddf5ef5f9893d7?placeholderIfAbsent=true"
                 className="spaceImage"
                 alt="Space"
               />
             </div>
-            <div className="gridColumn">
+            <div className="gridColumn" onClick={()=> navigate("/editar-laboratorio")} style={{cursor: "pointer"}}>
               <img
                 src="https://cdn.builder.io/api/v1/image/assets/b3c1de37907348cdbf57798a458478a7/d3a52f72dfb7e31fc13f9081f5d2f3080dfaa6fe?placeholderIfAbsent=true"
                 className="spaceImage"

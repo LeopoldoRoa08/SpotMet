@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import './RegistrarUsuario.css';
 import { useNavigate, Link } from 'react-router-dom';
 import {  createUserWithEmailAndPassword  } from 'firebase/auth';
-import { auth } from '../firebase';
-
+import { auth, googleProvider, db } from '../firebase';
+import { setDoc, doc } from 'firebase/firestore';
 
 export const RegistrarUsuario = () => {
   const navigate = useNavigate();
@@ -27,12 +27,13 @@ export const RegistrarUsuario = () => {
 
   const validateForm = () => {
     const newErrors = {};
-    
     if (!formData.nombre.trim()) newErrors.nombre = "Nombre es requerido";
+    if (!formData.apellido.trim()) newErrors.apellido = "Apellido es requerido";
+    if (!formData.carrera.trim()) newErrors.carrera = "La carrera es requerida";
     if (!/^\S+@\S+\.\S+$/.test(formData.email)) newErrors.email = "Email inválido";
     if (formData.password.length < 6) newErrors.password = "Mínimo 6 caracteres";
     if (formData.password !== formData.confirmPassword) newErrors.confirmPassword = "Las contraseñas no coinciden";
-    if (!/^\d+$/.test(formData.cedula)) newErrors.cedula = "Cédula debe contener solo números";
+    if (!/^\d+$/.test(formData.cedula)) newErrors.cedula = "El número de telefono debe contener solo números";
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -43,20 +44,23 @@ export const RegistrarUsuario = () => {
     setIsSubmitting(true);
     
     if (validateForm()) {
-      await createUserWithEmailAndPassword(auth, formData.email, formData.password)
-        .then((userCredential) => {
-            // Signed in
+        try{
+            const userCredential = await createUserWithEmailAndPassword(auth, formData.email, formData.password)
             const user = userCredential.user;
-            console.log(user);
+            await setDoc(doc(db, "usuarios", user.uid), {
+              nombre: formData.nombre,
+              apellido: formData.apellido,
+              carrera: formData.carrera,
+              telefono: formData.cedula,
+              fotoPerfil: ""            
+            });
             navigate("/login")
-            // ...
-        })
-        .catch((error) => {
+        }catch(error){
             const errorCode = error.code;
             const errorMessage = error.message;
             console.log(errorCode, errorMessage);
-            // ..
-        });
+            setIsSubmitting(false);
+        }
 
 
 
@@ -83,6 +87,14 @@ export const RegistrarUsuario = () => {
                 onChange={handleChange}
               />
               {errors.nombre && <span className="error-message">{errors.nombre}</span>}
+              <input
+                name="apellido"
+                className={`input-field ${errors.apellido ? 'error' : ''}`}
+                placeholder="Ingrese su apellido"
+                value={formData.apellido}
+                onChange={handleChange}
+              />
+              {errors.apellido && <span className="error-message">{errors.apellido}</span>}
 
               <input
                 name="email"
@@ -128,11 +140,21 @@ export const RegistrarUsuario = () => {
               <input
                 name="cedula"
                 className={`input-field ${errors.cedula ? 'error' : ''}`}
-                placeholder="Ingrese su cédula"
+                placeholder="Ingrese su número de Telefono"
                 value={formData.cedula}
                 onChange={handleChange}
               />
               {errors.cedula && <span className="error-message">{errors.cedula}</span>}
+
+              <input
+                name="carrera"
+                className={`input-field ${errors.carrera ? 'error' : ''}`}
+                placeholder="Ingrese su carrera"
+                value={formData.carrera}
+                onChange={handleChange}
+              />
+              {errors.carrera && <span className="error-message">{errors.carrera}</span>}
+
             </div>
           </div>
           

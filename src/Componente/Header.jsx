@@ -34,7 +34,7 @@ function Header() {
             </div>
             <ul>
               {userEmail== "diegoadjs22@gmail.com"&&<li>
-                <a href="#">
+                <a href="/dashboard">
                   <img src = "https://cdn.builder.io/api/v1/image/assets/0ee00be008dd423aadc13fb6ab914f24/d629c2dee2c22b89c4e4f7ba96c0b40751484ec6?placeholderIfAbsent=true" alt="Header icon" className="header-icon"></img>
                   <span>DASHBOARD</span>
                 </a>

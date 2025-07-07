@@ -711,6 +711,7 @@
 }
 
 .dashboard .text-wrapper-21 {
+  cursor: pointer;
   color: #ffffff;
   font-family: "Roboto", Helvetica;
   font-size: 13px;
@@ -723,6 +724,11 @@
   top: 5px;
   white-space: nowrap;
   width: 89px;
+}
+
+a {
+  color: white;
+  text-decoration: none;
 }
 
 .dashboard .overlap-15 {
