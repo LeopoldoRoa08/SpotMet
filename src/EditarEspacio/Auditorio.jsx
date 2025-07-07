@@ -47,16 +47,16 @@ const Auditorio = () => {
         maxPersonas: maxPersonas,
         precio: precio,
         descripcion: descripcion,
-        tipo: 'Salón', // Específico para Salón
+        tipo: 'Audiotorio', // Específico para Salón
         imagen: imagen, // Guardar la imagen seleccionada en Firestore
       });
 
       // Mostrar mensaje de éxito
-      setMensaje('¡Salón guardado con éxito!');
+      setMensaje('¡Auditorio guardado con éxito!');
       setTimeout(() => setMensaje(''), 3000); // El mensaje se oculta después de 3 segundos
 
     } catch (error) {
-      setMensaje('Error al guardar el salón. Intenta nuevamente.');
+      setMensaje('Error al guardar el Auditorio. Intenta nuevamente.');
     }
   };
 

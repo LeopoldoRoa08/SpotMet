@@ -52,11 +52,11 @@ const CentroMundoX  = () => {
       });
 
       // Mostrar mensaje de éxito
-      setMensaje('¡Salón guardado con éxito!');
+      setMensaje('¡Sala24 guardado con éxito!');
       setTimeout(() => setMensaje(''), 3000); // El mensaje se oculta después de 3 segundos
 
     } catch (error) {
-      setMensaje('Error al guardar el salón. Intenta nuevamente.');
+      setMensaje('Error al guardar la sala24. Intenta nuevamente.');
     }
   };
 
