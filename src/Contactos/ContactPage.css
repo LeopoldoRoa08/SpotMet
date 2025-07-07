@@ -462,3 +462,130 @@
     font-size: 14px;
   }
 }
+
+
+.top-header-contacto {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2rem auto;
+  max-width: 600px;
+}
+
+.top-header-contacto h1 {
+  font-size: 28px;
+  color: #f57c00;
+}
+
+.dropdown-container {
+  position: relative;
+  font-size: 14px;
+}
+
+.dropdown-toggle {
+  background-color: #fafafa;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 0.75rem;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: border 0.2s ease;
+}
+
+.dropdown-toggle:hover {
+  border-color: #f57c00;
+}
+
+.dropdown-arrow {
+  margin-left: 8px;
+  font-size: 12px;
+  color: #666;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-top: none;
+  border-radius: 0 0 10px 10px;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 10;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.dropdown-item {
+  padding: 0.7rem 1rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.dropdown-item:hover {
+  background-color: #fbe9e7;
+  color: #e65100;
+}
+
+
+.contact-form-section {
+  position: relative;
+  padding: 64px 48px;
+  margin: 0 auto;
+  background-color: #fff3e0;
+  border-radius: 40px;
+  width: 90%;
+  max-width: 850px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.section-title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  color: #e65100;
+  margin-bottom: 2rem;
+}
+
+.btn-inicio {
+  background-color: #f57c00;
+  color: white;
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-inicio:hover {
+  background-color: #ef6c00;
+  transform: scale(1.05);
+}
+
+.btn-submit {
+  background-color: #f57c00;
+  color: white;
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+  max-width: 300px;
+  margin: 2rem auto 0;
+  display: block;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-submit:hover {
+  background-color: #ef6c00;
+  transform: scale(1.03);
+}

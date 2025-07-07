@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { db } from "../firebase";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, deleteDoc, doc, query, where } from "firebase/firestore";
 import "./EspacioDisponible.css";
 
 function EspaciosDisponiblesAdministrador() {
   const [espacios, setEspacios] = useState([]);
-  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchEspacios = async () => {
@@ -17,12 +15,23 @@ function EspaciosDisponiblesAdministrador() {
     fetchEspacios();
   }, []);
 
+  const eliminarEspacio = async (id) => {
+    const reservasRef = collection(db, "alquileres");
+    const q = query(reservasRef, where("espacioId", "==", id));
+    const snapshot = await getDocs(q);
+
+    if (!snapshot.empty) {
+      alert("Este espacio no se puede eliminar porque tiene reservas activas.");
+      return;
+    }
+
+    await deleteDoc(doc(db, "espacios", id));
+    setEspacios((prev) => prev.filter((espacio) => espacio.id !== id));
+  };
+
   return (
     <div className="contenedor-general">
       <div className="encabezado">
-        <button className="btn-crear" onClick={() => navigate("/crear-espacio")}>
-          Crear nuevo espacio <span>➕</span>
-        </button>
         <h3>Espacios disponibles</h3>
       </div>
 
@@ -35,7 +44,6 @@ function EspaciosDisponiblesAdministrador() {
               {espacio.imagen && (
                 <div className="imagen-container">
                   <img src={espacio.imagen} alt={espacio.nombre} />
-                  <span className="icono-editar">✏️</span>
                 </div>
               )}
               <h3>{espacio.nombre}</h3>
@@ -43,6 +51,7 @@ function EspaciosDisponiblesAdministrador() {
               <p><strong>Tipo:</strong> {espacio.tipo}</p>
               <p><strong>Capacidad:</strong> {espacio.capacidad}</p>
               <p><strong>Precio:</strong> ${espacio.precio}</p>
+              <button onClick={() => eliminarEspacio(espacio.id)}>Eliminar</button>
             </div>
           ))}
         </div>

@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./CrearEspacio.css";
 import { db, storage } from "../firebase";
-import { collection, addDoc } from "firebase/firestore";
+import { collection, getDocs, addDoc } from "firebase/firestore";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { useNavigate } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
@@ -16,7 +16,18 @@ function CrearEspacio() {
   });
 
   const [imagenFile, setImagenFile] = useState(null);
+  const [tiposEspacio, setTiposEspacio] = useState([]);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const fetchTipos = async () => {
+      const tiposRef = collection(db, "tipos_espacio");
+      const snapshot = await getDocs(tiposRef);
+      const lista = snapshot.docs.map(doc => doc.data().nombre);
+      setTiposEspacio(lista);
+    };
+    fetchTipos();
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -61,7 +72,14 @@ function CrearEspacio() {
           <input type="text" name="nombre" placeholder="Nombre del Espacio" onChange={handleChange} required />
           <input type="number" name="capacidad" placeholder="Capacidad Máxima de personas" onChange={handleChange} required />
           <input type="number" name="precio" placeholder="Precio de alquiler" onChange={handleChange} required />
-          <input type="text" name="tipo" placeholder="Tipo de Espacio" onChange={handleChange} required />
+
+          <select name="tipo" value={formData.tipo} onChange={handleChange} required>
+            <option value="">Selecciona el tipo de espacio</option>
+            {tiposEspacio.map((tipo, i) => (
+              <option key={i} value={tipo}>{tipo}</option>
+            ))}
+          </select>
+
           <textarea name="descripcion" placeholder="Ingresa la Descripción del Espacio" onChange={handleChange} required />
         </div>
 
